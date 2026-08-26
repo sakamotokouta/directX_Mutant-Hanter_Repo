@@ -1,0 +1,27 @@
+# Visual Studio
+.vs/
+**/Debug/
+**/Release/
+**/x64/
+**/x86/
+*.user
+*.suo
+*.pdb
+*.idb
+*.tlog
+*.lastbuildstate
+*.log
+
+# Build outputs
+*.exe
+*.obj
+*.ilk
+
+# Keep intentional runtime DLL/CSO only through explicit allow-list decisions.
+# Do not blindly ignore third-party runtime DLLs required by the demo.
+
+# OS/editor conflict artifacts
+*-DESKTOP-*.cpp
+*-DESKTOP-*.h
+.DS_Store
+Thumbs.db

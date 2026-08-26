@@ -1,0 +1,20 @@
+# Visual Studio / MSBuild generated output (regenerated on every build)
+.vs/
+Debug/
+x64/
+x86/
+Release/
+*.obj
+*.pdb
+*.idb
+*.ilk
+*.tlog
+*.lastbuildstate
+*.log
+*.recipe
+*.suo
+*.user
+
+# Claude Code local-only configuration
+CLAUDE.local.md
+.claude/settings.local.json
