@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "scene.h"
 #include "manager.h"
 #include "villagePlayerAction.h"
@@ -23,10 +23,10 @@ void VillagePlayerAction::VillageActions(void)
 	QuestDeskUi* QuestUi = m_Scene->GetGameObject<QuestDeskUi>();
 
 
-	//ó•tì‚Æ‚Ì”ÍˆÍw’è
+	//å—ä»˜å¬¢ã¨ã®ç¯„å›²æŒ‡å®š
 	RECEPTIONDESK* reception = m_Scene->GetGameObject<RECEPTIONDESK>();
 	D3DXVECTOR3 questposition = reception->GetPosition();
-	//ƒNƒGƒXƒg‚Ìó’
+	//ã‚¯ã‚¨ã‚¹ãƒˆã®å—æ³¨
 	if (GetLength(questposition) <= 4.0f)
 	{
 		m_ReceptionFlg = true;
@@ -49,7 +49,7 @@ void VillagePlayerAction::VillageActions(void)
 		m_ReceptionFlg = false;
 
 
-	//’b–èê‚Ì”ÍˆÍw’è
+	//é›å†¶å ´ã®ç¯„å›²æŒ‡å®š
 	WeaponStoreDesk* weaponsotre = m_Scene->GetGameObject<WeaponStoreDesk>();
 	D3DXVECTOR3 weaponposition = weaponsotre->GetPosition();
 	if (GetLength(weaponposition) <= 4.0f)
@@ -71,7 +71,7 @@ void VillagePlayerAction::VillageActions(void)
 		m_WeaponDeskFlg = false;
 
 
-	//G‰İ‰®‚Ì”ÍˆÍw’è
+	//é›‘è²¨å±‹ã®ç¯„å›²æŒ‡å®š
 	GeneralStoreDesk* generalsotre = m_Scene->GetGameObject<GeneralStoreDesk>();
 	D3DXVECTOR3 generalposition = generalsotre->GetPosition();
 	if (GetLength(generalposition) <= 4.0f)
@@ -93,20 +93,20 @@ void VillagePlayerAction::VillageActions(void)
 		m_GeneralDeskFlg = false;
 
 
-	//‘º‚ÌˆÄ“àl”ÍˆÍw’è
+	//æ‘ã®æ¡ˆå†…äººç¯„å›²æŒ‡å®š
 	VillageInfoDesk* villageinfo = m_Scene->GetGameObject<VillageInfoDesk>();
 	D3DXVECTOR3 villageinfoposition = villageinfo->GetPosition();
 	if (GetLength(villageinfoposition) <= 4.0f)
 	{
-		//“ª‚Ìã‚Ìˆó
+		//é ­ã®ä¸Šã®å°
 		m_VillageInfoPointFlg = true;
 
 		if (Input::GetKeyTrigger('E'))
 		{
-			//˜b‚µ‚Ä‚¢‚é“r’†‚É“®‚©‚È‚¢‚æ‚¤‚É‚·‚éƒtƒ‰ƒO
+			//è©±ã—ã¦ã„ã‚‹é€”ä¸­ã«å‹•ã‹ãªã„ã‚ˆã†ã«ã™ã‚‹ãƒ•ãƒ©ã‚°
 			m_TransactionFlg = true;
 
-			//UI‚ğ•\¦‚·‚é‚½‚ß‚Ìƒtƒ‰ƒO
+			//UIã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã®ãƒ•ãƒ©ã‚°
 			m_VillageInfoFlg = true;
 		}
 		else if (Input::GetKeyTrigger('R'))
@@ -121,7 +121,7 @@ void VillagePlayerAction::VillageActions(void)
 
 
 
-	//‹³Š¯‚Æ‚Ì”ÍˆÍw’è
+	//æ•™å®˜ã¨ã®ç¯„å›²æŒ‡å®š
 	Instructor* instructor = m_Scene->GetGameObject<Instructor>();
 	D3DXVECTOR3 instructorPos = instructor->GetPosition();
 	if (GetLength(instructorPos) <= 4.0f)

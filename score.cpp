@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "score.h"
 #include "sprite.h"
@@ -29,13 +29,13 @@ void Score::Init()
 	vertex[3].TexCoord = D3DXVECTOR2(1.0f, 1.0f);
 
 
-	// ’¸“_ƒoƒbƒtƒ@¶¬
+	// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ç”Ÿæˆ
 	D3D11_BUFFER_DESC bd;
 	ZeroMemory(&bd, sizeof(bd));
-	bd.Usage = D3D11_USAGE_DYNAMIC;   // •ÏX
+	bd.Usage = D3D11_USAGE_DYNAMIC;   // å¤‰æ›´
 	bd.ByteWidth = sizeof(VERTEX_3D) * 4;
 	bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-	bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;   // •ÏX
+	bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;   // å¤‰æ›´
 
 	D3D11_SUBRESOURCE_DATA sd;
 	ZeroMemory(&sd, sizeof(sd));
@@ -43,7 +43,7 @@ void Score::Init()
 
 	Renderer::GetDevice()->CreateBuffer(&bd, &sd, &m_VertexBuffer);
 
-	// ƒeƒNƒXƒ`ƒƒ“Ç‚Ýž‚Ý
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£èª­ã¿è¾¼ã¿
 	D3DX11CreateShaderResourceViewFromFile(Renderer::GetDevice(), 
 		"asset/texture/score.png",
 		NULL,
@@ -84,35 +84,35 @@ void Score::Draw()
 {
 	if (m_DrawFlg)
 	{
-		// “ü—ÍƒŒƒCƒAƒEƒgÝ’è
+		// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 		Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-		// ƒVƒF[ƒ_[Ý’è
+		// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 		Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 		Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-		// ƒ}ƒgƒŠƒNƒXÝ’è
+		// ãƒžãƒˆãƒªã‚¯ã‚¹è¨­å®š
 		Renderer::SetWorldViewProjection2D();
 
-		// ‰¼‘zŠÖ”‚È‚Ì‚Å‹­§“I‚ÉŒÄ‚Ño‚·(Šî’êƒNƒ‰ƒX‚Ìƒƒ]ƒbƒgŒÄ‚Ño‚µ)
+		// ä»®æƒ³é–¢æ•°ãªã®ã§å¼·åˆ¶çš„ã«å‘¼ã³å‡ºã™(åŸºåº•ã‚¯ãƒ©ã‚¹ã®ãƒ¡ã‚¾ãƒƒãƒˆå‘¼ã³å‡ºã—)
 		//GameObject::Draw();
 
-		// ’¸“_ƒoƒbƒtƒ@Ý’è
+		// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡è¨­å®š
 		UINT stride = sizeof(VERTEX_3D);
 		UINT offset = 0;
 		Renderer::GetDeviceContext()->IASetVertexBuffers(0, 1, &m_VertexBuffer, &stride, &offset);
 
-		// ƒ}ƒeƒŠƒAƒ‹Ý’è
+		// ãƒžãƒ†ãƒªã‚¢ãƒ«è¨­å®š
 		MATERIAL material;
 		ZeroMemory(&material, sizeof(material));
 		material.Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
 		material.TextureEnable = true;
 		Renderer::SetMaterial(material);
 
-		// ƒeƒNƒXƒ`ƒƒÝ’è
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£è¨­å®š
 		Renderer::GetDeviceContext()->PSSetShaderResources(0, 1, &m_Texture);
 
-		// ƒvƒŠƒ~ƒeƒBƒuƒgƒ|ƒƒWÝ’è
+		// ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ãƒˆãƒãƒ­ã‚¸è¨­å®š
 		Renderer::GetDeviceContext()->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 
 		int count = m_Count;
@@ -133,21 +133,21 @@ void Score::Draw()
 
 		for (int i = 0; i < keta; i++)
 		{
-			//’¸“_À•WŽZo
+			//é ‚ç‚¹åº§æ¨™ç®—å‡º
 			float vx = m_Pos.x - i * 20.0f;
 			float vy = m_Pos.y;
 			float height = m_Scale.x;
 			float width = m_Scale.y;
 
-			// ƒeƒNƒXƒ`ƒƒÀ•WŽZo
+			// ãƒ†ã‚¯ã‚¹ãƒãƒ£åº§æ¨™ç®—å‡º
 			int number = count % 10;
 			count /= 10;
 
 
-			float x = number % 5/*‰¡*/ * (1.0f / 5/*‰¡*/);
-			float y = number / 5/*‰¡*/ * (1.0f / 5/*c*/);
+			float x = number % 5/*æ¨ª*/ * (1.0f / 5/*æ¨ª*/);
+			float y = number / 5/*æ¨ª*/ * (1.0f / 5/*ç¸¦*/);
 
-			// ’¸“_ƒf[ƒ^‘‚«Š·‚¦
+			// é ‚ç‚¹ãƒ‡ãƒ¼ã‚¿æ›¸ãæ›ãˆ
 			D3D11_MAPPED_SUBRESOURCE msr;
 			Renderer::GetDeviceContext()->Map(m_VertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &msr);
 
@@ -175,7 +175,7 @@ void Score::Draw()
 
 			Renderer::GetDeviceContext()->Unmap(m_VertexBuffer, 0);
 
-			// ƒ|ƒŠƒSƒ“•`‰æ
+			// ãƒãƒªã‚´ãƒ³æç”»
 			Renderer::GetDeviceContext()->Draw(4, 0);
 		}
 

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 
 
@@ -30,13 +30,13 @@ struct MATERIAL
 
 
 
-// ƒ}ƒeƒŠƒAƒ‹\‘¢‘Ì
+// ãƒãƒ†ãƒªã‚¢ãƒ«æ§‹é€ ä½“
 struct DX11_MODEL_MATERIAL
 {
 	MATERIAL		Material;
 	class CTexture* Texture;
 };
-// •`‰æƒTƒuƒZƒbƒg\‘¢‘Ì
+// æç”»ã‚µãƒ–ã‚»ãƒƒãƒˆæ§‹é€ ä½“
 struct DX11_SUBSET
 {
 	unsigned int	StartIndex;
@@ -64,7 +64,7 @@ struct PARAMETER
 	D3DXVECTOR4 hp;
 	D3DXCOLOR	Diffuse;
 	D3DXCOLOR	Ambient;
-	//ƒfƒBƒ]ƒ‹ƒuˆ—
+	//ãƒ‡ã‚£ã‚¾ãƒ«ãƒ–å‡¦ç†
 	float dissolveThreshold;
 	float disolveRange;
 	float dumy[2];

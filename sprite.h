@@ -1,8 +1,8 @@
-#pragma once
+ï»¿#pragma once
 
 #include "component.h"
 
-// 2D(x,y)•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
+// 2D(x,y)æç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 class Sprite : public Component
 {
 private:

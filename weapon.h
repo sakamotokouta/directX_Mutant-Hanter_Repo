@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #pragma once
 
 #include "gameObject.h"
@@ -75,7 +75,7 @@ public:
 
 
 
-//Œ•‚Ì’¸“_ƒNƒ‰ƒX
+//å‰£ã®é ‚ç‚¹ã‚¯ãƒ©ã‚¹
 class SwordTopVertex :public GameObject
 {
 private:

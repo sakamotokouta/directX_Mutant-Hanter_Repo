@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "sprite.h"
 #include "sprit2D.h"
@@ -31,13 +31,13 @@ void Sprit2D::Init(const char* spritname)
 	vertex[3].TexCoord = D3DXVECTOR2(1.0f, 1.0f);
 
 
-	// ’¸“_ƒoƒbƒtƒ@¶¬
+	// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ç”Ÿæˆ
 	D3D11_BUFFER_DESC bd;
 	ZeroMemory(&bd, sizeof(bd));
-	bd.Usage = D3D11_USAGE_DYNAMIC;   // •ÏX
+	bd.Usage = D3D11_USAGE_DYNAMIC;   // å¤‰æ›´
 	bd.ByteWidth = sizeof(VERTEX_3D) * 4;
 	bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-	bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;   // •ÏX
+	bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;   // å¤‰æ›´
 
 	D3D11_SUBRESOURCE_DATA sd;
 	ZeroMemory(&sd, sizeof(sd));
@@ -45,7 +45,7 @@ void Sprit2D::Init(const char* spritname)
 
 	Renderer::GetDevice()->CreateBuffer(&bd, &sd, &m_VertexBuffer);
 
-	// ƒeƒNƒXƒ`ƒƒ“Ç‚İ‚İ
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£èª­ã¿è¾¼ã¿
 	D3DX11CreateShaderResourceViewFromFile(Renderer::GetDevice(),
 		spritname,
 		NULL,
@@ -61,10 +61,10 @@ void Sprit2D::Init(const char* spritname)
 
 	//AddComponet<Sprite>()->Init(50.0f, 50.0f, 200.0f, 200.0f, "asset/texture/score.png");
 
-	//À•W
+	//åº§æ¨™
 	m_Position = (D3DXVECTOR3(-100.0f, -120.0f, 0.0f));
 
-	//ƒTƒCƒY
+	//ã‚µã‚¤ã‚º
 	m_Width = 800.0f;
 	m_Height = 400.0f;
 
@@ -89,48 +89,48 @@ void Sprit2D::Update()
 
 void Sprit2D::Draw(D3DXVECTOR3 pos, D3DXVECTOR3 size, D3DXVECTOR3 rotation,float clere)
 {
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX world,rot;
 	Renderer::SetWorldViewProjection2D();
 
-	// ‰¼‘zŠÖ”‚È‚Ì‚Å‹­§“I‚ÉŒÄ‚Ño‚·(Šî’êƒNƒ‰ƒX‚Ìƒƒ]ƒbƒgŒÄ‚Ño‚µ)
+	// ä»®æƒ³é–¢æ•°ãªã®ã§å¼·åˆ¶çš„ã«å‘¼ã³å‡ºã™(åŸºåº•ã‚¯ãƒ©ã‚¹ã®ãƒ¡ã‚¾ãƒƒãƒˆå‘¼ã³å‡ºã—)
 	//GameObject::Draw();
 
-	// ’¸“_ƒoƒbƒtƒ@İ’è
+	// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡è¨­å®š
 	UINT stride = sizeof(VERTEX_3D);
 	UINT offset = 0;
 	Renderer::GetDeviceContext()->IASetVertexBuffers(0, 1, &m_VertexBuffer, &stride, &offset);
 
-	// ƒ}ƒeƒŠƒAƒ‹İ’è
+	// ãƒãƒ†ãƒªã‚¢ãƒ«è¨­å®š
 	MATERIAL material;
 	ZeroMemory(&material, sizeof(material));
 	material.Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, clere);
 	material.TextureEnable = true;
 	Renderer::SetMaterial(material);
 
-	// ‰æ‘œ‚Ì‰ñ“]Šp“xiƒ‰ƒWƒAƒ“j‚ğİ’è
+	// ç”»åƒã®å›è»¢è§’åº¦ï¼ˆãƒ©ã‚¸ã‚¢ãƒ³ï¼‰ã‚’è¨­å®š
 	float angle = rotation.x;
 
-	// ‰æ‘œ‚Ì’†SÀ•W
+	// ç”»åƒã®ä¸­å¿ƒåº§æ¨™
 	float centerX = size.x;
 	float centerY = size.y*2.01;
 
-	// ƒeƒNƒXƒ`ƒƒİ’è
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£è¨­å®š
 	Renderer::GetDeviceContext()->PSSetShaderResources(0, 1, &m_Texture);
 
-	// ƒvƒŠƒ~ƒeƒBƒuƒgƒ|ƒƒWİ’è
+	// ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ãƒˆãƒãƒ­ã‚¸è¨­å®š
 	Renderer::GetDeviceContext()->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 
 	int count = m_Count;
 
-	// ’¸“_ƒf[ƒ^‘‚«Š·‚¦
+	// é ‚ç‚¹ãƒ‡ãƒ¼ã‚¿æ›¸ãæ›ãˆ
 	D3D11_MAPPED_SUBRESOURCE msr;
 	Renderer::GetDeviceContext()->Map(m_VertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &msr);
 
@@ -159,7 +159,7 @@ void Sprit2D::Draw(D3DXVECTOR3 pos, D3DXVECTOR3 size, D3DXVECTOR3 rotation,float
 		vertex01[3].Diffuse = D3DXVECTOR4(1.0f, 1.0f, 1.0f, clere);
 		vertex01[3].TexCoord = D3DXVECTOR2(1.0f, 1.0f);
 
-		// ’¸“_À•W‚ğ‰ñ“]
+		// é ‚ç‚¹åº§æ¨™ã‚’å›è»¢
 		for (int j = 0; j < 4; ++j)
 		{
 			float x = vertex01[j].Position.x - centerX;
@@ -173,7 +173,7 @@ void Sprit2D::Draw(D3DXVECTOR3 pos, D3DXVECTOR3 size, D3DXVECTOR3 rotation,float
 	
 		Renderer::GetDeviceContext()->Unmap(m_VertexBuffer, 0);
 
-		// ƒ|ƒŠƒSƒ“•`‰æ
+		// ãƒãƒªã‚´ãƒ³æç”»
 		Renderer::GetDeviceContext()->Draw(4, 0);
 	}
 

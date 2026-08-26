@@ -1,9 +1,9 @@
-#pragma once
+ï»¿#pragma once
 
 #include "component.h"
 #include "model.h"
 
-// 3Dƒ‚ƒfƒ‹•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
+// 3Dãƒ¢ãƒ‡ãƒ«æç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 class DrawModel : public Component
 {
 private:

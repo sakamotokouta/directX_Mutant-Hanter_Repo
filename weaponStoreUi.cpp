@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "weaponStoreUi.h"
 #include "scene.h"
 #include "manager.h"
@@ -77,104 +77,104 @@ void WeaponStoreUi::Init()
 
 	//AudioLoad
 	m_SelectSE = AddComponet<Audio>();
-	m_SelectSE->Load("asset\\audio\\‘I‘ğ‰¹.wav");
+	m_SelectSE->Load("asset\\audio\\é¸æŠéŸ³.wav");
 	m_SelectSE->Volume(0.4f);
 
 	m_EnterSE = AddComponet<Audio>();
-	m_EnterSE->Load("asset\\audio\\Œˆ’è‰¹.wav");
+	m_EnterSE->Load("asset\\audio\\æ±ºå®šéŸ³.wav");
 	m_EnterSE->Volume(0.4f);
 
-	//‚â‚¶‚é‚µ
+	//ã‚„ã˜ã‚‹ã—
 	m_PointerScale = D3DXVECTOR3(200.0f, 100.0f, 0.0f);
 
-	//ƒNƒGƒXƒgÅIŒˆ’è‚Ì‚â‚¶‚é‚µ
+	//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚æ±ºå®šã®ã‚„ã˜ã‚‹ã—
 	m_LastSelectPointerPos = D3DXVECTOR3(175.0f, 355.0f, 0.0f);
 	m_LastSelectPointerScale = D3DXVECTOR3(250.0f, 250.0f, 0.0f);
 
-	//•Ší‘I‘ğ‰æ–Ê
+	//æ­¦å™¨é¸æŠç”»é¢
 	m_BlacksmithFirstSelectPos = D3DXVECTOR3(830.0f, -10.0f, 0.0f);
 	m_BlacksmithFirstSelectScale = D3DXVECTOR3(500.0f, 300.0f, 0.0f);
 
 
-	//•Ší‘I‘ğ‰æ–Ê01
+	//æ­¦å™¨é¸æŠç”»é¢01
 	m_BlacksmithSecondSelect01Pos = D3DXVECTOR3(600.0f, 50.0f, 0.0f);
 	m_BlacksmithSecondSelect01Scale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//•Ší‘I‘ğ‰æ–Ê02
+	//æ­¦å™¨é¸æŠç”»é¢02
 	m_BlacksmithSecondSelect02Pos = D3DXVECTOR3(-200.0f, 250.0f, 0.0f);
 	m_BlacksmithSecondSelect02Scale = D3DXVECTOR3(900.0f, 400.0f, 0.0f);
 
-	//•Ší‘I‘ğ‰æ–Ê03
+	//æ­¦å™¨é¸æŠç”»é¢03
 	m_BlacksmithSecondSelect03Pos = D3DXVECTOR3(-200.0f, 20.0f, 0.0f);
 	m_BlacksmithSecondSelect03Scale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//•Ší‘I‘ğ‰æ–Ê04
+	//æ­¦å™¨é¸æŠç”»é¢04
 	m_WeaponMaterial1Pos = D3DXVECTOR3(570.0f, 300.0f, 0.0f);
 	m_WeaponMaterial1Scale = D3DXVECTOR3(950.0f, 500.0f, 0.0f);
 
-	//•Ší‘I‘ğ‰æ–Ê‚â‚¶‚é‚µ
+	//æ­¦å™¨é¸æŠç”»é¢ã‚„ã˜ã‚‹ã—
 	m_BlacksmithSelectPointerPos = D3DXVECTOR3(700.0f, 125.0f, 0.0f);
 	m_BlacksmithSelectPointerScale = D3DXVECTOR3(700.0f, 150.0f, 0.0f);
 
-	//•Ší2‚Ì‘fŞ
+	//æ­¦å™¨2ã®ç´ æ
 	m_WeaponMaterial2Pos = D3DXVECTOR3(570.0f, 300.0f, 0.0f);
 	m_WeaponMaterial2Scale = D3DXVECTOR3(950.0f, 500.0f, 0.0f);
 
-	//•Ší3‚Ì‘fŞ
+	//æ­¦å™¨3ã®ç´ æ
 	m_WeaponMaterial3Pos = D3DXVECTOR3(570.0f, 300.0f, 0.0f);
 	m_WeaponMaterial3Scale = D3DXVECTOR3(950.0f, 500.0f, 0.0f);
 
-	//•Ší‘JˆÚ‚â‚¶‚é‚µ
+	//æ­¦å™¨é·ç§»ã‚„ã˜ã‚‹ã—
 	m_BlacksmithPointerPos = D3DXVECTOR3(827.0f, 257.0f, 0.0f);
 	m_BlacksmithPointerScale = D3DXVECTOR3(400.0f, 200.0f, 0.0f);
 
-	//•ŠíÅŒãî•ñ
+	//æ­¦å™¨æœ€å¾Œæƒ…å ±
 	m_BlacksmithLastInfoPos = D3DXVECTOR3(-198.0f, 42.0f, 0.0f);
 	m_BlacksmithLastInfoScale = D3DXVECTOR3(800.0f, 450.0f, 0.0f);
 
 
-	//•Ší0‚Ìî•ñ
+	//æ­¦å™¨0ã®æƒ…å ±
 	m_Weapon00InfoPos = D3DXVECTOR3(594.0f, -102.0f, 0.0f);
 	m_Weapon00InfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//•Ší0‚ÌØ‚ê–¡
+	//æ­¦å™¨0ã®åˆ‡ã‚Œå‘³
 	m_Weapon00SharpnessTextuerPos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	m_Weapon00SharpnessTextuerScale = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 
 
-	//•Ší1‚Ìî•ñ
+	//æ­¦å™¨1ã®æƒ…å ±
 	m_Weapon01InfoPos = D3DXVECTOR3(594.0f, 185.0f, 0.0f);
 	m_Weapon01InfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//•Ší1‚ÌØ‚ê–¡
+	//æ­¦å™¨1ã®åˆ‡ã‚Œå‘³
 	m_Weapon01SharpnessTextuerPos = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	m_Weapon01SharpnessTextuerScale = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 
-	//•Ší2‚Ìî•ñ
+	//æ­¦å™¨2ã®æƒ…å ±
 	m_Weapon02InfoPos = D3DXVECTOR3(594.0f, 185.0f, 0.0f);
 	m_Weapon02InfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//•Ší3‚Ìî•ñ
+	//æ­¦å™¨3ã®æƒ…å ±
 	m_Weapon03InfoPos = D3DXVECTOR3(594.0f, 185.0f, 0.0f);
 	m_Weapon03InfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//•Ší0‚ÌØ‚ê–¡ƒQ[ƒW
+	//æ­¦å™¨0ã®åˆ‡ã‚Œå‘³ã‚²ãƒ¼ã‚¸
 	m_Weapon00SharppPos = D3DXVECTOR3(854.0f, 81.0f, 0.0f);
 	m_Weapon00SharppScale = D3DXVECTOR3(400.0f, 280.0f, 0.0f);
 
-	//•Ší1‚ÌØ‚ê–¡ƒQ[ƒW
+	//æ­¦å™¨1ã®åˆ‡ã‚Œå‘³ã‚²ãƒ¼ã‚¸
 	m_Weapon01SharppPos = D3DXVECTOR3(854.0f, 81.0f, 0.0f);
 	m_Weapon01SharppScale = D3DXVECTOR3(400.0f, 280.0f, 0.0f);
 
-	//•Ší2‚ÌØ‚ê–¡ƒQ[ƒW
+	//æ­¦å™¨2ã®åˆ‡ã‚Œå‘³ã‚²ãƒ¼ã‚¸
 	m_Weapon02SharppPos = D3DXVECTOR3(854.0f, 81.0f, 0.0f);
 	m_Weapon02SharppScale = D3DXVECTOR3(400.0f, 280.0f, 0.0f);
 
-	//•Ší3‚ÌØ‚ê–¡ƒQ[ƒW
+	//æ­¦å™¨3ã®åˆ‡ã‚Œå‘³ã‚²ãƒ¼ã‚¸
 	m_Weapon03SharppPos = D3DXVECTOR3(854.0f, 81.0f, 0.0f);
 	m_Weapon03SharppScale = D3DXVECTOR3(400.0f, 280.0f, 0.0f);
 
-	//•Ší‰®‚Å‚Ìc‹à•\¦
+	//æ­¦å™¨å±‹ã§ã®æ®‹é‡‘è¡¨ç¤º
 	m_WeaponStorMoneyPos = D3DXVECTOR3(1212.0f, 37.0f, 0.0f);
 	m_WeaponStorMoneyScale = D3DXVECTOR3(40.0f, 30.0f, 0.0f);
 
@@ -210,7 +210,7 @@ void WeaponStoreUi::Update()
 
 	if (m_PlayerAction->GetBlacksmithFlg())
 	{
-		//’b–èê‰æ–Ê
+		//é›å†¶å ´ç”»é¢
 		m_PointerPos = D3DXVECTOR3(800, 100.0f, 0.0f);
 
 		if (Input::GetKeyTrigger('F') && m_WeaponChangeFlg == false && m_WeaponMaterialFlg1 == false && m_WeaponMaterialFlg2 == false && m_WeaponMaterialFlg3 == false)
@@ -278,7 +278,7 @@ void WeaponStoreUi::Update()
 			if (m_BlacksmithSelectPointerPos.y <= 125.0f)
 				m_BlacksmithSelectPointerPos.y = 125.0f;
 
-			//•Ší1‚Ì‘fŞ‚ğ•\¦
+			//æ­¦å™¨1ã®ç´ æã‚’è¡¨ç¤º
 			if (m_BlacksmithSelectPointerPos.y == 125.0f)
 			{
 				m_WeaponMaterialFlg1 = true;
@@ -296,7 +296,7 @@ void WeaponStoreUi::Update()
 				m_WeaponMaterialFlg1 = false;
 			}
 
-			//•Ší2‚Ì‘fŞ‚ğ•\¦
+			//æ­¦å™¨2ã®ç´ æã‚’è¡¨ç¤º
 			if (m_BlacksmithSelectPointerPos.y == 155.0f)
 			{
 				m_WeaponMaterialFlg2 = true;
@@ -314,7 +314,7 @@ void WeaponStoreUi::Update()
 				m_WeaponMaterialFlg2 = false;
 			}
 
-			//•Ší3‚Ì‘fŞ‚ğ•\¦
+			//æ­¦å™¨3ã®ç´ æã‚’è¡¨ç¤º
 			if (m_BlacksmithSelectPointerPos.y == 185.0f)
 			{
 				m_WeaponMaterialFlg3 = true;
@@ -335,15 +335,15 @@ void WeaponStoreUi::Update()
 
 			if (Input::GetKeyTrigger('F') && m_BlecksmithSelect2 == true)
 			{
-				//•Ší•ÏX‚ÌÅI‚â‚¶‚é‚µ‚ÌˆÊ’uw’è
+				//æ­¦å™¨å¤‰æ›´ã®æœ€çµ‚ã‚„ã˜ã‚‹ã—ã®ä½ç½®æŒ‡å®š
 				m_LastSelectPointerPos = D3DXVECTOR3(153.0f, 120.0f, 0.0f);
 				m_LastSelectPointerScale = D3DXVECTOR3(150.0f, 200.0f, 0.0f);
 
-				//Œ³‚Ì‰æ–Ê‚ğÁ‚·
+				//å…ƒã®ç”»é¢ã‚’æ¶ˆã™
 				m_BlecksmithSelect1 = false;
 				m_BlecksmithSelect2 = false;
 
-				//•ÏX•Ší‚Ìî•ñ‚ğ•\¦
+				//å¤‰æ›´æ­¦å™¨ã®æƒ…å ±ã‚’è¡¨ç¤º
 				m_BlecksmithSelect3 = true;
 
 				m_EnterSE->Play();
@@ -375,8 +375,8 @@ void WeaponStoreUi::Update()
 
 		if (m_WeaponChangeFlg && Money::GetMoney() >= 100)
 		{
-			//ÅI‰æ–Ê‚â‚¶‚é‚µ‚ÌˆÊ’u‚ª‚Í‚¢‚¾‚Á‚½ê‡F‚ğ‰Ÿ‚µ‚½‚ç•Ší‚ğŠ·‘•‚·‚éŠ‹à‚ª0‚Ìê‡‚Íw“ü‚Å‚«‚È‚¢
-			//•Ší1
+			//æœ€çµ‚ç”»é¢ã‚„ã˜ã‚‹ã—ã®ä½ç½®ãŒã¯ã„ã ã£ãŸå ´åˆFã‚’æŠ¼ã—ãŸã‚‰æ­¦å™¨ã‚’æ›è£…ã™ã‚‹æ‰€æŒé‡‘ãŒ0ã®å ´åˆã¯è³¼å…¥ã§ããªã„
+			//æ­¦å™¨1
 			if (Input::GetKeyTrigger('F') && m_NextWeapon01Flg == true && m_LastSelectPointerPos.x == 153.0f)
 			{
 				m_Weapon->SetWeapon(1);
@@ -385,7 +385,7 @@ void WeaponStoreUi::Update()
 				m_EnterSE->Play();
 			}
 
-			//•Ší2
+			//æ­¦å™¨2
 			if (Input::GetKeyTrigger('F') && m_NextWeapon02Flg == true && m_LastSelectPointerPos.x == 153.0f)
 			{
 				m_Weapon->SetWeapon(2);
@@ -394,7 +394,7 @@ void WeaponStoreUi::Update()
 				m_EnterSE->Play();
 			}
 
-			//•Ší3
+			//æ­¦å™¨3
 			if (Input::GetKeyTrigger('F') && m_NextWeapon03Flg == true && m_LastSelectPointerPos.x == 153.0f)
 			{
 				m_Weapon->SetWeapon(3);
@@ -402,7 +402,7 @@ void WeaponStoreUi::Update()
 				Money::SetMinusMoney(100);
 				m_EnterSE->Play();
 			}
-			//ÅI‰æ–Ê‚Å‚Ç‚¿‚ç‚ÅF‚ğ‚¨‚µ‚Ä‚à–ß‚é‚æ‚¤‚É‚·‚éˆ—
+			//æœ€çµ‚ç”»é¢ã§ã©ã¡ã‚‰ã§Fã‚’ãŠã—ã¦ã‚‚æˆ»ã‚‹ã‚ˆã†ã«ã™ã‚‹å‡¦ç†
 			if (Input::GetKeyTrigger('F') && m_BlecksmithSelect3)
 			{
 				m_NextWeapon01Flg = false;
@@ -417,7 +417,7 @@ void WeaponStoreUi::Update()
 			}
 		}
 
-		//ÅI‰æ–Ê‚Å‚Ç‚¿‚ç‚ÅF‚ğ‚¨‚µ‚Ä‚à–ß‚é‚æ‚¤‚É‚·‚éˆ—
+		//æœ€çµ‚ç”»é¢ã§ã©ã¡ã‚‰ã§Fã‚’ãŠã—ã¦ã‚‚æˆ»ã‚‹ã‚ˆã†ã«ã™ã‚‹å‡¦ç†
 		if (Input::GetKeyTrigger('F') && m_BlecksmithSelect3 && m_LastSelectPointerPos.x != 153.0f)
 		{
 			m_NextWeapon01Flg = false;
@@ -438,7 +438,7 @@ void WeaponStoreUi::Update()
 void WeaponStoreUi::Draw()
 {
 
-	//’b–èê‚ÌUI
+	//é›å†¶å ´ã®UI
 	if (m_PlayerAction->GetBlacksmithFlg())
 	{
 		if (m_BlecksmithSelect1 == false && m_BlecksmithSelect3 == false)
@@ -455,7 +455,7 @@ void WeaponStoreUi::Draw()
 		m_BlacksmithSecondSelect03->Draw(m_BlacksmithSecondSelect03Pos, m_BlacksmithSecondSelect03Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 0.8f);
 		m_BlacksmithSelectPointer->Draw(m_BlacksmithSelectPointerPos, m_BlacksmithSelectPointerScale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 0.3f);
 
-		//c‹à
+		//æ®‹é‡‘
 		m_MoeneyNum->Draw();
 		m_MoeneyNum->SetCount(Money::GetMoney());
 		m_MoeneyNum->SetPosAndScale(m_WeaponStorMoneyPos.x, m_WeaponStorMoneyPos.y, m_WeaponStorMoneyScale.x, m_WeaponStorMoneyScale.y);
@@ -472,7 +472,7 @@ void WeaponStoreUi::Draw()
 		m_WeaponMaterial3->Draw(m_WeaponMaterial3Pos, m_WeaponMaterial3Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 0.8f);
 
 
-	//‚à‚Æ‚©‚ç‚Á‚Ä‚¢‚é‘•”õ‚ªweapon0‚Ìê‡
+	//ã‚‚ã¨ã‹ã‚‰æŒã£ã¦ã„ã‚‹è£…å‚™ãŒweapon0ã®å ´åˆ
 	if (m_BlecksmithSelect3 && m_Weapon->GetWeaponData()->GetWeaponModelName() == WEAPON00)
 	{
 
@@ -488,7 +488,7 @@ void WeaponStoreUi::Draw()
 
 	}
 
-	//‚à‚Æ‚©‚ç‚Á‚Ä‚¢‚é‘•”õ‚ªweapon1‚Ìê‡
+	//ã‚‚ã¨ã‹ã‚‰æŒã£ã¦ã„ã‚‹è£…å‚™ãŒweapon1ã®å ´åˆ
 	if (m_BlecksmithSelect3 && m_Weapon->GetWeaponData()->GetWeaponModelName() == WEAPON01)
 	{
 		m_Weapon01InfoPos.y = -33.0f;
@@ -504,7 +504,7 @@ void WeaponStoreUi::Draw()
 
 	}
 
-	//‚à‚Æ‚©‚ç‚Á‚Ä‚¢‚é‘•”õ‚ªweapon2‚Ìê‡
+	//ã‚‚ã¨ã‹ã‚‰æŒã£ã¦ã„ã‚‹è£…å‚™ãŒweapon2ã®å ´åˆ
 	if (m_BlecksmithSelect3 && m_Weapon->GetWeaponData()->GetWeaponModelName() == WEAPON02)
 	{
 
@@ -521,7 +521,7 @@ void WeaponStoreUi::Draw()
 
 	}
 
-	//‚à‚Æ‚©‚ç‚Á‚Ä‚¢‚é‘•”õ‚ªweapon3‚Ìê‡
+	//ã‚‚ã¨ã‹ã‚‰æŒã£ã¦ã„ã‚‹è£…å‚™ãŒweapon3ã®å ´åˆ
 	if (m_BlecksmithSelect3 && m_Weapon->GetWeaponData()->GetWeaponModelName() == WEAPON03)
 	{
 
@@ -545,7 +545,7 @@ void WeaponStoreUi::Draw()
 
 	}
 
-	//Š·‘•Œã‚Ì•Šíî•ñ01
+	//æ›è£…å¾Œã®æ­¦å™¨æƒ…å ±01
 	if (m_NextWeapon01Flg && m_NextWeapon02Flg == false)
 	{
 		m_Weapon01InfoPos.y = 243.0f;
@@ -565,7 +565,7 @@ void WeaponStoreUi::Draw()
 
 	}
 
-	//Š·‘•Œã‚Ì•Šíî•ñ02
+	//æ›è£…å¾Œã®æ­¦å™¨æƒ…å ±02
 	if (m_NextWeapon02Flg)
 	{
 		m_Weapon02InfoPos.y = 243.0f;
@@ -584,7 +584,7 @@ void WeaponStoreUi::Draw()
 
 	}
 
-	//Š·‘•Œã‚Ì•Šíî•ñ03
+	//æ›è£…å¾Œã®æ­¦å™¨æƒ…å ±03
 	if (m_NextWeapon03Flg)
 	{
 		m_Weapon03InfoPos.y = 243.0f;

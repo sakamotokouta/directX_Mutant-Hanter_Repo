@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "manager.h"
 #include "scene.h"
 #include "villageObjCollition.h"
@@ -23,37 +23,37 @@ void VillageObjCollition::ObjCollition(void)
 	HouseObj* house = scene->GetGameObject<HouseObj>();
 	WindMillObj* windmill = scene->GetGameObject<WindMillObj>();
 
-	//ˆäŒË‚Ì“–‚½‚è”»’è
+	//äº•æˆ¸ã®å½“ãŸã‚Šåˆ¤å®š
 	if (collition->SetOBB(player, ido, 3.0f))
 	{
 		player->SetPosition(player->GetOldPosition());
 	}
 
-	//ƒNƒGƒXƒgƒ{[ƒg‚Ì“–‚½‚è”»’è
+	//ã‚¯ã‚¨ã‚¹ãƒˆãƒœãƒ¼ãƒˆã®å½“ãŸã‚Šåˆ¤å®š
 	if (collition->SetOBB(player, questbord, 1.0f))
 	{
 		player->SetPosition(player->GetOldPosition());
 	}
 
-	//•Ší‰®‚Ì“–‚½‚è”»’è
+	//æ­¦å™¨å±‹ã®å½“ãŸã‚Šåˆ¤å®š
 	if (collition->SetOBB(player, weaponstore, 3.0f))
 	{
 		player->SetPosition(player->GetOldPosition());
 	}
 
-	//ŽG‰Ý‰®‚Ì“–‚½‚è”»’è
+	//é›‘è²¨å±‹ã®å½“ãŸã‚Šåˆ¤å®š
 	if (collition->SetOBB(player, generalstore, 3.0f))
 	{
 		player->SetPosition(player->GetOldPosition());
 	}
 
-	//‰Æ‚Ì“–‚½‚è”»’è
+	//å®¶ã®å½“ãŸã‚Šåˆ¤å®š
 	if (collition->SetOBB(player, house, 3.0f))
 	{
 		player->SetPosition(player->GetOldPosition());
 	}
 
-	//•—ŽÔ‚Ì“–‚½‚è”»’è
+	//é¢¨è»Šã®å½“ãŸã‚Šåˆ¤å®š
 	if (collition->SetOBB(player, windmill, 1.0f))
 	{
 		player->SetPosition(player->GetOldPosition());

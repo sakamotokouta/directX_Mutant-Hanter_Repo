@@ -1,9 +1,9 @@
-#pragma once
+ï»¿#pragma once
 
 #include "component.h"
 #include "gameObject.h"
 
-// 2D(x,y,z)•`‰æƒRƒ“ƒ|[ƒlƒ“ƒg
+// 2D(x,y,z)æç”»ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆ
 class SpriteField : public Component
 {
 private:

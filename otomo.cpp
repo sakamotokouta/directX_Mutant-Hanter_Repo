@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "drawModel.h"
 #include "animationModel.h"
@@ -143,7 +143,7 @@ void Otomo::Update()
 
 void Otomo::Draw()
 {
-	//‹‘äƒJƒŠƒ“ƒO
+	//è¦–éŒ˜å°ã‚«ãƒªãƒ³ã‚°
 	{
 		Scene* scene = Manager::GetScene();
 		Camera* camera = scene->GetGameObject<Camera>();
@@ -157,14 +157,14 @@ void Otomo::Draw()
 	D3DXVECTOR3 top = GetTop();
 
 
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX world, scale, rot, trans, muki;
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 	D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y + D3DX_PI, m_Rotation.x, m_Rotation.z);

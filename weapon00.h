@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "gameObject.h"
 #include "weaponDataBase.h"
@@ -9,68 +9,68 @@ private:
 
 public:
 
-	//•Ší‚ğ‚µ‚Ü‚Á‚Ä‚¢‚é‚Æ‚«
-	//ˆÊ’u
+	//æ­¦å™¨ã‚’ã—ã¾ã£ã¦ã„ã‚‹ã¨ã
+	//ä½ç½®
 	D3DXVECTOR3 GetWeaponMountPosition(void) {
 		m_Pos = D3DXVECTOR3(-30.0f, 90.0f, -10.0f);
 		return m_Pos;
 	}
-	//ƒTƒCƒY
+	//ã‚µã‚¤ã‚º
 	D3DXVECTOR3 GetWeaponMountScale(void) {
 		m_Scale = D3DXVECTOR3(30.0f, 30.0f, 30.0f);
 		
 		return m_Scale;
 	}
-	//Šp“x
+	//è§’åº¦
 	D3DXVECTOR3 GetWeaponMountRotation(void) {
 		m_Rot = D3DXVECTOR3(2.6f, 1.5f, 0.0f);
 		return m_Rot;
 	}
 
-	//•Ší‚ğ\‚¦‚Ä‚¢‚é‚Æ‚«
-	//ˆÊ’u
+	//æ­¦å™¨ã‚’æ§‹ãˆã¦ã„ã‚‹ã¨ã
+	//ä½ç½®
 	D3DXVECTOR3 GetWeaponSetUpPosition(void) {
 		m_Pos = D3DXVECTOR3(-15.0f, 30.0f, -30.0f);
 		return m_Pos;
 	}
-	//ƒTƒCƒY
+	//ã‚µã‚¤ã‚º
 	D3DXVECTOR3 GetWeaponSetUpScale(void) {
 		m_Scale = D3DXVECTOR3(25.0f, 40.0f, 25.0f);
 
 		return m_Scale;
 	}
-	//Šp“x
+	//è§’åº¦
 	D3DXVECTOR3 GetWeaponSetUpRotation(void) {
 		m_Rot = D3DXVECTOR3(2.0f, 0.0f, 5.0f);
 		return m_Rot;
 	}
 
-	//ƒ‚ƒfƒ‹‚Ì–¼‘O
+	//ãƒ¢ãƒ‡ãƒ«ã®åå‰
 	const char* GetWeaponModelName(void) {
 		m_ModelName = "asset\\model\\sword003.obj";
 		return m_ModelName;
 	}
-	//UŒ‚—Í
+	//æ”»æ’ƒåŠ›
 	float GetWeaponAttack(void) {
 		m_Attack = 100.0f;
 		return m_Attack;
 	}
-	//Ø‚ê–¡
+	//åˆ‡ã‚Œå‘³
 	float GetWeaponSharpness(void) {
 		m_Sharpness = 100.0f;
 		return m_Sharpness;
 	}
-	//Ø‚ê–¡‰æ‘œ
+	//åˆ‡ã‚Œå‘³ç”»åƒ
 	const char* GetWeaponSharpnessTextuer(void) {
 		m_SharpnessTextuer = "asset/texture/weapon00sharp.png";
 		return m_SharpnessTextuer;
 	}
-	//’l’i
+	//å€¤æ®µ
 	int GetWeaponPrice(void) {
 		m_Price = 100;
 		return m_Price;
 	}
-	//ƒgƒŒƒCƒ‹‚ÌˆÊ’u
+	//ãƒˆãƒ¬ã‚¤ãƒ«ã®ä½ç½®
 	D3DXVECTOR3 GetTrailPositon(void){
 		m_TrailPos = D3DXVECTOR3(-1.0f, 5.0f, 1.0f);
 		return m_TrailPos;

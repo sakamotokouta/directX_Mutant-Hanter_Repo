@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "drawModel.h"
 #include "player.h"
@@ -27,7 +27,7 @@ void EnemyWeapon::Init()
 	m_Model->Load("asset\\model\\box.obj");
 
 	m_AttackSE = AddComponet<Audio>();
-	m_AttackSE->Load("asset\\audio\\“G‹ß‹——£UŒ‚.wav");
+	m_AttackSE->Load("asset\\audio\\æ•µè¿‘è·é›¢æ”»æ’ƒ.wav");
 	m_AttackSE->Volume(0.6f);
 
 
@@ -74,10 +74,10 @@ void EnemyWeapon::Update()
 
 
 
-	////pos‚Ì•ÏŠ·
-	//m_CollitionPos.x = m_CollitionMatrix._41; // s—ñ‚Ì‰E‰º‚Ì—v‘f‚ªXŽ²•ûŒü‚ÌˆÚ“®¬•ª
-	//m_CollitionPos.y = m_CollitionMatrix._42; // s—ñ‚Ì‰E‰º‚Ì—v‘f‚ªYŽ²•ûŒü‚ÌˆÚ“®¬•ª
-	//m_CollitionPos.z = m_CollitionMatrix._43; // s—ñ‚Ì‰E‰º‚Ì—v‘f‚ªZŽ²•ûŒü‚ÌˆÚ“®¬•ª
+	////posã®å¤‰æ›
+	//m_CollitionPos.x = m_CollitionMatrix._41; // è¡Œåˆ—ã®å³ä¸‹ã®è¦ç´ ãŒXè»¸æ–¹å‘ã®ç§»å‹•æˆåˆ†
+	//m_CollitionPos.y = m_CollitionMatrix._42; // è¡Œåˆ—ã®å³ä¸‹ã®è¦ç´ ãŒYè»¸æ–¹å‘ã®ç§»å‹•æˆåˆ†
+	//m_CollitionPos.z = m_CollitionMatrix._43; // è¡Œåˆ—ã®å³ä¸‹ã®è¦ç´ ãŒZè»¸æ–¹å‘ã®ç§»å‹•æˆåˆ†
 
 
 	if (enemy != NULL)
@@ -100,7 +100,7 @@ void EnemyWeapon::Update()
 
 
 
-		////ƒvƒŒƒCƒ„[‚Æ‚Ì“–‚½‚è”»’è
+		////ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨ã®å½“ãŸã‚Šåˆ¤å®š
 		//D3DXVECTOR3 position = player->GetPosition();
 		//D3DXVECTOR3 scale1 = player->GetScale() * 200;
 
@@ -134,10 +134,10 @@ void EnemyWeapon::Draw()
 	Scene* scene = Manager::GetScene();
 	Enemy* enemy = scene->GetGameObject<Enemy>();
 
-	// “ü—ÍƒŒƒCƒAƒEƒgÝ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[Ý’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 

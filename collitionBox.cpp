@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "collitionBox.h"
 
@@ -45,14 +45,14 @@ void CollisionBox::Draw()
 {
 	GameObject::Draw();
 
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX scale, rot, trans;
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 	D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y, m_Rotation.x, m_Rotation.z);
@@ -80,42 +80,42 @@ void CollisionBox::Draw()
 }
 
 
-//A(obb1)‚ÆB(obb2)‚ÌOBB“–‚½‚è”»’èŠÖ”
+//A(obb1)ã¨B(obb2)ã®OBBå½“ãŸã‚Šåˆ¤å®šé–¢æ•°
 bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 {
-	//A‚Ì²‚ÉŠi”[
+	//Aã®è»¸ã«æ ¼ç´
 	D3DXVECTOR3 NAe1 = obb1->GetMatrixRight(), Ae1 = NAe1 * (obb1->GetMatrixScale().x * offset);
 	D3DXVECTOR3 NAe2 = obb1->GetMatrixUp(), Ae2 = NAe2 * (obb1->GetMatrixScale().y * offset);
 	D3DXVECTOR3 NAe3 = obb1->GetMatrixForward(), Ae3 = NAe3 * (obb1->GetMatrixScale().z * offset);
 
-	//B‚Ì²‚ÉŠi”[
+	//Bã®è»¸ã«æ ¼ç´
 	D3DXVECTOR3 NBe1 = obb2->GetMatrixRight(), Be1 = NBe1 * (obb2->GetMatrixScale().x * offset);
 	D3DXVECTOR3 NBe2 = obb2->GetMatrixUp(), Be2 = NBe2 * (obb2->GetMatrixScale().y * offset);
 	D3DXVECTOR3 NBe3 = obb2->GetMatrixForward(), Be3 = NBe3 * (obb2->GetMatrixScale().z * offset);
 
-	//’†SÀ•W‚Ì‹——£
+	//ä¸­å¿ƒåº§æ¨™ã®è·é›¢
 	D3DXVECTOR3 Interval = obb1->GetMatrixPosition() - obb2->GetMatrixPosition();
 
-	//•ª—£²‚ÌŒvZ//
+	//åˆ†é›¢è»¸ã®è¨ˆç®—//
 
-	//“Š‰eü•ª‚Ì’·‚³
+	//æŠ•å½±ç·šåˆ†ã®é•·ã•
 	float rA, rB, L;
-	//ŠOÏ•ª—£²
+	//å¤–ç©åˆ†é›¢è»¸
 	D3DXVECTOR3 Cross;
 
 	//Ae1
 	rA = D3DXVec3Length(&Ae1);
 	rB = LenSegOnSeparateAxis(&NAe1, &Be1, &Be2, &Be3);
 	L = fabs(D3DXVec3Dot(&Interval, &NAe1));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
-		return false; // Õ“Ë‚µ‚Ä‚¢‚È‚¢
+		return false; // è¡çªã—ã¦ã„ãªã„
 
 	//Ae2
 	rA = D3DXVec3Length(&Ae2);
 	rB = LenSegOnSeparateAxis(&NAe2, &Be1, &Be2, &Be3);
 	L = fabs(D3DXVec3Dot(&Interval, &NAe2));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -123,7 +123,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = D3DXVec3Length(&Ae3);
 	rB = LenSegOnSeparateAxis(&NAe3, &Be1, &Be2, &Be3);
 	L = fabs(D3DXVec3Dot(&Interval, &NAe3));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -131,7 +131,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&NBe1, &Ae1, &Ae2, &Ae3);
 	rB = D3DXVec3Length(&Be1);
 	L = fabs(D3DXVec3Dot(&Interval, &NBe1));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -139,7 +139,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&NBe2, &Ae1, &Ae2, &Ae3);
 	rB = D3DXVec3Length(&Be2);
 	L = fabs(D3DXVec3Dot(&Interval, &NBe2));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -147,7 +147,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&NBe3, &Ae1, &Ae2, &Ae3);
 	rB = D3DXVec3Length(&Be3);
 	L = fabs(D3DXVec3Dot(&Interval, &NBe3));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -156,7 +156,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae2, &Ae3, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be2, &Be3, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -165,7 +165,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae2, &Ae3, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be1, &Be3, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -174,7 +174,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae2, &Ae3, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be1, &Be2, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -183,7 +183,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae1, &Ae3, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be2, &Be3, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -192,7 +192,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae1, &Ae3, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be1, &Be3, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -201,7 +201,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae1, &Ae3, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be1, &Be2, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -210,7 +210,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae1, &Ae2, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be2, &Be3, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -219,7 +219,7 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae1, &Ae2, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be1, &Be3, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
@@ -228,24 +228,24 @@ bool CollisionBox::SetOBB(GameObject* obb1, GameObject* obb2, float offset)
 	rA = LenSegOnSeparateAxis(&Cross, &Ae1, &Ae2, 0);
 	rB = LenSegOnSeparateAxis(&Cross, &Be1, &Be2, 0);
 	L = fabs(D3DXVec3Dot(&Interval, &Cross));
-	//”»’è
+	//åˆ¤å®š
 	if (L > rA + rB)
 		return false;
 
-	//”»’è
-	return true; // Õ“Ë‚µ‚Ä‚¢‚é
+	//åˆ¤å®š
+	return true; // è¡çªã—ã¦ã„ã‚‹
 }
 
-// “Š‰eü•ª’·ŠÖ” //
-// •ª—£²‚É“Š‰e‚³‚ê‚½²¬•ª‚©‚ç“Š‰eü•ª’·‚ğZo
-// •ª—£²Sep‚Í•W€‰»‚³‚ê‚Ä‚¢‚é‚±‚Æ
+// æŠ•å½±ç·šåˆ†é•·é–¢æ•° //
+// åˆ†é›¢è»¸ã«æŠ•å½±ã•ã‚ŒãŸè»¸æˆåˆ†ã‹ã‚‰æŠ•å½±ç·šåˆ†é•·ã‚’ç®—å‡º
+// åˆ†é›¢è»¸Sepã¯æ¨™æº–åŒ–ã•ã‚Œã¦ã„ã‚‹ã“ã¨
 float CollisionBox::LenSegOnSeparateAxis(D3DXVECTOR3* Sep, D3DXVECTOR3* e1, D3DXVECTOR3* e2, D3DXVECTOR3* e3)
 {
-	// 3‚Â‚Ì“àÏ‚Ìâ‘Î’l‚Ì˜a‚Å“Š‰eü•ª’·‚ğŒvZ
+	// 3ã¤ã®å†…ç©ã®çµ¶å¯¾å€¤ã®å’Œã§æŠ•å½±ç·šåˆ†é•·ã‚’è¨ˆç®—
 	float r1 = fabs(D3DXVec3Dot(Sep, e1));
 	float r2 = fabs(D3DXVec3Dot(Sep, e2));
-	//e3‚ª0‚¾‚Á‚½0‚ğr3‚É‘ã“ü
-	//0ˆÈŠO‚¾‚Á‚½fabs‚ÌŒvZ‚ğ‚µr3‚É‘ã“ü
+	//e3ãŒ0ã ã£ãŸæ™‚0ã‚’r3ã«ä»£å…¥
+	//0ä»¥å¤–ã ã£ãŸæ™‚fabsã®è¨ˆç®—ã‚’ã—r3ã«ä»£å…¥
 	float r3 = e3 ? (fabs(D3DXVec3Dot(Sep, e3))) : 0;
 
 	return r1 + r2 + r3;

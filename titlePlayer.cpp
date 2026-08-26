@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "manager.h"
 #include "renderer.h"
 #include "drawModel.h"
@@ -72,20 +72,20 @@ void TitlePlayer::Update()
 	GeneralStoreDesk* generalsotre = m_Scene->GetGameObject<GeneralStoreDesk>();
 
 
-	//d—Í
+	//é‡åŠ›
 	m_Velocity.y -= 0.015f;
 
-	//ˆÚ“®
+	//ç§»å‹•
 	m_Position += m_Velocity;
 
-	//ƒƒbƒVƒ…ƒtƒB[ƒ‹ƒh‚Æ‚ÌÕ“Ë”»’è
+	//ãƒ¡ãƒƒã‚·ãƒ¥ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã¨ã®è¡çªåˆ¤å®š
 	float groundHeight = 0.0f;
 	MeshField* meshfield = m_Scene->GetGameObject<MeshField>();
 	groundHeight = meshfield->GetHight(m_Position);
 
 
 
-	//Ú’n
+	//æ¥åœ°
 	if (m_Position.y < groundHeight && m_Velocity.y < 0.0f)
 	{
 		m_Position.y = groundHeight;
@@ -104,15 +104,15 @@ void TitlePlayer::Draw()
 {
 
 
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX world, scale, rot, trans;
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 	D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y, m_Rotation.x, m_Rotation.z);

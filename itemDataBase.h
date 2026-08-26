@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #pragma once
 
 #include "gameObject.h"
@@ -6,17 +6,17 @@
 class ItemDataBase : public GameObject
 {
 protected:
-	//ˆÊ’u
+	//ä½ç½®
 	D3DXVECTOR3 m_Pos{};
-	// ƒTƒCƒY
+	// ã‚µã‚¤ã‚º
 	D3DXVECTOR3 m_Scale{};
-	// Šp“x
+	// è§’åº¦
 	D3DXVECTOR3 m_Rot{};
-	//ƒAƒCƒeƒ€‚Ì‰æ‘œ
+	//ã‚¢ã‚¤ãƒ†ãƒ ã®ç”»åƒ
 	const char* m_ItemTextuer{};
-	//‚Á‚Ä‚¢‚é—Ê
+	//æŒã£ã¦ã„ã‚‹é‡
 	int m_Count = 0;
-	//’l’i
+	//å€¤æ®µ
 	int m_Price{};
 
 public:

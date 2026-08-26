@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "manager.h"
 #include "renderer.h"
 #include "title.h"
@@ -39,19 +39,19 @@ void Title::Init()
 	o_dome->SetScale(D3DXVECTOR3(30.0f, 30.0f, 30.0f));
 
 
-	//ƒxƒ“ƒ`ƒIƒuƒWƒFƒNƒg
+	//ãƒ™ãƒ³ãƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	BentiObj* benti = AddGameObject<BentiObj>(1);
 	benti->SetPosition(D3DXVECTOR3(-4.5f, 0.0f, 4.0f));
 	benti->SetRotation(D3DXVECTOR3(0.0f, 2.2f, 0.0f));
 	benti->SetScale(D3DXVECTOR3(1.0f, 1.0f, 1.0f));
 
-	//’n–Êƒ^ƒCƒ‹
+	//åœ°é¢ã‚¿ã‚¤ãƒ«
 	Sky* tile = AddGameObject<Sky>(1);
 	tile->SetPosition(D3DXVECTOR3(6.5f, 0.0f, 14.0f));
 	tile->SetRotation(D3DXVECTOR3(0.0f, 1.6f, 0.0f));
 	tile->SetScale(D3DXVECTOR3(1.0f, 1.0f, 1.0f));
 
-	//ƒvƒŒƒCƒ„[
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼
 	TitlePlayer* player = AddGameObject<TitlePlayer>(1);
 	player->SetPosition(D3DXVECTOR3(-1.2f, 1.0f, 5.4f));
 	player->SetRotation(D3DXVECTOR3(0.0f, 3.0f, 0.0f));
@@ -63,7 +63,7 @@ void Title::Init()
 
 
 
-	//BGMÄ¶
+	//BGMå†ç”Ÿ
 	m_BGM = AddGameObject<GameObject>(0)->AddComponet<Audio>();
 	m_BGM->Load("asset\\audio\\zarlf-idtvj (mp3cut.net).wav");
 	m_BGM->Play(true);
@@ -94,7 +94,7 @@ void Title::Draw()
 {
 	m_Fade->Draw();
 
-	//ƒ‰ƒCƒgƒJƒƒ‰\‘¢‘Ì‚Ì‰Šú‰»
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©æ§‹é€ ä½“ã®åˆæœŸåŒ–
 	LIGHT light;
 	light.Enable = true;
 	light.Direction = D3DXVECTOR4(1.0f, -1.0f, 1.0f, 0.0f);
@@ -103,31 +103,31 @@ void Title::Draw()
 	light.Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
 
 
-	//ƒ‰ƒCƒgƒJƒƒ‰‚Ìƒrƒ…[s—ñ‚ğì¬
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—ã‚’ä½œæˆ
 	D3DXVECTOR3 lightPos = D3DXVECTOR3(-50.0f, 20.0f, -50.0f);
 	D3DXVECTOR3 lightTarget = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	D3DXVECTOR3 lightUp = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 	D3DXMatrixLookAtLH(&light.ViewMatrix, &lightPos, &lightTarget, &lightUp);
-	//ƒ‰ƒCƒgƒJƒƒ‰‚ÌƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ‚ğì¬
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—ã‚’ä½œæˆ
 	D3DXMatrixPerspectiveFovLH(&light.ProjectionMatrix, 1.0f,
 		(float)1.0f, 10.0f, 300.0f);
 
 
 	Renderer::SetLight(light);
 
-	//** 1ƒpƒX–Ú ƒVƒƒƒhƒEƒoƒbƒtƒ@‚Ìì¬ **//
+	//** 1ãƒ‘ã‚¹ç›® ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ **//
 	Renderer::BeginDepth();
 
 	Renderer::SetDepthViewport();
 
-	//ƒ‰ƒCƒgƒJƒƒ‰‚Ìs—ñ‚ğƒZƒbƒg
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®è¡Œåˆ—ã‚’ã‚»ãƒƒãƒˆ
 	Renderer::SetViewMatrix(&light.ViewMatrix);
 	Renderer::SetProjectionMatrix(&light.ProjectionMatrix);
 
-	//‰e‚ğ—‚Æ‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	//å½±ã‚’è½ã¨ã—ãŸã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æç”»
 	ShadowDraw();
 
-	//** 2ƒpƒX–Ú ’Êí‚Ìì¬ **//
+	//** 2ãƒ‘ã‚¹ç›® é€šå¸¸ã®ä½œæˆ **//
 	Renderer::Begin();
 
 	Renderer::SetDefaultViewport();

@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "manager.h"
 #include "renderer.h"
 #include "scene.h"
@@ -9,7 +9,7 @@
 #include "audio.h"
 #include "village.h"
 
-// Ã“Iƒƒ“ƒo•Ï”‚ÍÄéŒ¾‚ª•K—v
+// é™çš„ãƒ¡ãƒ³ãƒå¤‰æ•°ã¯å†å®£è¨€ãŒå¿…è¦
 Scene* Manager::m_Scene{};
 Scene* Manager::m_NextScene{};
 
@@ -20,7 +20,7 @@ void Manager::Init()
 	Audio::InitMaster();
 
 
-	//ImGUI‰Šú‰»
+	//ImGUIåˆæœŸåŒ–
 	{
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
@@ -71,7 +71,7 @@ void Manager::Uninit()
 	m_Scene->Uninit();
 	delete m_Scene;
 
-	//ImGUII—¹ˆ—
+	//ImGUIçµ‚äº†å‡¦ç†
 	ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();
 	ImGui::DestroyContext();
@@ -116,7 +116,7 @@ void Manager::Draw()
 
 	m_Scene->Draw();
 
-	//ImGUI‚Ì•`‰æˆ—
+	//ImGUIã®æç”»å‡¦ç†
 	ImGui::Render();
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 

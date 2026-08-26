@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "resultLogo.h"
 #include "sprite.h"
@@ -55,7 +55,7 @@ void ResultLogo::Init()
 	m_Scale7 = D3DXVECTOR3(SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f);
 
 
-	//‚¨‹à‚Ì‰Šú‰»
+	//ãŠé‡‘ã®åˆæœŸåŒ–
 	Money::Init();
 
 	GameObject::Init();
@@ -81,24 +81,24 @@ void ResultLogo::Update()
 
 void ResultLogo::Draw()
 {
-	// “ü—ÍƒŒƒCƒAƒEƒgÝ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[Ý’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// ƒ}ƒgƒŠƒNƒXÝ’è
+	// ãƒžãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	Renderer::SetWorldViewProjection2D();
 
 
-	//ƒŠƒUƒ‹ƒg‚ÅƒQ[ƒ€ƒV[ƒ“‚Ìflg‚ðfalse‚É‚·‚éˆ—
+	//ãƒªã‚¶ãƒ«ãƒˆã§ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã®flgã‚’falseã«ã™ã‚‹å‡¦ç†
 	VillageUi::SetGameSceneFlg(false);
 
-	//ƒNƒGƒXƒg1
+	//ã‚¯ã‚¨ã‚¹ãƒˆ1
 	if (Player::GetPlayerEndFlg() && QuestDeskUi::GetLevel01RespwanFlg())
 	{
-		//ƒNƒGƒXƒgŽ¸”sŽž
+		//ã‚¯ã‚¨ã‚¹ãƒˆå¤±æ•—æ™‚
 		m_Sprit5->Draw(m_Pos5, m_Scale5, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
 		if(Input::GetKeyTrigger(VK_RETURN))
@@ -107,22 +107,22 @@ void ResultLogo::Draw()
 	}
 	else if (QuestDeskUi::GetLevel01RespwanFlg())
 	{
-		//ƒNƒGƒXƒg¬Œ÷Žž
+		//ã‚¯ã‚¨ã‚¹ãƒˆæˆåŠŸæ™‚
 		m_Sprit1->Draw(m_Pos1, m_Scale1, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 		
 		if (Input::GetKeyTrigger(VK_RETURN))
 		{
-			//ƒNƒGƒXƒg¬Œ÷Žž‚É‚¨‹à‚ð‘‚â‚·ˆ—
+			//ã‚¯ã‚¨ã‚¹ãƒˆæˆåŠŸæ™‚ã«ãŠé‡‘ã‚’å¢—ã‚„ã™å‡¦ç†
 			m_Level1Reward = 5000;
 			Money::SetPlusMoney(m_Level1Reward);
 			QuestDeskUi::SetLevel01RespwanFlg(false);
 		}
 	}
 
-	//ƒNƒGƒXƒg2
+	//ã‚¯ã‚¨ã‚¹ãƒˆ2
 	if (Player::GetPlayerEndFlg() && QuestDeskUi::GetLevel02RespwanFlg())
 	{
-		//ƒNƒGƒXƒgŽ¸”sŽž
+		//ã‚¯ã‚¨ã‚¹ãƒˆå¤±æ•—æ™‚
 		m_Sprit6->Draw(m_Pos6, m_Scale6, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
 		if (Input::GetKeyTrigger(VK_RETURN))
@@ -131,13 +131,13 @@ void ResultLogo::Draw()
 	}
 	else if (QuestDeskUi::GetLevel02RespwanFlg())
 	{
-		//ƒNƒGƒXƒg¬Œ÷Žž
+		//ã‚¯ã‚¨ã‚¹ãƒˆæˆåŠŸæ™‚
 		m_Sprit3->Draw(m_Pos3, m_Scale3, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
 
 		if (Input::GetKeyTrigger(VK_RETURN))
 		{
-			//ƒNƒGƒXƒg¬Œ÷Žž‚É‚¨‹à‚ð‘‚â‚·ˆ—
+			//ã‚¯ã‚¨ã‚¹ãƒˆæˆåŠŸæ™‚ã«ãŠé‡‘ã‚’å¢—ã‚„ã™å‡¦ç†
 			m_Level2Reward = 5000;
 			Money::SetPlusMoney(m_Level2Reward);
 			QuestDeskUi::SetLevel02RespwanFlg(false);
@@ -146,10 +146,10 @@ void ResultLogo::Draw()
 		}
 	}
 
-	//ƒNƒGƒXƒg3
+	//ã‚¯ã‚¨ã‚¹ãƒˆ3
 	if (Player::GetPlayerEndFlg() && QuestDeskUi::GetLevel03RespwanFlg())
 	{
-		//ƒNƒGƒXƒgŽ¸”sŽž
+		//ã‚¯ã‚¨ã‚¹ãƒˆå¤±æ•—æ™‚
 		m_Sprit7->Draw(m_Pos7, m_Scale7, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
 		if(Input::GetKeyTrigger(VK_RETURN))
@@ -158,13 +158,13 @@ void ResultLogo::Draw()
 	}
 	else if (QuestDeskUi::GetLevel03RespwanFlg())
 	{
-		//ƒNƒGƒXƒg¬Œ÷Žž
+		//ã‚¯ã‚¨ã‚¹ãƒˆæˆåŠŸæ™‚
 		m_Sprit4->Draw(m_Pos3, m_Scale3, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
-		//ƒNƒGƒXƒg¬Œ÷Žž‚É‚¨‹à‚ð‘‚â‚·ˆ—
+		//ã‚¯ã‚¨ã‚¹ãƒˆæˆåŠŸæ™‚ã«ãŠé‡‘ã‚’å¢—ã‚„ã™å‡¦ç†
 		if (Input::GetKeyTrigger(VK_RETURN))
 		{
-			//ƒNƒGƒXƒg¬Œ÷Žž‚É‚¨‹à‚ð‘‚â‚·ˆ—
+			//ã‚¯ã‚¨ã‚¹ãƒˆæˆåŠŸæ™‚ã«ãŠé‡‘ã‚’å¢—ã‚„ã™å‡¦ç†
 			m_Level3Reward = 5000;
 			Money::SetPlusMoney(m_Level3Reward);
 			QuestDeskUi::SetLevel03RespwanFlg(false);
@@ -196,6 +196,6 @@ void ResultLogo::Draw()
 		m_Celar -= 0.01f;
 
 
-	// ‰¼‘zŠÖ”‚È‚Ì‚Å‹­§“I‚ÉŒÄ‚Ño‚·(Šî’êƒNƒ‰ƒX‚Ìƒƒ]ƒbƒgŒÄ‚Ño‚µ)
+	// ä»®æƒ³é–¢æ•°ãªã®ã§å¼·åˆ¶çš„ã«å‘¼ã³å‡ºã™(åŸºåº•ã‚¯ãƒ©ã‚¹ã®ãƒ¡ã‚¾ãƒƒãƒˆå‘¼ã³å‡ºã—)
 	GameObject::Draw();
 }

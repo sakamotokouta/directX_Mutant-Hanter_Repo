@@ -1,4 +1,4 @@
-#include "main.h"
+Ôªø#include "main.h"
 #include "manager.h"
 #include "renderer.h"
 #include "drawModel.h"
@@ -43,7 +43,7 @@ void Player::Init()
 	Renderer::CreatePixelShader(&m_PixelShader, "shader\\DepthShadowMappingPS.cso");
 
 
-	//ÉAÉjÉÅÅ[ÉVÉáÉìÇ∆ÉÇÉfÉãÇÃÉçÅ[Éh
+	//„Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥„Å®„É¢„Éá„É´„ÅÆ„É≠„Éº„Éâ
 	{
 		m_Model = new AnimationModel;
 		m_Model->Load("asset\\model\\Ganfaul M Aure.fbx");
@@ -76,57 +76,57 @@ void Player::Init()
 	//SELoad
 	{
 		m_DamageSE_1 = AddComponet<Audio>();
-		m_DamageSE_1->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[É_ÉÅÅ[ÉW1.wav");
+		m_DamageSE_1->Load("asset\\audio\\„Éó„É¨„Ç§„É§„Éº„ÉÄ„É°„Éº„Ç∏1.wav");
 		m_DamageSE_1->Volume(0.4f);
 		m_DamageSE_2 = AddComponet<Audio>();
-		m_DamageSE_2->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[É_ÉÅÅ[ÉW2.wav");
+		m_DamageSE_2->Load("asset\\audio\\„Éó„É¨„Ç§„É§„Éº„ÉÄ„É°„Éº„Ç∏2.wav");
 		m_DamageSE_2->Volume(0.4f);
 
 		m_HealSE = AddComponet<Audio>();
-		m_HealSE->Load("asset\\audio\\ëÃóÕâÒïú.wav");
+		m_HealSE->Load("asset\\audio\\‰ΩìÂäõÂõûÂæ©.wav");
 		m_HealSE->Volume(0.4f);
 
 		m_AVoiceSE_1 = AddComponet<Audio>();
-		m_AVoiceSE_1->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[çUåÇä|ÇØê∫1.wav");
+		m_AVoiceSE_1->Load("asset\\audio\\„Éó„É¨„Ç§„É§„ÉºÊîªÊíÉÊéõ„ÅëÂ£∞1.wav");
 		m_AVoiceSE_1->Volume(0.4f);
 		m_AVoiceSE_2 = AddComponet<Audio>();
-		m_AVoiceSE_2->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[çUåÇä|ÇØê∫2.wav");
+		m_AVoiceSE_2->Load("asset\\audio\\„Éó„É¨„Ç§„É§„ÉºÊîªÊíÉÊéõ„ÅëÂ£∞2.wav");
 		m_AVoiceSE_2->Volume(0.4f);
 		m_AVoiceSE_3 = AddComponet<Audio>();
-		m_AVoiceSE_3->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[çUåÇä|ÇØê∫3.wav");
+		m_AVoiceSE_3->Load("asset\\audio\\„Éó„É¨„Ç§„É§„ÉºÊîªÊíÉÊéõ„ÅëÂ£∞3.wav");
 		m_AVoiceSE_3->Volume(0.4f);
 
 		m_AttackSE_1 = AddComponet<Audio>();
-		m_AttackSE_1->Load("asset\\audio\\åïÇ≈éaÇÈ.wav");
+		m_AttackSE_1->Load("asset\\audio\\Ââ£„ÅßÊñ¨„Çã.wav");
 		m_AttackSE_1->Volume(0.4f);
 		m_AttackSE_2 = AddComponet<Audio>();
-		m_AttackSE_2->Load("asset\\audio\\åïÇ≈éaÇÈ.wav");
+		m_AttackSE_2->Load("asset\\audio\\Ââ£„ÅßÊñ¨„Çã.wav");
 		m_AttackSE_2->Volume(0.4f);
 		m_AttackSE_3 = AddComponet<Audio>();
-		m_AttackSE_3->Load("asset\\audio\\åïÇ≈éaÇÈ.wav");
+		m_AttackSE_3->Load("asset\\audio\\Ââ£„ÅßÊñ¨„Çã.wav");
 		m_AttackSE_3->Volume(0.4f);
 
 		m_SAVoiceSE = AddComponet<Audio>();
-		m_SAVoiceSE->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[èdçUåÇä|ÇØê∫.wav");
+		m_SAVoiceSE->Load("asset\\audio\\„Éó„É¨„Ç§„É§„ÉºÈáçÊîªÊíÉÊéõ„ÅëÂ£∞.wav");
 		m_SAVoiceSE->Volume(0.4f);
 
 		m_SALandingSE = AddComponet<Audio>();
-		m_SALandingSE->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[èdçUåÇëO.wav");
+		m_SALandingSE->Load("asset\\audio\\„Éó„É¨„Ç§„É§„ÉºÈáçÊîªÊíÉÂâç.wav");
 		m_SALandingSE->Volume(1.0f);
 
 		m_SAttackSE_1 = AddComponet<Audio>();
-		m_SAttackSE_1->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[èdçUåÇ1.wav");
+		m_SAttackSE_1->Load("asset\\audio\\„Éó„É¨„Ç§„É§„ÉºÈáçÊîªÊíÉ1.wav");
 		m_SAttackSE_1->Volume(0.6f);
 		m_SAttackSE_2 = AddComponet<Audio>();
-		m_SAttackSE_2->Load("asset\\audio\\ÉvÉåÉCÉÑÅ[èdçUåÇ2.wav");
+		m_SAttackSE_2->Load("asset\\audio\\„Éó„É¨„Ç§„É§„ÉºÈáçÊîªÊíÉ2.wav");
 		m_SAttackSE_2->Volume(0.6f);
 
 		m_BGM2 = AddComponet<Audio>();
-		m_BGM2->Load("asset\\audio\\ìyÇÃè„ÇëñÇÈ.wav");
+		m_BGM2->Load("asset\\audio\\Âúü„ÅÆ‰∏ä„ÇíËµ∞„Çã.wav");
 		m_BGM3 = AddComponet<Audio>();
-		m_BGM3->Load("asset\\audio\\åïÇî≤Ç≠.wav");
+		m_BGM3->Load("asset\\audio\\Ââ£„ÇíÊäú„Åè.wav");
 		m_BGM4 = AddComponet<Audio>();
-		m_BGM4->Load("asset\\audio\\åïÇè‚Ç…ÇµÇ‹Ç§.wav");
+		m_BGM4->Load("asset\\audio\\Ââ£„ÇíÈûò„Å´„Åó„Åæ„ÅÜ.wav");
 	}
 
 
@@ -137,7 +137,7 @@ void Player::Init()
 
 	m_PlayerEndFlg = false;
 
-	//ÉAÉCÉeÉÄÉfÅ[É^Å[ÉxÅ[ÉXÇÃÉfÅ[É^ÉçÅ[Éh
+	//„Ç¢„Ç§„ÉÜ„É†„Éá„Éº„Çø„Éº„Éô„Éº„Çπ„ÅÆ„Éá„Éº„Çø„É≠„Éº„Éâ
 	ItemDataLoad::DataLoad();
 	m_ItemCo = ItemDataLoad::GetItemBaseIndex(0)->GetItemCount();
 
@@ -174,7 +174,7 @@ void Player::Update()
 	EnemyRemoteAttack* remoteAttack = m_Scene->GetGameObject<EnemyRemoteAttack>();
 	EnemyJumpAttack* enemyJumpAttack = m_Scene->GetGameObject<EnemyJumpAttack>();
 
-	//ìGÇÃìñÇΩÇËîªíËÅienemyÇ™nullÇÃéûÇÕÉQÅ[ÉÄÇ™èIóπÇ∑ÇÈ)
+	//Êïµ„ÅÆÂΩì„Åü„ÇäÂà§ÂÆöÔºàenemy„Åånull„ÅÆÊôÇ„ÅØ„Ç≤„Éº„É†„ÅåÁµÇ‰∫Ü„Åô„Çã)
 	if (enemey == NULL && !Village::GetTutorialFlg() && Game::GetGameFlg())
 		m_Fade->FadeOut();
 
@@ -184,12 +184,12 @@ void Player::Update()
 		Game::SetGameFlg(false);
 	}
 
-	//âìäuçUåÇÇÃìñÇΩÇËîªíËflg
+	//ÈÅ†ÈöîÊîªÊíÉ„ÅÆÂΩì„Åü„ÇäÂà§ÂÆöflg
 	if (remoteAttack != NULL)
 		m_RemoteDamage = remoteAttack->GetAttackFlg();
 
 
-	//////////ÉQÅ[ÉÄÉVÅ[ÉìÇ‹ÇΩÇÕÉ`ÉÖÅ[ÉgÉäÉAÉãÉVÅ[ÉìÇ≈ÇÃèàóù////////////////
+	//////////„Ç≤„Éº„É†„Ç∑„Éº„É≥„Åæ„Åü„ÅØ„ÉÅ„É•„Éº„Éà„É™„Ç¢„É´„Ç∑„Éº„É≥„Åß„ÅÆÂá¶ÁêÜ////////////////
 	if (Game::GetGameFlg() || Tutorial::GetTutorialFlg())
 	{
 		if (hpred->GetHPRed() < HPREDMAX)
@@ -221,7 +221,7 @@ void Player::Update()
 	}
 
 
-	//èdóÕ
+	//ÈáçÂäõ
 	m_Velocity.y -= 0.015f;
 	m_Velocity.x -= 0.05f;
 	m_Velocity.z -= 0.05f;
@@ -233,15 +233,15 @@ void Player::Update()
 		m_Velocity.z = 0.0f;
 
 
-	//à⁄ìÆ
+	//ÁßªÂãï
 	m_Position += m_Velocity;
 
-	//ÉÅÉbÉVÉÖÉtÉBÅ[ÉãÉhÇ∆ÇÃè’ìÀîªíË
+	//„É°„ÉÉ„Ç∑„É•„Éï„Ç£„Éº„É´„Éâ„Å®„ÅÆË°ùÁ™ÅÂà§ÂÆö
 	float groundHeight = 0.0f;
 	MeshField* meshfield = m_Scene->GetGameObject<MeshField>();
 	groundHeight = meshfield->GetHight(m_Position);
 
-	//ê⁄ín
+	//Êé•Âú∞
 	if (m_Position.y < groundHeight && m_Velocity.y < 0.0f)
 	{
 		m_Position.y = groundHeight;
@@ -255,7 +255,7 @@ void Player::Update()
 		m_IsGround = false;
 	}
 
-	//////////////////ë∫Ç≈ÇÃÉvÉåÉCÉÑÅ[ÇÃèàóù//////////////////
+	//////////////////Êùë„Åß„ÅÆ„Éó„É¨„Ç§„É§„Éº„ÅÆÂá¶ÁêÜ//////////////////
 	if (Village::GetVillageFlg())
 	{
 		VillagePlayerAction* villageAction = m_Scene->GetGameObject<VillagePlayerAction>();
@@ -263,7 +263,7 @@ void Player::Update()
 	}
 
 
-	//ìGÇ∆ÇÃìñÇΩÇËîªíË
+	//Êïµ„Å®„ÅÆÂΩì„Åü„ÇäÂà§ÂÆö
 	if (enemey != NULL)
 	{
 
@@ -294,7 +294,7 @@ void Player::Update()
 		//}
 	}
 
-	//ìGÇÃì¡éÍçUåÇÇ∆ÇÃìñÇΩÇËîªíË
+	//Êïµ„ÅÆÁâπÊÆäÊîªÊíÉ„Å®„ÅÆÂΩì„Åü„ÇäÂà§ÂÆö
 	if (enemyJumpAttack != NULL && enemey != NULL)
 	{
 		//AABB
@@ -321,7 +321,7 @@ void Player::Update()
 
 
 
-	//ÉtÉBÅ[ÉãÉhÇÃè„å¿Ç∆â∫å¿
+	//„Éï„Ç£„Éº„É´„Éâ„ÅÆ‰∏äÈôê„Å®‰∏ãÈôê
 	if (m_Position.x >= 100.0f)
 		m_Position.x = 100.0f;
 
@@ -336,7 +336,7 @@ void Player::Update()
 		m_Position.z = -45.0f;
 
 
-	//ÉXÉeÅ[ÉgÉ}ÉVÅ[ÉìÅ@
+	//„Çπ„ÉÜ„Éº„Éà„Éû„Ç∑„Éº„É≥„ÄÄ
 	switch (m_PlayerState)
 	{
 	case PLAYER_STATE_GROUND:
@@ -405,15 +405,15 @@ void Player::Draw()
 {
 
 
-	// ì¸óÕÉåÉCÉAÉEÉgê›íË
+	// ÂÖ•Âäõ„É¨„Ç§„Ç¢„Ç¶„ÉàË®≠ÂÆö
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ÉVÉFÅ[É_Å[ê›íË
+	// „Ç∑„Çß„Éº„ÉÄ„ÉºË®≠ÂÆö
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
 
-	// É}ÉgÉäÉNÉXê›íË
+	// „Éû„Éà„É™„ÇØ„ÇπË®≠ÂÆö
 	D3DXMATRIX world, scale, rot, trans;
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 	//D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y, m_Rotation.x, m_Rotation.z);
@@ -455,7 +455,7 @@ void Player::UpdateGround()
 	
 	m_MoveFlg = false;
 
-	//ìØéûÇ…âüÇµÇΩÇ∆Ç´Ç≈Ç‡ë¨ìxÇ™ïœÇÌÇÁÇ»Ç¢ÇÊÇ§Ç…Ç∑ÇÈèàóù
+	//ÂêåÊôÇ„Å´Êäº„Åó„Åü„Å®„Åç„Åß„ÇÇÈÄüÂ∫¶„ÅåÂ§â„Çè„Çâ„Å™„ÅÑ„Çà„ÅÜ„Å´„Åô„ÇãÂá¶ÁêÜ
 	if (Input::GetKeyPress('W') || Input::GetKeyPress('D') &&
 		Input::GetKeyPress('S') || Input::GetKeyPress('D') &&
 		Input::GetKeyPress('W') || Input::GetKeyPress('A') &&
@@ -468,7 +468,7 @@ void Player::UpdateGround()
 		m_Forward = 0.1f;
 	}
 
-	//ë∫êlÇ∆òbÇµÇƒÇ¢ÇÈÇ∆Ç´ÇÕìÆÇØÇ»Ç¢ÇÊÇ§Ç…Ç∑ÇÈflgÇÃèàóù
+	//Êùë‰∫∫„Å®Ë©±„Åó„Å¶„ÅÑ„Çã„Å®„Åç„ÅØÂãï„Åë„Å™„ÅÑ„Çà„ÅÜ„Å´„Åô„Çãflg„ÅÆÂá¶ÁêÜ
 	if (vplayer != NULL)
 		m_VillageStopFlg = vplayer->GetSVillgeStopFlg();
 	else
@@ -476,7 +476,7 @@ void Player::UpdateGround()
 
 	if (!m_VillageStopFlg)
 	{
-		// ÉTÅ[ÉhÉpÅ[É\ÉìÉrÉÖÅ[
+		// „Çµ„Éº„Éâ„Éë„Éº„ÇΩ„É≥„Éì„É•„Éº
 		if (Input::GetKeyPress('A'))
 		{
 
@@ -790,7 +790,7 @@ void Player::UpdateGround()
 		m_AttackCoFlg = false;
 	}
 
-	//çUåÇ
+	//ÊîªÊíÉ
 	if (Input::GetKeyTrigger(VK_LBUTTON) && m_Attack01Co == 0 && m_Attackstate2_1 == false && m_Attackstate3_1 == false && m_SetUpFlg02)
 	{
 		m_Attackstate1 = true;
@@ -825,13 +825,13 @@ void Player::UpdateGround()
 
 	}
 
-	//ìGÇÃôÙöKéûÇÃãØÇ›
+	//Êïµ„ÅÆÂíÜÂìÆÊôÇ„ÅÆÊÄØ„Åø
 	if (m_ScaredStart == true)
 		m_PlayerState = PLAYER_STATE_SCARED;
 
 
 
-	//ì¡éÍçUåÇ
+	//ÁâπÊÆäÊîªÊíÉ
 	if (Input::GetKeyTrigger(VK_RBUTTON) && m_SetUpFlg02 && ui->GetSpescalAttackScale() >= 160.0f)
 		m_SpecialAttackFlg = true;
 	
@@ -860,17 +860,17 @@ void Player::UpdateGround()
 
 	
 
-	//ë∫ÉVÅ[ÉìÇ≈ÇÕåïÇàµÇ¶Ç»Ç¢ÇÊÇ§Ç…Ç∑ÇÈèàóù
+	//Êùë„Ç∑„Éº„É≥„Åß„ÅØÂâ£„ÇíÊâ±„Åà„Å™„ÅÑ„Çà„ÅÜ„Å´„Åô„ÇãÂá¶ÁêÜ
 	if (!Village::GetVillageFlg())
 	{
-		//åïÇÇ∆ÇËÇæÇ∑ÉAÉjÉÅÅ[ÉVÉáÉì
+		//Ââ£„Çí„Å®„Çä„Å†„Åô„Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥
 		if (Input::GetKeyTrigger('Q') && !m_SetUpFlg02)
 			m_SetUpFlg = true;
 
 		if (m_SetUpFlg)
 			m_PlayerState = PLAYER_STATE_SETUP;
 
-		//åïÇÇµÇ‹Ç§ÉAÉjÉÅÅ[ÉVÉáÉì
+		//Ââ£„Çí„Åó„Åæ„ÅÜ„Ç¢„Éã„É°„Éº„Ç∑„Éß„É≥
 		if (Input::GetKeyTrigger('E') && m_SetUpFlg02)
 			m_MountFlg = true;
 
@@ -880,7 +880,7 @@ void Player::UpdateGround()
 
 
 
-	//ëÃóÕèàóù
+	//‰ΩìÂäõÂá¶ÁêÜ
 	if ((m_Damage == true || m_RemoteDamage == true) && 
 		(Game::GetGameFlg() || Tutorial::GetTutorialFlg()))
 	{
@@ -896,7 +896,7 @@ void Player::UpdateGround()
 		}
 	}
 
-	//âÒïú
+	//ÂõûÂæ©
 	if (Input::GetKeyTrigger('F') && m_ItemCo > 0 && 
 		(Game::GetGameFlg() || Tutorial::GetTutorialFlg()))
 	{
@@ -958,7 +958,7 @@ void Player::UpdateAttack1(void)
 	}
 
 
-	//ìGÇ∆ÇÃè’ìÀîªíËÇÃéûÇæÇØÉqÉbÉgÉXÉgÉbÉvÇ∑ÇÈèàóù
+	//Êïµ„Å®„ÅÆË°ùÁ™ÅÂà§ÂÆö„ÅÆÊôÇ„Å†„Åë„Éí„ÉÉ„Éà„Çπ„Éà„ÉÉ„Éó„Åô„ÇãÂá¶ÁêÜ
 	if (m_Weapon->GetEnemyDamege())
 	{
 		if (m_Attack01Co >= 30 && m_Attack01Co <= 40)
@@ -972,7 +972,7 @@ void Player::UpdateAttack1(void)
 			m_AnimationName = "Attack1";
 	}
 
-	//ÉGÉtÉFÉNÉgïtÇØÇÈÇΩÇﬂÇÃflg
+	//„Ç®„Éï„Çß„ÇØ„Éà‰ªò„Åë„Çã„Åü„ÇÅ„ÅÆflg
 	if (m_Attack01Co == 40)
 		m_AttackHit1 = true;
 	else
@@ -1020,7 +1020,7 @@ void Player::UpdateAttack2(void)
 	}
 
 
-	//ìGÇ∆ÇÃè’ìÀîªíËÇÃéûÇæÇØÉqÉbÉgÉXÉgÉbÉvÇ∑ÇÈèàóù
+	//Êïµ„Å®„ÅÆË°ùÁ™ÅÂà§ÂÆö„ÅÆÊôÇ„Å†„Åë„Éí„ÉÉ„Éà„Çπ„Éà„ÉÉ„Éó„Åô„ÇãÂá¶ÁêÜ
 	if (m_Weapon->GetEnemyDamege())
 	{
 		if (m_Attack02Co >= 10 && m_Attack02Co <= 20)
@@ -1033,7 +1033,7 @@ void Player::UpdateAttack2(void)
 			m_AnimationName = "Attack2";
 	}
 	
-	//ÉGÉtÉFÉNÉgïtÇØÇÈÇΩÇﬂÇÃflg
+	//„Ç®„Éï„Çß„ÇØ„Éà‰ªò„Åë„Çã„Åü„ÇÅ„ÅÆflg
 	if (m_Attack02Co == 20)
 		m_AttackHit2 = true;
 	else
@@ -1084,7 +1084,7 @@ void Player::UpdateAttack3(void)
 	}
 
 
-	//ìGÇ∆ÇÃè’ìÀîªíËÇÃéûÇæÇØÉqÉbÉgÉXÉgÉbÉvÇ∑ÇÈèàóù
+	//Êïµ„Å®„ÅÆË°ùÁ™ÅÂà§ÂÆö„ÅÆÊôÇ„Å†„Åë„Éí„ÉÉ„Éà„Çπ„Éà„ÉÉ„Éó„Åô„ÇãÂá¶ÁêÜ
 	if (m_Weapon->GetEnemyDamege())
 	{
 		if (m_Attack03Co >= 40 && m_Attack03Co <= 50)
@@ -1098,7 +1098,7 @@ void Player::UpdateAttack3(void)
 			m_AnimationName = "Attack3";
 	}
 
-	//ÉGÉtÉFÉNÉgïtÇØÇÈÇΩÇﬂÇÃflg
+	//„Ç®„Éï„Çß„ÇØ„Éà‰ªò„Åë„Çã„Åü„ÇÅ„ÅÆflg
 	if (m_Attack03Co == 50)
 		m_AttackHit3 = true;
 	else
@@ -1190,7 +1190,7 @@ void Player::UpdateDamege(void)
 			m_PlayerState = PLAYER_STATE_GROUND;
 
 			int random = (int)rand();
-			//ÉâÉìÉ_ÉÄÇ≈2ÉpÉ^Å[ÉìÇÃSEçƒê∂
+			//„É©„É≥„ÉÄ„É†„Åß2„Éë„Çø„Éº„É≥„ÅÆSEÂÜçÁîü
 			if(random % 2 == 0)
 				m_DamageSE_1->Play();
 			else if (random % 2 == 1)
@@ -1394,7 +1394,7 @@ void Player::UpdateSetUpMode()
 }
 
 
-//ÉvÉåÉCÉÑÅ[ÇÃì¡éÍçUåÇ
+//„Éó„É¨„Ç§„É§„Éº„ÅÆÁâπÊÆäÊîªÊíÉ
 void Player::UpdateSpecialAttack(void)
 {
 	SpecialAttack01* attack01;
@@ -1425,13 +1425,13 @@ void Player::UpdateSpecialAttack(void)
 		if(ui->GetSpescalAttackScale() <= 0)
 			ui->SetSpescalAttackScale(0.0f);
 
-		//åïÇ™ínñ Ç…Ç¬Ç¢ÇΩÇ∆Ç´
+		//Ââ£„ÅåÂú∞Èù¢„Å´„Å§„ÅÑ„Åü„Å®„Åç
 		if (m_SpecialAttackCo == 100)
 		{
 			m_SALandingSE->Play();
 		}
 
-		//ì¡éÍçUåÇÉIÉuÉWÉFÉNÉgÇèáî‘Ç…ê∂ê¨ÇµÇƒÇ¢Ç≠
+		//ÁâπÊÆäÊîªÊíÉ„Ç™„Éñ„Ç∏„Çß„ÇØ„Éà„ÇíÈ†ÜÁï™„Å´ÁîüÊàê„Åó„Å¶„ÅÑ„Åè
 		if (m_SpecialAttackCo == 150)
 		{
 			attack01 = m_Scene->AddGameObject< SpecialAttack01>(1);

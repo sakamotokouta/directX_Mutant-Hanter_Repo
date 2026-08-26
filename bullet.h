@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "gameObject.h"
 
@@ -8,7 +8,7 @@ private:
 	ID3D11VertexShader* m_VertexShader = nullptr;
 	ID3D11PixelShader* m_PixelShader = nullptr;
 	ID3D11InputLayout* m_VertexLayout = nullptr;
-	D3DXVECTOR3 m_Velocity{};  // ‘¬“x
+	D3DXVECTOR3 m_Velocity{};  // é€Ÿåº¦
 
 	class Scene* m_Scene{};
 	class CollisionBox* m_Collision{};

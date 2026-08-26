@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "manager.h"
 #include "renderer.h"
 #include "field.h"
@@ -64,7 +64,7 @@ void Village::Unload()
 
 void Village::Init()
 {
-	//‘ºƒV[ƒ“‚Ì‚ÉƒIƒ“‚É‚·‚éƒtƒ‰ƒO
+	//æ‘ã‚·ãƒ¼ãƒ³ã®æ™‚ã«ã‚ªãƒ³ã«ã™ã‚‹ãƒ•ãƒ©ã‚°
 	m_VillageFlg = true;
 
 	//camera
@@ -74,20 +74,20 @@ void Village::Init()
 	Dome*dome = AddGameObject<Dome>(1);
 	dome->SetScale(D3DXVECTOR3(100.0f, 100.0f, 100.0f));
 
-	//ƒvƒŒƒCƒ„[‚ÌƒAƒNƒVƒ‡ƒ“
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ã‚¢ã‚¯ã‚·ãƒ§ãƒ³
 	m_VPlayer = AddGameObject<VillagePlayerAction>(1);
 
-	//’n–Ê
+	//åœ°é¢
 	AddGameObject<MeshField>(1);
 
-	//’n–Êƒ^ƒCƒ‹
+	//åœ°é¢ã‚¿ã‚¤ãƒ«
 	Sky* tile = AddGameObject<Sky>(1);
 	tile->SetPosition(D3DXVECTOR3(6.5f, 0.0f, 14.0f));
 	tile->SetRotation(D3DXVECTOR3(0.0f, 1.6f, 0.0f));
 	tile->SetScale(D3DXVECTOR3(1.0f, 1.0f, 1.0f));
 
 
-	//ƒNƒGƒXƒgó•t
+	//ã‚¯ã‚¨ã‚¹ãƒˆå—ä»˜
 	RECEPTIONDESK* reception = AddGameObject<RECEPTIONDESK>(1);
 	reception->SetPosition(D3DXVECTOR3(6.5f, 0.0f, 14.0f));
 	reception->SetRotation(D3DXVECTOR3(0.0f, 1.6f, 0.0f));
@@ -105,13 +105,13 @@ void Village::Init()
 
 
 
-	//‹³Š¯
+	//æ•™å®˜
 	Instructor* instructor = AddGameObject<Instructor>(1);
 	instructor->SetPosition(D3DXVECTOR3(8.0f, 0.0f, 24.0f)); 
 	instructor->SetRotation(D3DXVECTOR3(0.0f, 0.3f, 0.0f));
 
 
-	//’b–èê
+	//é›å†¶å ´
 	WeaponStoreDesk* weapon = AddGameObject<WeaponStoreDesk>(1);
 	weapon->SetPosition(D3DXVECTOR3(7.5f, 0.0f, -2.0f));
 	weapon->SetRotation(D3DXVECTOR3(0.0f, 1.6f, 0.0f));
@@ -126,7 +126,7 @@ void Village::Init()
 	weaponboard->SetRotation(D3DXVECTOR3(0.0f, 4.7f, 0.0f));
 	weaponboard->SetScale(D3DXVECTOR3(1.5f, 1.3f, 1.0f));
 
-	//G‰İ‰®
+	//é›‘è²¨å±‹
 	GeneralStoreDesk* general = AddGameObject<GeneralStoreDesk>(1);
 	general->SetPosition(D3DXVECTOR3(7.4f, 0.0f, 7.0f));
 	general->SetRotation(D3DXVECTOR3(0.0f, 1.6f, 0.0f));
@@ -136,54 +136,54 @@ void Village::Init()
 	generalstore1->SetRotation(D3DXVECTOR3(0.0f, 4.7f, 0.0f));
 	generalstore1->SetScale(D3DXVECTOR3(1.5f, 1.3f, 1.0f));
 
-	//ƒNƒGƒXƒg‚Ös‚­–å
+	//ã‚¯ã‚¨ã‚¹ãƒˆã¸è¡Œãé–€
 	QuestGateObj* questgate = AddGameObject<QuestGateObj>(1);
 	questgate->SetPosition(D3DXVECTOR3(4.0f, 0.0f, 25.5f));
 	questgate->SetRotation(D3DXVECTOR3(0.0f, 0.3f, 0.0f));
 	questgate->SetScale(D3DXVECTOR3(1.8f, 1.8f, 1.0f));
 
-	//ˆäŒËƒIƒuƒWƒFƒNƒg
+	//äº•æˆ¸ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	IdoObj* ido = AddGameObject<IdoObj>(1);
 	ido->SetPosition(D3DXVECTOR3(-0.5, 0.0f, 5.0f));
 	ido->SetRotation(D3DXVECTOR3(0.0f, 1.6f, 0.0f));
 	ido->SetScale(D3DXVECTOR3(1.3f, 1.3f, 1.3f));
 
-	//ƒxƒ“ƒ`ƒIƒuƒWƒFƒNƒg
+	//ãƒ™ãƒ³ãƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	BentiObj* benti = AddGameObject<BentiObj>(1);
 	benti->SetPosition(D3DXVECTOR3(-9.5f, 0.0f, -1.0f));
 	benti->SetRotation(D3DXVECTOR3(0.0f, 0.9f, 0.0f));
 	benti->SetScale(D3DXVECTOR3(1.0f, 1.0f, 1.0f));
 
-	//‰Æ01
+	//å®¶01
 	HouseObj* house = AddGameObject<HouseObj>(1);
 	house->SetPosition(D3DXVECTOR3(-9.5f, 0.0f, 15.0f));
 	house->SetRotation(D3DXVECTOR3(0.0f, 1.6f, 0.0f));
 	house->SetScale(D3DXVECTOR3(1.0f, 1.0f, 1.0f));
 
-	//•—Ô
+	//é¢¨è»Š
 	WindMillObj* windmill = AddGameObject<WindMillObj>(1);
 	windmill->SetPosition(D3DXVECTOR3(-6.5f, 0.0f, 27.0f));
 	windmill->SetRotation(D3DXVECTOR3(0.0f, 2.6f, 0.0f));
 	windmill->SetScale(D3DXVECTOR3(1.0f, 1.0f, 1.0f));
 
-	//‘º‚ÌˆÄ“àl
+	//æ‘ã®æ¡ˆå†…äºº
 	VillageInfoDesk* villageinfo = AddGameObject<VillageInfoDesk>(1);
 	villageinfo->SetPosition(D3DXVECTOR3(-5.0f, 0.0f, -7.0f));
 	villageinfo->SetRotation(D3DXVECTOR3(0.0f, 5.6f, 0.0f));
 	villageinfo->SetScale(D3DXVECTOR3(0.011f, 0.011f, 0.011f));
 
-	//ƒvƒŒƒCƒ„[‚ª‘ºl‚Éˆê’è‹——£‹ß‚Ã‚­‚Æ“ªã‚É•\¦‚³‚ê‚é–îˆó
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒæ‘äººã«ä¸€å®šè·é›¢è¿‘ã¥ãã¨é ­ä¸Šã«è¡¨ç¤ºã•ã‚Œã‚‹çŸ¢å°
 	AddGameObject<RecepitionPointer>(1);
 
-	//ƒvƒŒƒCƒ„[
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼
 	m_Player = AddGameObject<Player>(1);
 	m_Player->SetPosition(D3DXVECTOR3(0.0f, 1.0f, -15.0f));
 	m_Player->SetRotation(D3DXVECTOR3(0.0f, 1.0f, 0.0f));
 
-	////•Ší
+	////æ­¦å™¨
 	AddGameObject<Weapon>(1);
 
-	//“–‚½‚è”»’è‚Ì‰Šú‰»
+	//å½“ãŸã‚Šåˆ¤å®šã®åˆæœŸåŒ–
 	villageCillition = AddGameObject<VillageObjCollition>(1);
 
 
@@ -198,7 +198,7 @@ void Village::Init()
 	m_QuestFlg1 = false;
 	m_TutorialFlg = false;
 
-	//BGMÄ¶
+	//BGMå†ç”Ÿ
 	m_BGM = AddGameObject<GameObject>(0)->AddComponet<Audio>();
 	m_BGM->Load("asset\\audio\\maou_bgm_fantasy05.wav");
 	m_BGM->Play(true);
@@ -218,10 +218,10 @@ void Village::Update()
 {
 	Scene::Update();
 
-	//‘º‚Å‚ÌƒvƒŒƒCƒ„[‚ÆƒIƒuƒWƒFƒNƒg‚Ì“–‚½‚è”»’è
+	//æ‘ã§ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®å½“ãŸã‚Šåˆ¤å®š
 	villageCillition->ObjCollition();
 
-	//‹³Š¯‚©‚çƒ`ƒ…[ƒgƒŠƒAƒ‹‚És‚­ˆ—
+	//æ•™å®˜ã‹ã‚‰ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã«è¡Œãå‡¦ç†
 	if (m_VPlayer->GetTutorialrFlg())
 	{
 		m_Fade->FadeOut();
@@ -229,7 +229,7 @@ void Village::Update()
 		m_VillageFlg = false;
 	}
 
-	//ƒ`ƒ…[ƒgƒŠƒAƒ‹ƒV[ƒ“‚Ö‚ÌƒV[ƒ“ˆÚs
+	//ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã‚·ãƒ¼ãƒ³ã¸ã®ã‚·ãƒ¼ãƒ³ç§»è¡Œ
 	if(m_Fade->GetFadeFinish() && m_TutorialFlg)
 		Manager::SetScene<Loading>();
 
@@ -240,7 +240,7 @@ void Village::Update()
 void Village::Draw()
 {
 
-	//ƒ‰ƒCƒgƒJƒƒ‰\‘¢‘Ì‚Ì‰Šú‰»
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©æ§‹é€ ä½“ã®åˆæœŸåŒ–
 	LIGHT light;
 	light.Enable = true;
 	light.Direction = D3DXVECTOR4(1.0f, -1.0f, 1.0f, 0.0f);
@@ -249,31 +249,31 @@ void Village::Draw()
 	light.Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
 
 
-	//ƒ‰ƒCƒgƒJƒƒ‰‚Ìƒrƒ…[s—ñ‚ğì¬
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—ã‚’ä½œæˆ
 	D3DXVECTOR3 lightPos = D3DXVECTOR3(-50.0f, 20.0f, -50.0f);
 	D3DXVECTOR3 lightTarget = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	D3DXVECTOR3 lightUp = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 	D3DXMatrixLookAtLH(&light.ViewMatrix, &lightPos, &lightTarget, &lightUp);
-	//ƒ‰ƒCƒgƒJƒƒ‰‚ÌƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ‚ğì¬
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—ã‚’ä½œæˆ
 	D3DXMatrixPerspectiveFovLH(&light.ProjectionMatrix, 1.0f,
 		(float)1.0f, 10.0f, 300.0f);
 
 
 	Renderer::SetLight(light);
 
-	//** 1ƒpƒX–Ú ƒVƒƒƒhƒEƒoƒbƒtƒ@‚Ìì¬ **//
+	//** 1ãƒ‘ã‚¹ç›® ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ **//
 	Renderer::BeginDepth();
 
 	Renderer::SetDepthViewport();
 
-	//ƒ‰ƒCƒgƒJƒƒ‰‚Ìs—ñ‚ğƒZƒbƒg
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®è¡Œåˆ—ã‚’ã‚»ãƒƒãƒˆ
 	Renderer::SetViewMatrix(&light.ViewMatrix);
 	Renderer::SetProjectionMatrix(&light.ProjectionMatrix);
 
-	//‰e‚ğ—‚Æ‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	//å½±ã‚’è½ã¨ã—ãŸã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æç”»
 	ShadowDraw();
 
-	//** 2ƒpƒX–Ú ’Êí‚Ìì¬ **//
+	//** 2ãƒ‘ã‚¹ç›® é€šå¸¸ã®ä½œæˆ **//
 	Renderer::Begin();
 
 	Renderer::SetDefaultViewport();

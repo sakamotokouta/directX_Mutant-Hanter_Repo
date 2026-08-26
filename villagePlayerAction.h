@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #pragma once
 
 #include "gameObject.h"
@@ -24,10 +24,10 @@ private:
 
 public:
 
-	//ƒvƒŒƒCƒ„[‚Ì‘º‚Å‚ÌƒƒCƒ“ƒAƒNƒVƒ‡ƒ“ŠÖ”
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ‘ã§ã®ãƒ¡ã‚¤ãƒ³ã‚¢ã‚¯ã‚·ãƒ§ãƒ³é–¢æ•°
 	void VillageActions(void);
 
-	//ƒvƒŒƒCƒ„[‚Æ‚Ì‹——£‘ª’èŠÖ”
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨ã®è·é›¢æ¸¬å®šé–¢æ•°
 	float GetLength(D3DXVECTOR3 targetpos);
 
 	bool GetQuestFlg(void) { return m_QuestFlg; }

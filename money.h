@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #pragma once
 
 #include "gameObject.h"
@@ -22,7 +22,7 @@ public:
 	}
 	static void SetPlusMoney(int money) { 
 		m_Money += money; 
-		//ãŒÀ9999
+		//ä¸Šé™9999
 		if (m_Money >= 9999)
 			m_Money = 9999;
 	}

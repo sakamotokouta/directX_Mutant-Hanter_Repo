@@ -1,4 +1,4 @@
-#include "generalStoreUi.h"
+ï»¿#include "generalStoreUi.h"
 #include "scene.h"
 #include "manager.h"
 #include "sprit2D.h"
@@ -43,56 +43,56 @@ void GeneralStoreUi::Init()
 	m_MoeneyNum->Init();
 
 
-	//‚â‚¶‚é‚µ
+	//ã‚„ã˜ã‚‹ã—
 	m_PointerScale = D3DXVECTOR3(200.0f, 100.0f, 0.0f);
 
-	//G‰İ‰®‚ÌÅ‰‚Ì‰æ–Ê
+	//é›‘è²¨å±‹ã®æœ€åˆã®ç”»é¢
 	m_GeneralStoreFirstInfoPos = D3DXVECTOR3(830.0f, -10.0f, 0.0f);
 	m_GeneralStoreFirstInfoScale = D3DXVECTOR3(500.0f, 300.0f, 0.0f);
 
 
-	//G‰İ‰®‚ÌƒAƒCƒeƒ€‘I‘ğ‰æ–Ê1
+	//é›‘è²¨å±‹ã®ã‚¢ã‚¤ãƒ†ãƒ é¸æŠç”»é¢1
 	m_GeneralStoreSelectInfoPos0 = D3DXVECTOR3(-198.0f, -33.0f, 0.0f);
 	m_GeneralStoreSelectInfoScale0 = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//G‰İ‰®‚ÌƒAƒCƒeƒ€‘I‘ğ‰æ–Ê2
+	//é›‘è²¨å±‹ã®ã‚¢ã‚¤ãƒ†ãƒ é¸æŠç”»é¢2
 	m_GeneralStoreSelectInfoPos1 = D3DXVECTOR3(588.0f, -33.0f, 0.0f);
 	m_GeneralStoreSelectInfoScale1 = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//G‰İ‰®‚ÌƒAƒCƒeƒ€‘I‘ğ‰æ–Ê3
+	//é›‘è²¨å±‹ã®ã‚¢ã‚¤ãƒ†ãƒ é¸æŠç”»é¢3
 	m_GeneralStoreSelectInfoPos2 = D3DXVECTOR3(588.0f, 205.0f, 0.0f);
 	m_GeneralStoreSelectInfoScale2 = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//G‰İ‰®‚ÌƒAƒCƒeƒ€‘I‘ğ‰æ–Ê4
+	//é›‘è²¨å±‹ã®ã‚¢ã‚¤ãƒ†ãƒ é¸æŠç”»é¢4
 	m_GeneralStoreSelectInfoPos3 = D3DXVECTOR3(-198.0f, -33.0f, 0.0f);
 	m_GeneralStoreSelectInfoScale3 = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//G‰İ‰®‚ÌƒAƒCƒeƒ€ÅŒã‚Ì‘I‘ğ‰æ–Ê
+	//é›‘è²¨å±‹ã®ã‚¢ã‚¤ãƒ†ãƒ æœ€å¾Œã®é¸æŠç”»é¢
 	m_GeneralStoreLastInfoPos = D3DXVECTOR3(-198.0f, -33.0f, 0.0f);
 	m_GeneralStoreLastInfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//ƒAƒCƒeƒ€‘I‘ğ‚Ì–Úˆó
+	//ã‚¢ã‚¤ãƒ†ãƒ é¸æŠã®ç›®å°
 	m_SelectPointerPos = D3DXVECTOR3(700.0f, 125.0f, 0.0f);
 	m_SelectPointerScale = D3DXVECTOR3(700.0f, 150.0f, 0.0f);
 
-	//ÅIŒˆ’è‚Ì‚â‚¶‚é‚µ
+	//æœ€çµ‚æ±ºå®šã®ã‚„ã˜ã‚‹ã—
 	m_LastSelectPointerPos = D3DXVECTOR3(175.0f, 355.0f, 0.0f);
 	m_LastSelectPointerScale = D3DXVECTOR3(250.0f, 250.0f, 0.0f);
 
-	//G‰İ‰®‚Å‚Ìc‹à•\¦
+	//é›‘è²¨å±‹ã§ã®æ®‹é‡‘è¡¨ç¤º
 	m_GeneralStoreMoneyPos = D3DXVECTOR3(1212.0f, 37.0f, 0.0f);
 	m_GeneralStoreMoneyScale = D3DXVECTOR3(40.0f, 30.0f, 0.0f);
 
 	//AudioLoad
 	m_SelectSE = AddComponet<Audio>();
-	m_SelectSE->Load("asset\\audio\\‘I‘ğ‰¹.wav");
+	m_SelectSE->Load("asset\\audio\\é¸æŠéŸ³.wav");
 	m_SelectSE->Volume(0.4f);
 
 	m_EnterSE = AddComponet<Audio>();
-	m_EnterSE->Load("asset\\audio\\Œˆ’è‰¹.wav");
+	m_EnterSE->Load("asset\\audio\\æ±ºå®šéŸ³.wav");
 	m_EnterSE->Volume(0.4f);
 
-	//ƒAƒCƒeƒ€‚ÌƒJƒEƒ“ƒg‚ğ1‚É‰Šú‰»
+	//ã‚¢ã‚¤ãƒ†ãƒ ã®ã‚«ã‚¦ãƒ³ãƒˆã‚’1ã«åˆæœŸåŒ–
 	m_ItemCount = 1;
 
 }
@@ -116,7 +116,7 @@ void GeneralStoreUi::Update()
 
 		if (m_PlayerAction->GetGeneralStore() && Input::GetKeyTrigger('F'))
 		{
-			//ƒAƒCƒeƒ€‚ğ‘I‘ğ‚µ‚½‚Ì–Úˆó
+			//ã‚¢ã‚¤ãƒ†ãƒ ã‚’é¸æŠã—ãŸæ™‚ã®ç›®å°
 			m_SelectPointerPos = D3DXVECTOR3(688.0f, 68.0f, 0.0f);
 			m_SelectPointerScale = D3DXVECTOR3(700.0f, 200.0f, 0.0f);
 			m_GeneralStoreFlg1 = true;
@@ -247,7 +247,7 @@ void GeneralStoreUi::Update()
 void GeneralStoreUi::Draw()
 {
 
-	//G‰İ‰®‚ÌUI
+	//é›‘è²¨å±‹ã®UI
 	if (m_PlayerAction->GetGeneralStore())
 	{
 		if (m_GeneralStoreFlg1 == false)
@@ -258,7 +258,7 @@ void GeneralStoreUi::Draw()
 
 	if (m_GeneralStoreFlg2)
 	{
-		//c‹à•\¦
+		//æ®‹é‡‘è¡¨ç¤º
 		m_MoeneyNum->Draw();
 		m_MoeneyNum->SetCount(Money::GetMoney());
 		m_MoeneyNum->SetPosAndScale(m_GeneralStoreMoneyPos.x, m_GeneralStoreMoneyPos.y, m_GeneralStoreMoneyScale.x, m_GeneralStoreMoneyScale.y);

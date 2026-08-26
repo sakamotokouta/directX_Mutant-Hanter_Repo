@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "manager.h"
 #include "renderer.h"
 #include "drawModel.h"
@@ -52,16 +52,16 @@ void Bullet::Update()
 
 	m_Position += m_Velocity;
 
-	//ƒtƒB[ƒ‹ƒhŠO‚Ü‚½‚Í“G‚É“–‚½‚Á‚½‚É’e‚ªÁ‚¦‚é‚æ‚¤‚É‚·‚é
+	//ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰å¤–ã¾ãŸã¯æ•µã«å½“ãŸã£ãŸæ™‚ã«å¼¾ãŒæ¶ˆãˆã‚‹ã‚ˆã†ã«ã™ã‚‹
 	if (m_Position.z > 100.0f || m_Position.z<-100.0f
 		|| m_Position.x > 100.0f || m_Position.x < -100.0f||
 		m_EnemyDamegeFlg)
 	{
-		// Á‚·—\–ñ‚ğ‚·‚é
+		// æ¶ˆã™äºˆç´„ã‚’ã™ã‚‹
 		SetDestroy();
 	}
 
-	// enemy‚Æ‚ÌÕ“Ë”»’è
+	// enemyã¨ã®è¡çªåˆ¤å®š
 	if (enemy != NULL)
 	{
 
@@ -108,14 +108,14 @@ void Bullet::Update()
 
 void Bullet::Draw()
 {
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX world, scale, rot, trans;
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 	D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y, m_Rotation.x, m_Rotation.z);

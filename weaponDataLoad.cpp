@@ -1,4 +1,4 @@
-#include"scene.h"
+ï»¿#include"scene.h"
 #include "manager.h"
 #include "weaponDataLoad.h"
 #include "weapon00.h"
@@ -13,7 +13,7 @@ int WeaponDataLoad::WeaponNumber = 0;
 
 void WeaponDataLoad::DataLoad(void)
 {
-	//‰Šú‰»‚µ‚Ä‚È‚¢ê‡‰Šú‰»‚·‚é
+	//åˆæœŸåŒ–ã—ã¦ãªã„å ´åˆåˆæœŸåŒ–ã™ã‚‹
 	Weapon00* weapon00 = new Weapon00;
 	Weapon01* weapon01 = new Weapon01;
 	Weapon02* weapon02 = new Weapon02;

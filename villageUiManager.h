@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "gameObject.h"
 #include "villageUi.h"
@@ -24,14 +24,14 @@ private:
 
 
 
-	//‘º‚Ìui‚ğŠÇ—‚·‚é”z—ñ
+	//æ‘ã®uiã‚’ç®¡ç†ã™ã‚‹é…åˆ—
 	VillageUi* m_VillageArry[100]{};
 
-	//’b–èêui
+	//é›å†¶å ´ui
 
-	//G‰İui
+	//é›‘è²¨ui
 
-	//ƒNƒGƒXƒgó•tui
+	//ã‚¯ã‚¨ã‚¹ãƒˆå—ä»˜ui
 
 
 public:

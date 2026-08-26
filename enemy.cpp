@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "enemy.h"
 #include "animationModel.h"
@@ -102,18 +102,18 @@ void Enemy::Init()
 
 
 	m_JABarkSE = AddComponet<Audio>();
-	m_JABarkSE->Load("asset\\audio\\“GdUŒ‚‘O.wav");
+	m_JABarkSE->Load("asset\\audio\\æ•µé‡æ”»æ’ƒå‰.wav");
 	m_JALandingSE = AddComponet<Audio>();
-	m_JALandingSE->Load("asset\\audio\\“GdUŒ‚.wav");
+	m_JALandingSE->Load("asset\\audio\\æ•µé‡æ”»æ’ƒ.wav");
 	m_RAttackSE = AddComponet<Audio>();
-	m_RAttackSE->Load("asset\\audio\\“G‰“‹——£UŒ‚.wav");
+	m_RAttackSE->Load("asset\\audio\\æ•µé è·é›¢æ”»æ’ƒ.wav");
 
 	m_DamageBarkSE = AddComponet<Audio>();
-	m_DamageBarkSE->Load("asset\\audio\\ƒSƒuƒŠƒ“‚Ì–Â‚«º2.wav");
+	m_DamageBarkSE->Load("asset\\audio\\ã‚´ãƒ–ãƒªãƒ³ã®é³´ãå£°2.wav");
 	m_DamageBarkSE->Volume(0.2f);
 
 	m_BarkSE = AddComponet<Audio>();
-	m_BarkSE->Load("asset\\audio\\ƒSƒuƒŠƒ“‚Ì–Â‚«º2.wav");
+	m_BarkSE->Load("asset\\audio\\ã‚´ãƒ–ãƒªãƒ³ã®é³´ãå£°2.wav");
 	m_BarkSE->Volume(0.3f);
 
 	if (Village::GetTutorialFlg())
@@ -155,8 +155,8 @@ void Enemy::Update()
 	m_Direction02 = GetPlayerDirection02();
 	m_Length = GetPlayerLenth();
 
-	//“G‚ÌHP‚ª0‚É‚È‚Á‚½‚Æ‚«‚Ìˆ—
-	//“G‚ÌƒWƒƒƒ“ƒvUŒ‚ƒIƒuƒWƒF‚ªÁ‚¦‚½‚Æ‚«‚Ìflg‚ªtrue‚É‚È‚Á‚½‚ç“|‚ê‚éƒXƒe[ƒg‚És‚­
+	//æ•µã®HPãŒ0ã«ãªã£ãŸã¨ãã®å‡¦ç†
+	//æ•µã®ã‚¸ãƒ£ãƒ³ãƒ—æ”»æ’ƒã‚ªãƒ–ã‚¸ã‚§ãŒæ¶ˆãˆãŸã¨ãã®flgãŒtrueã«ãªã£ãŸã‚‰å€’ã‚Œã‚‹ã‚¹ãƒ†ãƒ¼ãƒˆã«è¡Œã
 	if (m_JampAttackOBjFlg)
 	{
 		m_Damage = true;
@@ -164,7 +164,7 @@ void Enemy::Update()
 		m_EnemyState = ENEMY_STATE_DIE;
 	}
 
-	//“G‚ªõ“Gó‘Ô‚Ì‚ÌƒvƒŒƒCƒ„[‚ªUŒ‚‚µ‚½ê‡‚Ìˆ—
+	//æ•µãŒç´¢æ•µçŠ¶æ…‹ã®æ™‚ã®ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒæ”»æ’ƒã—ãŸå ´åˆã®å‡¦ç†
 	if (weapon->GetEnemyDamege() && m_EnemyFirstAttackCo < 1 && m_EnemyState == ENEMY_STATE_SACH && 
 		(m_Player->GetPlayerAttackHit1() || m_Player->GetPlayerAttackHit2() || m_Player->GetPlayerAttackHit3()))
 	{
@@ -172,12 +172,12 @@ void Enemy::Update()
 		m_EnemyFirstAttackCo += 1;
 	}
 
-	float fieldOfView = D3DXToRadian(120.0f); // ‹–ìŠp
+	float fieldOfView = D3DXToRadian(120.0f); // è¦–é‡è§’
 
-	//enemy‚Ì‹^—‹–ì‚Ìˆ—
+	//enemyã®ç–‘ä¼¼è¦–é‡ã®å‡¦ç†
 	m_Siya = IsInFieldOfView(m_Position, m_Direction02, fieldOfView, m_ViewDistance);
 
-	//“G‚ªƒvƒŒƒCƒ„[‚ğŒ©‚Â‚¯‚½‚Æ‚«“®‚«
+	//æ•µãŒãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¦‹ã¤ã‘ãŸã¨ãå‹•ã
 	if (m_Siya || m_PlayerDetectFlg)
 	{
 		m_Attackflg = true;
@@ -207,15 +207,15 @@ void Enemy::Update()
 	}
 	
 
-	//d—Í
+	//é‡åŠ›
 	m_Velocity.y -= 0.015f;
 
-	//ˆÚ“®
+	//ç§»å‹•
 	m_Position += m_Velocity;
 
 
 
-	//“G‚ÌHP‚ÅF‚ª•Ï‰»‚·‚éˆ—
+	//æ•µã®HPã§è‰²ãŒå¤‰åŒ–ã™ã‚‹å‡¦ç†
 	if (m_EnemyHp > 50.0f)
 		m_RimColor = D3DXCOLOR(0.0f, 0.5f, 0.5f, 1.0f);
 	else if (m_EnemyHp <= 50.0f && m_EnemyHp > 40.0f)
@@ -230,12 +230,12 @@ void Enemy::Update()
 		m_RimColor = D3DXCOLOR(0.0f, 0.0f, 0.0f, 1.0f);
 
 
-	//ƒƒbƒVƒ…ƒtƒB[ƒ‹ƒh‚Æ‚ÌÕ“Ë”»’è
+	//ãƒ¡ãƒƒã‚·ãƒ¥ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã¨ã®è¡çªåˆ¤å®š
 	float groundHeight = 0.0f;
 	MeshField* meshfield = m_Scene->GetGameObject<MeshField>();
 	groundHeight = meshfield->GetHight(m_Position);
 
-	//Ú’n
+	//æ¥åœ°
 	if (m_Position.y < groundHeight && m_Velocity.y < 0.0f)
 	{
 		m_Velocity.y = 0.0f;
@@ -244,7 +244,7 @@ void Enemy::Update()
 
 
 
-	//ƒXƒe[ƒgƒ}ƒV[ƒ“@
+	//ã‚¹ãƒ†ãƒ¼ãƒˆãƒã‚·ãƒ¼ãƒ³ã€€
 	switch (m_EnemyState)
 	{
 	case ENEMY_STATE_SACH:
@@ -294,7 +294,7 @@ void Enemy::Draw()
 {
 
 
-	//‹‘äƒJƒŠƒ“ƒO
+	//è¦–éŒ˜å°ã‚«ãƒªãƒ³ã‚°
 	{
 		Scene* scene = Manager::GetScene();
 		Camera* camera = scene->GetGameObject<Camera>();
@@ -306,14 +306,14 @@ void Enemy::Draw()
 	D3DXVECTOR3 top = GetTop();
 
 
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX world, scale, rot, trans;
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 	D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y + D3DX_PI, m_Rotation.x, m_Rotation.z);
@@ -326,7 +326,7 @@ void Enemy::Draw()
 
 
 
-	//ƒfƒBƒ]ƒ‹ƒu‚Ìˆ—
+	//ãƒ‡ã‚£ã‚¾ãƒ«ãƒ–ã®å‡¦ç†
 	Renderer::GetDeviceContext()->PSSetShaderResources(2, 1, &m_DisolveTexture);
 	PARAMETER param;
 	ZeroMemory(&param, sizeof(param));
@@ -335,7 +335,7 @@ void Enemy::Draw()
 	Renderer::SetParameter(param);
 
 
-	//ƒŠƒ€ƒ‰ƒCƒg‚Ìˆ— 
+	//ãƒªãƒ ãƒ©ã‚¤ãƒˆã®å‡¦ç† 
 	ENEMYPARAM eparam;
 	eparam.rimColor = m_RimColor;
 	Renderer::SetEnemy(eparam);
@@ -409,10 +409,10 @@ void Enemy::UpdateEnemyRoaring(void)
 void Enemy::UpdateEnemySach(void)
 {
 	m_ViewDistance = 5.0f;
-	//“G‚ªƒvƒŒƒCƒ„[‚ğ’T‚µ‚Ä‚¢‚é‚Æ‚«‚Ì“®‚«
+	//æ•µãŒãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’æ¢ã—ã¦ã„ã‚‹ã¨ãã®å‹•ã
 	if (m_Animflg == false && m_FoundFlg == false)
 	{
-		//s“®‚Ì—”
+		//è¡Œå‹•ã®ä¹±æ•°
 		if (m_MoveCo > 100)
 		{
 			std::srand(time(NULL));
@@ -424,7 +424,7 @@ void Enemy::UpdateEnemySach(void)
 			}
 			m_MoveCo = 0;
 		}
-		//ˆÚ“®‚µ‚Ä‚¢‚éƒpƒ^[ƒ“
+		//ç§»å‹•ã—ã¦ã„ã‚‹ãƒ‘ã‚¿ãƒ¼ãƒ³
 		if (m_EnemyActionRondomNum == 1)
 		{
 			if (m_NextAnimationName != "Run")
@@ -454,7 +454,7 @@ void Enemy::UpdateEnemySach(void)
 				m_MoveCo = 0;
 			}
 		}
-		//~‚Ü‚Á‚Ä‚¢‚éƒpƒ^[ƒ“
+		//æ­¢ã¾ã£ã¦ã„ã‚‹ãƒ‘ã‚¿ãƒ¼ãƒ³
 		if (m_EnemyActionRondomNum == 2)
 		{
 			if (m_NextAnimationName != "Idle")
@@ -469,7 +469,7 @@ void Enemy::UpdateEnemySach(void)
 				m_MoveCo = 0;
 			}
 		}
-		//‰ñ“]‚µ‚Ä‚¢‚éƒpƒ^[ƒ“
+		//å›è»¢ã—ã¦ã„ã‚‹ãƒ‘ã‚¿ãƒ¼ãƒ³
 		if (m_EnemyActionRondomNum == 3)
 		{
 			if (m_NextAnimationName != "Idle")
@@ -504,14 +504,14 @@ void Enemy::UpdateEnemyFound(void)
 	m_EnemyDistance = 10.0f;
 
 
-	//ƒvƒŒƒCƒ„[‚ğŒ©‚Â‚¯‚½‚Æ‚«
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã‚’è¦‹ã¤ã‘ãŸã¨ã
 	if (m_FoundFlg == true)
 	{
 
-		//“G‚Ìs“®num‚ğ0‚É‚·‚é
+		//æ•µã®è¡Œå‹•numã‚’0ã«ã™ã‚‹
 		m_EnemyActionRondomNum = 0;
 
-		//UŒ‚flg‚ğtrue‚É‚µ‚ÄUŒ‚ƒ‚[ƒVƒ‡ƒ“‚É“ü‚é
+		//æ”»æ’ƒflgã‚’trueã«ã—ã¦æ”»æ’ƒãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã«å…¥ã‚‹
 		m_Animflg = true;
 		m_EnemyState = ENEMY_STATE_ATTACK;
 	}
@@ -519,7 +519,7 @@ void Enemy::UpdateEnemyFound(void)
 
 void Enemy::UpdateEnemyAttack(void)
 {
-	//UŒ‚ŠJn‚·‚é‚Æ‚«‚Ì‹——£
+	//æ”»æ’ƒé–‹å§‹ã™ã‚‹ã¨ãã®è·é›¢
 	if (ATTACK_RANGE > m_Length)
 	{
 		if (m_NextAnimationName != "Attack" && m_Attackflg == true)
@@ -543,7 +543,7 @@ void Enemy::UpdateEnemyAttack(void)
 			m_EnemyHitOnlyCo = 0;
 		}
 
-		//enemy‚ªUŒ‚‚µ‚Ä‚¢‚é‚Æ‚«‚¾‚¯player‚É“–‚½‚è”»’è‚ğs‚¤‚Æ‚«‚Ìˆ—
+		//enemyãŒæ”»æ’ƒã—ã¦ã„ã‚‹ã¨ãã ã‘playerã«å½“ãŸã‚Šåˆ¤å®šã‚’è¡Œã†ã¨ãã®å‡¦ç†
 		if (m_EnemyHitOnlyCo >= 100 && m_EnemyHitOnlyCo <= 180)
 		{
 			m_EnemyHitFlg = true;
@@ -555,7 +555,7 @@ void Enemy::UpdateEnemyAttack(void)
 		}
 
 
-		//ˆê’èŠÔ‚½‚Á‚½‚çƒvƒŒƒCƒ„[‚Ì•ûŒü‚ğŒü‚­ˆ—
+		//ä¸€å®šæ™‚é–“ãŸã£ãŸã‚‰ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®æ–¹å‘ã‚’å‘ãå‡¦ç†
 		if (m_ActionCount >= 300)
 		{
 			m_ActionCount = 0;
@@ -563,7 +563,7 @@ void Enemy::UpdateEnemyAttack(void)
 		}
 	}
 
-	//ƒvƒŒƒCƒ„[‚Æˆê’è‹——£—£‚êê‡‚Ìˆ—
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã¨ä¸€å®šè·é›¢é›¢ã‚Œå ´åˆã®å‡¦ç†
 	if (ATTACK_RANGE + MIDDLE_RANGE < m_Length)
 	{
 		m_EnemyHitOnlyCo = 0;
@@ -595,7 +595,7 @@ void Enemy::UpdateEnemyChase(void)
 
 		}
 
-		//­‚µ’Ç‚¢‚©‚¯‚½‚ç‰“ŠuUŒ‚‚ÉØ‚è‘Ö‚¦‚é
+		//å°‘ã—è¿½ã„ã‹ã‘ãŸã‚‰é éš”æ”»æ’ƒã«åˆ‡ã‚Šæ›¿ãˆã‚‹
 		if (m_RunCo > 100)
 		{
 			m_EnemyState = ENEMY_STATE_REMOTEATTACK;
@@ -658,7 +658,7 @@ void Enemy::UpdateEnemyDie(void)
 
 void Enemy::UpdateEnemyRemoteAttack(void)
 {
-	//ƒAƒjƒ[ƒVƒ‡ƒ“Ä¶
+	//ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å†ç”Ÿ
 	if (m_NextAnimationName != "LongDistanceAttack")
 	{
 		m_Time = 0.0f;
@@ -667,32 +667,32 @@ void Enemy::UpdateEnemyRemoteAttack(void)
 		m_BlendRate = 0.0f;
 	}
 
-	//‰“‹——£UŒ‚—\‘z—‰º’n“_
+	//é è·é›¢æ”»æ’ƒäºˆæƒ³è½ä¸‹åœ°ç‚¹
 	AttackPrediction* attackp;
-	//‰“‹——£UŒ‚‚Ì—‰º•¨
+	//é è·é›¢æ”»æ’ƒã®è½ä¸‹ç‰©
 	EnemyRemoteAttack* eattack;
 
-	//‰“‹——£UŒ‚ƒJƒEƒ“ƒg
+	//é è·é›¢æ”»æ’ƒã‚«ã‚¦ãƒ³ãƒˆ
 	attacPCo++;
 
-	//‰“‹——£UŒ‚ƒJƒEƒ“ƒg‚ª1‚Ìˆê‰ñ‚¾‚¯—\‘z—‰º’n“_ƒ‚ƒfƒ‹‚ğ•\¦‚·‚é
+	//é è·é›¢æ”»æ’ƒã‚«ã‚¦ãƒ³ãƒˆãŒ1ã®æ™‚ä¸€å›ã ã‘äºˆæƒ³è½ä¸‹åœ°ç‚¹ãƒ¢ãƒ‡ãƒ«ã‚’è¡¨ç¤ºã™ã‚‹
 	if (attacPCo == 1)
 		attackp = m_Scene->AddGameObject<AttackPrediction>(1);
 
-	//—\‘z—‰º’n“_ƒ‚ƒfƒ‹‚Ìî•ñ‚ğŒÄ‚Ño‚·
+	//äºˆæƒ³è½ä¸‹åœ°ç‚¹ãƒ¢ãƒ‡ãƒ«ã®æƒ…å ±ã‚’å‘¼ã³å‡ºã™
 	attackp = m_Scene->GetGameObject<AttackPrediction>();
 
-	//“G‚ª—‰º—\‘z’n“_ƒ‚ƒfƒ‹‚Ì•ûŒü‚ğŒü‚­‚æ‚¤‚É‚·‚é‚½‚ß‚Ìˆ—
+	//æ•µãŒè½ä¸‹äºˆæƒ³åœ°ç‚¹ãƒ¢ãƒ‡ãƒ«ã®æ–¹å‘ã‚’å‘ãã‚ˆã†ã«ã™ã‚‹ãŸã‚ã®å‡¦ç†
 	D3DXVECTOR3 direction1 = m_Position - attackp->GetPosition();
 	direction1.y = 0.0f;
 	D3DXVec3Normalize(&direction1, &direction1);
 	m_Rotation.y = atan2(direction1.x, direction1.z);
 
-	//‰“‹——£UŒ‚ƒJƒEƒ“ƒg‚ª100‚É‚È‚é‚Æ—\‘z’n“_ƒ‚ƒfƒ‹‚ÌÀ•W‚ªŒÅ’è‚³‚ê‚é
+	//é è·é›¢æ”»æ’ƒã‚«ã‚¦ãƒ³ãƒˆãŒ100ã«ãªã‚‹ã¨äºˆæƒ³åœ°ç‚¹ãƒ¢ãƒ‡ãƒ«ã®åº§æ¨™ãŒå›ºå®šã•ã‚Œã‚‹
 	if (attacPCo <= 100)
 		attackp->SetPosition(m_Player->GetPosition());
 
-	//‰“‹——£UŒ‚ƒJƒEƒ“ƒg‚ª150‚Ìˆê‰ñ‚¾‚¯—‰º•¨ƒ‚ƒfƒ‹‚ğ“Š‰º‚·‚é
+	//é è·é›¢æ”»æ’ƒã‚«ã‚¦ãƒ³ãƒˆãŒ150ã®æ™‚ä¸€å›ã ã‘è½ä¸‹ç‰©ãƒ¢ãƒ‡ãƒ«ã‚’æŠ•ä¸‹ã™ã‚‹
 	if (attacPCo == 150)
 	{
 		EnemyRemoteAttack* eattack = m_Scene->AddGameObject<EnemyRemoteAttack>(1);
@@ -701,10 +701,10 @@ void Enemy::UpdateEnemyRemoteAttack(void)
 		m_RAttackSE->Volume(0.2f);
 	}
 
-	//—‰º•¨ƒ‚ƒfƒ‹‚Ìî•ñ‚ğŒÄ‚Ño‚·
+	//è½ä¸‹ç‰©ãƒ¢ãƒ‡ãƒ«ã®æƒ…å ±ã‚’å‘¼ã³å‡ºã™
 	eattack = m_Scene->GetGameObject<EnemyRemoteAttack>();
 
-	//‰“‹——£UŒ‚ƒJƒEƒ“ƒg‚ª160ˆÈã‚É‚È‚é‚Æ—‰º•¨ƒ‚ƒfƒ‹‚Æ—\‘z’n“_ƒ‚ƒfƒ‹‚ğÁ‚µAƒJƒEƒ“ƒg0‚É‚·‚é
+	//é è·é›¢æ”»æ’ƒã‚«ã‚¦ãƒ³ãƒˆãŒ160ä»¥ä¸Šã«ãªã‚‹ã¨è½ä¸‹ç‰©ãƒ¢ãƒ‡ãƒ«ã¨äºˆæƒ³åœ°ç‚¹ãƒ¢ãƒ‡ãƒ«ã‚’æ¶ˆã—ã€ã‚«ã‚¦ãƒ³ãƒˆ0ã«ã™ã‚‹
 	if (attacPCo > 160)
 	{
 		attackp->SetDestroy();
@@ -712,7 +712,7 @@ void Enemy::UpdateEnemyRemoteAttack(void)
 		attacPCo = 0;
 	}
 
-	//“G‚ÆƒvƒŒƒCƒ„[‚ÌˆÊ’u‚ªˆê’è‚æ‚è‹ß‚Ã‚­‚Æ‹ß‹——£UŒ‚‚ÌƒXƒe[ƒg‚ÉˆÚ‚é‚æ‚¤‚É‚·‚éˆ—
+	//æ•µã¨ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ä½ç½®ãŒä¸€å®šã‚ˆã‚Šè¿‘ã¥ãã¨è¿‘è·é›¢æ”»æ’ƒã®ã‚¹ãƒ†ãƒ¼ãƒˆã«ç§»ã‚‹ã‚ˆã†ã«ã™ã‚‹å‡¦ç†
 	if (ATTACK_RANGE > m_Length)
 	{
 		attackp->SetDestroy();
@@ -806,7 +806,7 @@ void Enemy::UpdateEnemyJumpAttack(void)
 
 		}
 
-		//enemy‚ÌHP‚ª0‚É‚È‚Á‚½‚çƒWƒƒƒ“ƒvUŒ‚‚ÌƒIƒuƒWƒFƒNƒg‚ğÁ‚µ‚Äflg‚ğƒIƒ“‚É‚·‚é
+		//enemyã®HPãŒ0ã«ãªã£ãŸã‚‰ã‚¸ãƒ£ãƒ³ãƒ—æ”»æ’ƒã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ¶ˆã—ã¦flgã‚’ã‚ªãƒ³ã«ã™ã‚‹
 		if (m_EnemyHp <= 0 && !m_JampAttackOBjFlg)
 		{
 
@@ -826,7 +826,7 @@ void Enemy::UpdateEnemyJumpAttack(void)
 
 bool Enemy::IsInFieldOfView(const D3DXVECTOR3& origin, D3DXVECTOR3& direction, float fieldOfViewRadians, float viewDistancee)
 {
-	// ‹–ì”ÍˆÍ“à‚©‚Ç‚¤‚©‚Ì”»’è
+	// è¦–é‡ç¯„å›²å†…ã‹ã©ã†ã‹ã®åˆ¤å®š
 	D3DXVECTOR3 normalizedDirection;
 	D3DXVec3Normalize(&normalizedDirection, &direction);
 	D3DXVECTOR3 houkou = -GetForward();
@@ -834,7 +834,7 @@ bool Enemy::IsInFieldOfView(const D3DXVECTOR3& origin, D3DXVECTOR3& direction, f
 	float angle = acos(dotProduct);
 	bool isInFieldOfView = angle <= fieldOfViewRadians / 2.0f;
 
-	// ‹–ì‹——£“à‚©‚Ç‚¤‚©‚Ì”»’è
+	// è¦–é‡è·é›¢å†…ã‹ã©ã†ã‹ã®åˆ¤å®š
 	D3DXVECTOR3 dice = origin - m_Player->GetPosition();
 	float distance = D3DXVec3Length(&dice);
 	bool isInViewDistance = distance <= viewDistancee;

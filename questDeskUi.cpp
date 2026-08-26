@@ -1,4 +1,4 @@
-#include "questDeskUi.h"
+ï»¿#include "questDeskUi.h"
 #include "manager.h"
 #include "sprit2D.h"
 #include "villagePlayerAction.h"
@@ -43,53 +43,53 @@ void QuestDeskUi::Init()
 	m_LastSelect->Init("asset/texture/LastSelect.png");
 	m_LastSelectPointer->Init("asset/texture/LastSelectPointer.png");
 
-	//‚â‚¶‚é‚µ
+	//ã‚„ã˜ã‚‹ã—
 	m_PointerPos = D3DXVECTOR3(680.0f, 50.0f, 0.0f);
 	m_PointerScale = D3DXVECTOR3(200.0f, 100.0f, 0.0f);
 
-	//ƒNƒGƒXƒg‘I‘ğ1
+	//ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠ1
 	m_QuestChoice01Pos = D3DXVECTOR3(680.0f, -100.0f, 0.0f);
 	m_QuestChoice01Scale = D3DXVECTOR3(750.0f, 400.0f, 0.0f);
 
-	//ƒNƒGƒXƒg‘I‘ğ2
+	//ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠ2
 	m_QuestChoice02Pos = D3DXVECTOR3(680.0f, -20.0f, 0.0f);
 	m_QuestChoice02Scale = D3DXVECTOR3(750.0f, 400.0f, 0.0f);
 
-	//ƒNƒGƒXƒg‘I‘ğ3
+	//ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠ3
 	m_QuestChoice03Pos = D3DXVECTOR3(680.0f, 60.0f, 0.0f);
 	m_QuestChoice03Scale = D3DXVECTOR3(750.0f, 400.0f, 0.0f);
 
-	//ƒNƒGƒXƒg1
+	//ã‚¯ã‚¨ã‚¹ãƒˆ1
 	m_Quest01Pos = D3DXVECTOR3(500.0f, 50.0f, 0.0f);
 	m_Quest01Scale = D3DXVECTOR3(900.0f, 600.0f, 0.0f);
 
-	//ƒNƒGƒXƒg2
+	//ã‚¯ã‚¨ã‚¹ãƒˆ2
 	m_Quest02Pos = D3DXVECTOR3(500.0f, 50.0f, 0.0f);
 	m_Quest02Scale = D3DXVECTOR3(900.0f, 600.0f, 0.0f);
 
-	//ƒNƒGƒXƒg3
+	//ã‚¯ã‚¨ã‚¹ãƒˆ3
 	m_Quest03Pos = D3DXVECTOR3(500.0f, 50.0f, 0.0f);
 	m_Quest03Scale = D3DXVECTOR3(900.0f, 600.0f, 0.0f);
 
-	//Œˆ’è‚©–ß‚é‚©‚Ì“ü—ÍˆÄ“à
+	//æ±ºå®šã‹æˆ»ã‚‹ã‹ã®å…¥åŠ›æ¡ˆå†…
 	m_EnerOrReternPos = D3DXVECTOR3(900.0f, 550.0f, 0.0f);
 	m_EnerOrReternScale = D3DXVECTOR3(400.0f, 200.0f, 0.0f);
 
-	//ƒNƒGƒXƒg‚ÌŒˆ’èˆÄ“à
+	//ã‚¯ã‚¨ã‚¹ãƒˆã®æ±ºå®šæ¡ˆå†…
 	m_LastSelectPos = D3DXVECTOR3(-150.0f, 200.0f, 0.0f);
 	m_LastSelectScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//ƒNƒGƒXƒgÅIŒˆ’è‚Ì‚â‚¶‚é‚µ
+	//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚æ±ºå®šã®ã‚„ã˜ã‚‹ã—
 	m_LastSelectPointerPos = D3DXVECTOR3(175.0f, 355.0f, 0.0f);
 	m_LastSelectPointerScale = D3DXVECTOR3(250.0f, 250.0f, 0.0f);
 
 	//AudioLoad
 	m_SelectSE = AddComponet<Audio>();
-	m_SelectSE->Load("asset\\audio\\‘I‘ğ‰¹.wav");
+	m_SelectSE->Load("asset\\audio\\é¸æŠéŸ³.wav");
 	m_SelectSE->Volume(0.4f);
 
 	m_EnterSE = AddComponet<Audio>();
-	m_EnterSE->Load("asset\\audio\\Œˆ’è‰¹.wav");
+	m_EnterSE->Load("asset\\audio\\æ±ºå®šéŸ³.wav");
 	m_EnterSE->Volume(0.4f);
 
 }
@@ -111,7 +111,7 @@ void QuestDeskUi::Uninit()
 
 void QuestDeskUi::Update()
 {
-	//ƒNƒGƒXƒg‘I‘ğ‰æ–Ê
+	//ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠç”»é¢
 	if (m_PointerLockFlg == false)
 	{
 		if (Input::GetKeyTrigger(VK_DOWN))
@@ -128,7 +128,7 @@ void QuestDeskUi::Update()
 
 	}
 
-	//ƒNƒGƒXƒgÅIŠm”F‚Ì‚â‚¶‚é‚µ
+	//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚ç¢ºèªã®ã‚„ã˜ã‚‹ã—
 	/*if (m_BlecksmithSelect3 == false && m_ItemLastInfo == false)
 	{
 	}*/
@@ -156,13 +156,13 @@ void QuestDeskUi::Update()
 	}
 
 
-	//ƒŒƒxƒ‹1
+	//ãƒ¬ãƒ™ãƒ«1
 	if (m_PointerPos.y == 50 && m_PlayerAction->GetQuestFlg())
 	{
 		m_QuestChoice01Pos.x = 665.0f;
 		if (Input::GetKeyTrigger('F') && m_Level1Flg == false && m_LastSelectFlg == false)
 		{
-			//Å‰‚ÌƒNƒGƒXƒg‘I‘ğ‰æ–Ê‚Å‘I‚Î‚ê‚½ƒNƒGƒXƒg
+			//æœ€åˆã®ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠç”»é¢ã§é¸ã°ã‚ŒãŸã‚¯ã‚¨ã‚¹ãƒˆ
 			m_PointerLockFlg = true;
 			m_Level1Flg = true;
 			m_EnterSE->Play();
@@ -170,7 +170,7 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_Level1Flg == true && m_LastSelectFlg == false)
 		{
-			//ÅIƒNƒGƒXƒg‘I‘ğ‚ğ•\¦
+			//æœ€çµ‚ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠã‚’è¡¨ç¤º
 			m_LastSelectPointerPos.y = 355.0f;
 			m_LastSelectFlg = true;
 			m_Level1Flg = false;
@@ -179,15 +179,15 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_LastSelectFlg == true && m_LastSelectPointerPos.y <= 355.0f && Money::GetMoney() >= 100)
 		{
-			//ƒNƒGƒXƒgÅI‘I‘ğ‚Å"‚Í‚¢"‚¾‚Á‚½ê‡
-			//‚±‚±‚ÅƒŒƒxƒ‹‚P‚Ìƒ‚ƒ“ƒXƒ^[‚ğƒŠƒXƒ|[ƒ“‚³‚¹‚éƒtƒ‰ƒO‚ğ—§‚Ä‚é
+			//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚é¸æŠã§"ã¯ã„"ã ã£ãŸå ´åˆ
+			//ã“ã“ã§ãƒ¬ãƒ™ãƒ«ï¼‘ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’ãƒªã‚¹ãƒãƒ¼ãƒ³ã•ã›ã‚‹ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 			m_Level1RespwanFlg = true;
 			m_LastSelectFlg = false;
 			m_PlayerAction->SetQuestFlg(false);
 			m_PointerLockFlg = false;
 			m_PlayerAction->SetSVillgeStopFlg(false);
 
-			//‚¨‹à‚ğŒ¸‚ç‚·ˆ—
+			//ãŠé‡‘ã‚’æ¸›ã‚‰ã™å‡¦ç†
 			Money::SetMinusMoney(100);
 
 			m_EnterSE->Play();
@@ -195,7 +195,7 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_LastSelectPointerPos.y >= 404.0f && m_Level1Flg == false && m_LastSelectFlg == true)
 		{
-			//ƒNƒGƒXƒgÅI‘I‘ğ‚Å"‚¢‚¢‚¦"‚¾‚Á‚½ê‡
+			//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚é¸æŠã§"ã„ã„ãˆ"ã ã£ãŸå ´åˆ
 			m_LastSelectFlg = false;
 			m_Level1Flg = true;
 
@@ -204,7 +204,7 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('R') && m_Level1Flg == true && m_LastSelectFlg == false)
 		{
-			//–ß‚é
+			//æˆ»ã‚‹
 			m_Level1Flg = false;
 			m_PointerLockFlg = false;
 			m_EnterSE->Play();
@@ -217,13 +217,13 @@ void QuestDeskUi::Update()
 
 
 
-	//ƒŒƒxƒ‹2
+	//ãƒ¬ãƒ™ãƒ«2
 	if (m_PointerPos.y == 130 && m_PlayerAction->GetQuestFlg())
 	{
 		m_QuestChoice02Pos.x = 665.0f;
 		if (Input::GetKeyTrigger('F') && m_Level2Flg == false && m_LastSelectFlg == false)
 		{
-			//Å‰‚ÌƒNƒGƒXƒg‘I‘ğ‰æ–Ê‚Å‘I‚Î‚ê‚½ƒNƒGƒXƒg
+			//æœ€åˆã®ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠç”»é¢ã§é¸ã°ã‚ŒãŸã‚¯ã‚¨ã‚¹ãƒˆ
 			m_PointerLockFlg = true;
 			m_Level2Flg = true;
 			m_EnterSE->Play();
@@ -231,7 +231,7 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_Level2Flg == true && m_LastSelectFlg == false)
 		{
-			//ÅIƒNƒGƒXƒg‘I‘ğ‚ğ•\¦
+			//æœ€çµ‚ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠã‚’è¡¨ç¤º
 			m_LastSelectPointerPos.y = 355.0f;
 			m_LastSelectFlg = true;
 			m_Level2Flg = false;
@@ -241,15 +241,15 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_LastSelectFlg == true && m_LastSelectPointerPos.y <= 355.0f && Money::GetMoney() >= 100)
 		{
-			//ƒNƒGƒXƒgÅI‘I‘ğ‚Å"‚Í‚¢"‚¾‚Á‚½ê‡
-			//‚±‚±‚ÅƒŒƒxƒ‹‚P‚Ìƒ‚ƒ“ƒXƒ^[‚ğƒŠƒXƒ|[ƒ“‚³‚¹‚éƒtƒ‰ƒO‚ğ—§‚Ä‚é
+			//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚é¸æŠã§"ã¯ã„"ã ã£ãŸå ´åˆ
+			//ã“ã“ã§ãƒ¬ãƒ™ãƒ«ï¼‘ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’ãƒªã‚¹ãƒãƒ¼ãƒ³ã•ã›ã‚‹ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 			m_Level2RespwanFlg = true;
 			m_LastSelectFlg = false;
 			m_PlayerAction->SetQuestFlg(false);
 			m_PointerLockFlg = false;
 			m_PlayerAction->SetSVillgeStopFlg(false);
 
-			//‚¨‹à‚ğŒ¸‚ç‚·ˆ—
+			//ãŠé‡‘ã‚’æ¸›ã‚‰ã™å‡¦ç†
 			Money::SetMinusMoney(100);
 
 			m_EnterSE->Play();
@@ -257,7 +257,7 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_LastSelectPointerPos.y >= 404.0f && m_Level2Flg == false && m_LastSelectFlg == true)
 		{
-			//ƒNƒGƒXƒgÅI‘I‘ğ‚Å"‚¢‚¢‚¦"‚¾‚Á‚½ê‡
+			//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚é¸æŠã§"ã„ã„ãˆ"ã ã£ãŸå ´åˆ
 			m_LastSelectFlg = false;
 			m_Level2Flg = true;
 			m_EnterSE->Play();
@@ -265,7 +265,7 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('R') && m_Level2Flg == true && m_LastSelectFlg == false)
 		{
-			//–ß‚é
+			//æˆ»ã‚‹
 			m_Level2Flg = false;
 			m_PointerLockFlg = false;
 			m_EnterSE->Play();
@@ -277,13 +277,13 @@ void QuestDeskUi::Update()
 		m_QuestChoice02Pos.x = 680.0f;
 
 
-	//ƒŒƒxƒ‹3
+	//ãƒ¬ãƒ™ãƒ«3
 	if (m_PointerPos.y >= 210 && m_PlayerAction->GetQuestFlg())
 	{
 		m_QuestChoice03Pos.x = 665.0f;
 		if (Input::GetKeyTrigger('F') && m_Level3Flg == false && m_LastSelectFlg == false)
 		{
-			//Å‰‚ÌƒNƒGƒXƒg‘I‘ğ‰æ–Ê‚Å‘I‚Î‚ê‚½ƒNƒGƒXƒg
+			//æœ€åˆã®ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠç”»é¢ã§é¸ã°ã‚ŒãŸã‚¯ã‚¨ã‚¹ãƒˆ
 			m_PointerLockFlg = true;
 			m_Level3Flg = true;
 
@@ -292,7 +292,7 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_Level3Flg == true && m_LastSelectFlg == false)
 		{
-			//ÅIƒNƒGƒXƒg‘I‘ğ‚ğ•\¦
+			//æœ€çµ‚ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠã‚’è¡¨ç¤º
 			m_LastSelectPointerPos.y = 355.0f;
 			m_LastSelectFlg = true;
 			m_Level3Flg = false;
@@ -301,15 +301,15 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_LastSelectFlg == true && m_LastSelectPointerPos.y <= 355.0f && Money::GetMoney() >= 100)
 		{
-			//ƒNƒGƒXƒgÅI‘I‘ğ‚Å"‚Í‚¢"‚¾‚Á‚½ê‡
-			//‚±‚±‚ÅƒŒƒxƒ‹‚P‚Ìƒ‚ƒ“ƒXƒ^[‚ğƒŠƒXƒ|[ƒ“‚³‚¹‚éƒtƒ‰ƒO‚ğ—§‚Ä‚é
+			//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚é¸æŠã§"ã¯ã„"ã ã£ãŸå ´åˆ
+			//ã“ã“ã§ãƒ¬ãƒ™ãƒ«ï¼‘ã®ãƒ¢ãƒ³ã‚¹ã‚¿ãƒ¼ã‚’ãƒªã‚¹ãƒãƒ¼ãƒ³ã•ã›ã‚‹ãƒ•ãƒ©ã‚°ã‚’ç«‹ã¦ã‚‹
 			m_Level3RespwanFlg = true;
 			m_LastSelectFlg = false;
 			m_PlayerAction->SetQuestFlg(false);
 			m_PointerLockFlg = false;
 			m_PlayerAction->SetSVillgeStopFlg(false);
 
-			//‚¨‹à‚ğŒ¸‚ç‚·ˆ—
+			//ãŠé‡‘ã‚’æ¸›ã‚‰ã™å‡¦ç†
 			Money::SetMinusMoney(100);
 
 			m_EnterSE->Play();
@@ -317,13 +317,13 @@ void QuestDeskUi::Update()
 		}
 		else if (Input::GetKeyTrigger('F') && m_LastSelectPointerPos.y >= 404.0f && m_Level3Flg == false && m_LastSelectFlg == true)
 		{
-			//ƒNƒGƒXƒgÅI‘I‘ğ‚Å"‚¢‚¢‚¦"‚¾‚Á‚½ê‡
+			//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚é¸æŠã§"ã„ã„ãˆ"ã ã£ãŸå ´åˆ
 			m_LastSelectFlg = false;
 			m_Level3Flg = true;
 		}
 		else if (Input::GetKeyTrigger('R') && m_Level3Flg == true && m_LastSelectFlg == false)
 		{
-			//–ß‚é
+			//æˆ»ã‚‹
 			m_Level3Flg = false;
 			m_PointerLockFlg = false;
 			m_EnterSE->Play();
@@ -335,13 +335,13 @@ void QuestDeskUi::Update()
 		m_QuestChoice03Pos.x = 680.0f;
 
 
-	//ƒŒƒxƒ‹2
+	//ãƒ¬ãƒ™ãƒ«2
 	if (m_PointerPos.y == 130)
 		m_QuestChoice02Pos.x = 665.0f;
 	else
 		m_QuestChoice02Pos.x = 680.0f;
 
-	//ƒŒƒxƒ‹3
+	//ãƒ¬ãƒ™ãƒ«3
 	if (m_PointerPos.y == 210)
 		m_QuestChoice03Pos.x = 665.0f;
 	else
@@ -349,11 +349,11 @@ void QuestDeskUi::Update()
 
 
 
-	//Å‰‚ÌƒNƒGƒXƒg‘I‘ğ‚â‚¶‚é‚µ‚ÌãŒÀ
+	//æœ€åˆã®ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠã‚„ã˜ã‚‹ã—ã®ä¸Šé™
 	if (m_PointerPos.y >= 210)
 		m_PointerPos.y = 210;
 
-	//Å‰‚ÌƒNƒGƒXƒg‘I‘ğ‚â‚¶‚é‚µ‚Ì‰ºŒÀ
+	//æœ€åˆã®ã‚¯ã‚¨ã‚¹ãƒˆé¸æŠã‚„ã˜ã‚‹ã—ã®ä¸‹é™
 	if (m_PointerPos.y <= 50)
 		m_PointerPos.y = 50;
 
@@ -361,7 +361,7 @@ void QuestDeskUi::Update()
 	if (m_LastSelectPointerPos.y >= 404.0f)
 		m_LastSelectPointerPos.y = 404.0f;
 
-	//ƒNƒGƒXƒgÅI‘I‘ğ‚â‚¶‚é‚µ‚Ì‰ºŒÀ
+	//ã‚¯ã‚¨ã‚¹ãƒˆæœ€çµ‚é¸æŠã‚„ã˜ã‚‹ã—ã®ä¸‹é™
 	if (m_LastSelectPointerPos.y <= 355.0f)
 		m_LastSelectPointerPos.y = 355.0f;
 
@@ -380,22 +380,22 @@ void QuestDeskUi::Draw()
 		m_QuestChoice02->Draw(m_QuestChoice02Pos, m_QuestChoice02Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 		m_QuestChoice03->Draw(m_QuestChoice03Pos, m_QuestChoice03Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
-		//c‹à
+		//æ®‹é‡‘
 		m_MoeneyNum->Draw();
 		m_MoeneyNum->SetCount(Money::GetMoney());
 		m_MoeneyNum->SetPosAndScale(m_QuestMoneyPos.x, m_QuestMoneyPos.y, m_QuestMoneyScale.x, m_QuestMoneyScale.y);
 
 	}
 
-	//ƒŒƒxƒ‹1‚ÌƒNƒGƒXƒg
+	//ãƒ¬ãƒ™ãƒ«1ã®ã‚¯ã‚¨ã‚¹ãƒˆ
 	if (m_Level1Flg)
 		m_Quest01->Draw(m_Quest01Pos, m_Quest01Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
-	//ƒŒƒxƒ‹2‚ÌƒNƒGƒXƒg
+	//ãƒ¬ãƒ™ãƒ«2ã®ã‚¯ã‚¨ã‚¹ãƒˆ
 	if (m_Level2Flg)
 		m_Quest02->Draw(m_Quest02Pos, m_Quest02Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
-	//ƒŒƒxƒ‹3‚ÌƒNƒGƒXƒg
+	//ãƒ¬ãƒ™ãƒ«3ã®ã‚¯ã‚¨ã‚¹ãƒˆ
 	if (m_Level3Flg)
 		m_Quest03->Draw(m_Quest03Pos, m_Quest03Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 

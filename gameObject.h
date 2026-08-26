@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <list>
 #include "component.h"
@@ -62,7 +62,7 @@ public:
 	D3DXVECTOR3 GetRotation() { return m_Rotation; }
 	D3DXVECTOR3 GetScale() { return m_Scale; }
 
-	// ‘O•ûŒüƒxƒNƒgƒ‹æ“¾
+	// å‰æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«å–å¾—
 	D3DXVECTOR3 GetForward()
 	{
 		D3DXMATRIX rot;
@@ -76,7 +76,7 @@ public:
 		return forward;
 	}
 
-	// ‰E•ûŒüƒxƒNƒgƒ‹æ“¾
+	// å³æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«å–å¾—
 	D3DXVECTOR3 GetRight()
 	{
 		D3DXMATRIX rot;
@@ -90,7 +90,7 @@ public:
 		return forward;
 	}
 
-	// ã•ûŒüƒxƒNƒgƒ‹æ“¾
+	// ä¸Šæ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«å–å¾—
 	D3DXVECTOR3 GetTop()
 	{
 		D3DXMATRIX rot;
@@ -105,7 +105,7 @@ public:
 	}
 
 
-	// ‘O•ûŒüƒxƒNƒgƒ‹æ“¾
+	// å‰æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«å–å¾—
 	D3DXVECTOR3 GetForwardQ()
 	{
 		D3DXMATRIX rot;
@@ -119,7 +119,7 @@ public:
 		return forward;
 	}
 
-	// ‰E•ûŒüƒxƒNƒgƒ‹æ“¾
+	// å³æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«å–å¾—
 	D3DXVECTOR3 GetRightQ()
 	{
 		D3DXMATRIX rot;
@@ -133,7 +133,7 @@ public:
 		return forward;
 	}
 
-	// ã•ûŒüƒxƒNƒgƒ‹æ“¾
+	// ä¸Šæ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«å–å¾—
 	D3DXVECTOR3 GetTopQ()
 	{
 		D3DXMATRIX rot;
@@ -181,7 +181,7 @@ public:
 			delete component;
 		}
 
-		// ƒŠƒXƒg\‘¢‚Ìíœ
+		// ãƒªã‚¹ãƒˆæ§‹é€ ã®å‰Šé™¤
 		m_Component.clear();
 	}
 
@@ -197,7 +197,7 @@ public:
 	{
 		if (m_ShadowFlg)
 		{
-			// ƒeƒNƒXƒ`ƒƒİ’è
+			// ãƒ†ã‚¯ã‚¹ãƒãƒ£è¨­å®š
 			ID3D11ShaderResourceView* depthShadowTexture = Renderer::GetDepthShadowTexture();
 			Renderer::GetDeviceContext()->PSSetShaderResources(1, 1, &depthShadowTexture);
 		}
@@ -209,7 +209,7 @@ public:
 		}
 	}
 
-	// ƒeƒ“ƒvƒŒ[ƒgŠÖ”
+	// ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆé–¢æ•°
 	template <typename T>
 	T* AddComponet()
 	{

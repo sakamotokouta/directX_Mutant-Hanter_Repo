@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "drawModel.h"
 #include "weapon.h"
@@ -29,11 +29,11 @@ void Weapon::Init()
 
 	m_WeaponCount = WeaponDataLoad::GetWeaponNumber();
 
-	//•Šíî•ñ“Ç‚İ‚İ
+	//æ­¦å™¨æƒ…å ±èª­ã¿è¾¼ã¿
 	WeaponDataLoad::DataLoad();
 
 
-	//m_Weapondata‚Éƒf[ƒ^‚ğ“Ç‚İ‚Ş
+	//m_Weapondataã«ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€
 	for (int i = 0; i < WEAPON_NUM; i++)
 	{
 		m_Weapondata[i] = WeaponDataLoad::GetWeaponDataBaseIndex(i);
@@ -41,7 +41,7 @@ void Weapon::Init()
 
 
 
-	//•Šíƒf[ƒ^“Ç‚İ‚İ
+	//æ­¦å™¨ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿
 	//m_WeaponData = new WeaponDataLoad;
 	//m_WeaponData->DataLoad();
 	m_WeaponName = m_Weapondata[m_WeaponCount]->GetWeaponModelName();
@@ -89,12 +89,12 @@ void Weapon::Update()
 	Ui01* ui = m_Scene->GetGameObject<Ui01>();
 
 
-	//ƒvƒŒƒCƒ„[‚Ìƒ‚ƒfƒ‹‚ğæ“¾
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ¢ãƒ‡ãƒ«ã‚’å–å¾—
 	AnimationModel* anim = player->GetAnim();
-	//ã‚Åæ“¾‚µ‚½ƒ‚ƒfƒ‹‚Ìƒ{[ƒ“‚ğæ“¾‚·‚é
-	//˜‚Ìƒ{[ƒ“æ“¾
+	//ä¸Šã§å–å¾—ã—ãŸãƒ¢ãƒ‡ãƒ«ã®ãƒœãƒ¼ãƒ³ã‚’å–å¾—ã™ã‚‹
+	//è…°ã®ãƒœãƒ¼ãƒ³å–å¾—
 	BONE* Hips = anim->GetBoneName("mixamorig:Hips");
-	//‰Eè‚Ìƒ{[ƒ“æ“¾
+	//å³æ‰‹ã®ãƒœãƒ¼ãƒ³å–å¾—
 	BONE* RightHand = anim->GetBoneName("mixamorig:RightHand");
 
 
@@ -104,7 +104,7 @@ void Weapon::Update()
 		//OBB
 		if (m_Collision->SetOBB(this, enemy, 3.0f))
 		{
-			//ƒvƒŒƒCƒ„[‚ªUŒ‚ƒ‚[ƒVƒ‡ƒ“‚Ì‚ÉUŒ‚‚ª’Ê‚¶‚é‚æ‚¤‚É‚·‚éˆ—
+			//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ãŒæ”»æ’ƒãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ã®æ™‚ã«æ”»æ’ƒãŒé€šã˜ã‚‹ã‚ˆã†ã«ã™ã‚‹å‡¦ç†
 			if (player->GetPlayerState() == PLAYER_STATE_ATTACK1 ||
 				player->GetPlayerState() == PLAYER_STATE_ATTACK2 ||
 				player->GetPlayerState() == PLAYER_STATE_ATTACK3)
@@ -115,7 +115,7 @@ void Weapon::Update()
 			{
 				m_EnemyDamege = false;
 			}
-			//ƒGƒtƒFƒNƒg‚ğ•t‚¯‚éÛ‚É“Á’è‚ÌƒtƒŒ[ƒ€”‚Ì‚¾‚¯ƒGƒtƒFƒNƒg‚ğ•t‚¯‚½‚¢
+			//ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’ä»˜ã‘ã‚‹éš›ã«ç‰¹å®šã®ãƒ•ãƒ¬ãƒ¼ãƒ æ•°ã®æ™‚ã ã‘ã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚’ä»˜ã‘ãŸã„
 			if (player->GetPlayerAttackHit1() ||
 				player->GetPlayerAttackHit2() ||
 				player->GetPlayerAttackHit3())
@@ -149,7 +149,7 @@ void Weapon::Update()
 		}
 
 		//AABB
-		////“G‚Æ‚Ì“–‚½‚è”»’è
+		////æ•µã¨ã®å½“ãŸã‚Šåˆ¤å®š
 		//D3DXVECTOR3 position = enemy->GetPosition();
 		//D3DXVECTOR3 scale1 = enemy->GetScale() * 100;
 
@@ -186,27 +186,27 @@ void Weapon::Update()
 
 	if (player->GetSetUpFlg())
 	{
-		//Œ•‚ğæ‚èo‚µ‚Ä‚¢‚é‚Æ‚«‚ÌˆÊ’uAƒXƒP[ƒ‹A‰ñ“]
+		//å‰£ã‚’å–ã‚Šå‡ºã—ã¦ã„ã‚‹ã¨ãã®ä½ç½®ã€ã‚¹ã‚±ãƒ¼ãƒ«ã€å›è»¢
 		m_Position = WeaponDataLoad::GetWeaponDataBaseIndex(WeaponDataLoad::GetWeaponNumber())->GetWeaponSetUpPosition();
 		m_Scale = WeaponDataLoad::GetWeaponDataBaseIndex(WeaponDataLoad::GetWeaponNumber())->GetWeaponSetUpScale();
 		m_Rotation = WeaponDataLoad::GetWeaponDataBaseIndex(WeaponDataLoad::GetWeaponNumber())->GetWeaponSetUpRotation();
 
-		//ƒvƒŒƒCƒ„[‚Ìƒ‚ƒfƒ‹‚Ì‰Eè‚Ìƒ{[ƒ“‚Ìƒ}ƒgƒŠƒbƒNƒX‚ğæ“¾‚µ‚Ä‚¢‚é
+		//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ¢ãƒ‡ãƒ«ã®å³æ‰‹ã®ãƒœãƒ¼ãƒ³ã®ãƒãƒˆãƒªãƒƒã‚¯ã‚¹ã‚’å–å¾—ã—ã¦ã„ã‚‹
 		m_Parent = anim->ConvertMatrix(RightHand->WorldMatrix);
 	}
 	else
 	{
-		//Œ•‚ğ‚µ‚Ü‚Á‚Ä‚¢‚é‚Æ‚«‚ÌˆÊ’uAƒXƒP[ƒ‹A‰ñ“]
+		//å‰£ã‚’ã—ã¾ã£ã¦ã„ã‚‹ã¨ãã®ä½ç½®ã€ã‚¹ã‚±ãƒ¼ãƒ«ã€å›è»¢
 		m_Position = WeaponDataLoad::GetWeaponDataBaseIndex(WeaponDataLoad::GetWeaponNumber())->GetWeaponMountPosition();
 		m_Scale = WeaponDataLoad::GetWeaponDataBaseIndex(WeaponDataLoad::GetWeaponNumber())->GetWeaponMountScale();
 		m_Rotation = WeaponDataLoad::GetWeaponDataBaseIndex(WeaponDataLoad::GetWeaponNumber())->GetWeaponMountRotation();
 
-		//ƒvƒŒƒCƒ„[‚Ìƒ‚ƒfƒ‹‚Ì˜‚Ìƒ{[ƒ“‚Ìƒ}ƒgƒŠƒbƒNƒX‚ğæ“¾‚µ‚Ä‚¢‚é
+		//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ¢ãƒ‡ãƒ«ã®è…°ã®ãƒœãƒ¼ãƒ³ã®ãƒãƒˆãƒªãƒƒã‚¯ã‚¹ã‚’å–å¾—ã—ã¦ã„ã‚‹
 		m_Parent = anim->ConvertMatrix(Hips->WorldMatrix);
 	}
 
 
-	//Œ•‚ğ~‚Á‚Ä‚¢‚é‚Æ‚«‚¾‚¯‚ÉƒgƒŒƒCƒ‹‚ª‚Â‚­‚æ‚¤‚É‚·‚éˆ—
+	//å‰£ã‚’é™ã£ã¦ã„ã‚‹ã¨ãã ã‘ã«ãƒˆãƒ¬ã‚¤ãƒ«ãŒã¤ãã‚ˆã†ã«ã™ã‚‹å‡¦ç†
 	if (player->GetPlayerState() == PLAYER_STATE_ATTACK1 ||
 		player->GetPlayerState() == PLAYER_STATE_ATTACK2 ||
 		player->GetPlayerState() == PLAYER_STATE_ATTACK3)
@@ -216,7 +216,7 @@ void Weapon::Update()
 	else
 		m_TrailFlg = false;
 
-	//‰º‚Ì’¸“_‚Ìæ“¾
+	//ä¸‹ã®é ‚ç‚¹ã®å–å¾—
 	m_BottomVertex = MatrixPosition(m_WorldMatrix);
 
 
@@ -230,10 +230,10 @@ void Weapon::Draw()
 {
 	Player* player = m_Scene->GetGameObject<Player>();
 
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
@@ -243,8 +243,8 @@ void Weapon::Draw()
 	D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y, m_Rotation.x, m_Rotation.z);
 	D3DXMatrixTranslation(&trans, m_Position.x, m_Position.y, m_Position.z);
 
-	//Œ•‚Ìƒ}ƒgƒŠƒbƒNƒX‚Éæ“¾‚µ‚½ƒvƒŒƒCƒ„[‚Ìƒ‚ƒfƒ‹‚Ìƒ{[ƒ“‚Æ
-	//ƒvƒŒƒCƒ„[‚Ìƒ}ƒgƒŠƒbƒNƒX‚ğŠ|‚¯‚é‚±‚Æ‚É‚æ‚èŒ•‚É’Ç]‚·‚é
+	//å‰£ã®ãƒãƒˆãƒªãƒƒã‚¯ã‚¹ã«å–å¾—ã—ãŸãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒ¢ãƒ‡ãƒ«ã®ãƒœãƒ¼ãƒ³ã¨
+	//ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ãƒãƒˆãƒªãƒƒã‚¯ã‚¹ã‚’æ›ã‘ã‚‹ã“ã¨ã«ã‚ˆã‚Šå‰£ã«è¿½å¾“ã™ã‚‹
 	m_WorldMatrix = scale * rot * trans * m_Parent * player->GetMatrix();
 
 	Renderer::SetWorldMatrix(&m_WorldMatrix);
@@ -271,12 +271,12 @@ void SwordTopVertex::Load()
 {
 	VERTEX_3D vertex[4];
 
-	vertex[0].Position = D3DXVECTOR3(-1.0f, 0.0f, 1.0f);	//¶‰œ
+	vertex[0].Position = D3DXVECTOR3(-1.0f, 0.0f, 1.0f);	//å·¦å¥¥
 	vertex[0].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 	vertex[0].Diffuse = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 1.0f);
 	vertex[0].TexCoord = D3DXVECTOR2(0.0f, 0.0f);
 
-	vertex[1].Position = D3DXVECTOR3(1.0f, 0.0f, 1.0f);	//‰E‰œ
+	vertex[1].Position = D3DXVECTOR3(1.0f, 0.0f, 1.0f);	//å³å¥¥
 	vertex[1].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 	vertex[1].Diffuse = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 1.0f);
 	vertex[1].TexCoord = D3DXVECTOR2(1.0f, 0.0f);
@@ -291,7 +291,7 @@ void SwordTopVertex::Load()
 	vertex[3].Diffuse = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 1.0f);
 	vertex[3].TexCoord = D3DXVECTOR2(1.0f, 1.0f);
 
-	//’¸“_ƒoƒbƒtƒ@İ’è
+	//é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡è¨­å®š
 	D3D11_BUFFER_DESC bd;
 	ZeroMemory(&bd, sizeof(bd));
 	bd.Usage = D3D11_USAGE_DEFAULT;
@@ -328,7 +328,7 @@ void SwordTopVertex::Update()
 
 void SwordTopVertex::Draw()
 {
-	//ƒ}ƒgƒŠƒNƒXİ’è
+	//ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX world, scale, rot, trans;
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 	D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y, m_Rotation.x, m_Rotation.z);
@@ -338,7 +338,7 @@ void SwordTopVertex::Draw()
 
 
 
-	//’¸“_ƒoƒbƒtƒ@İ’è
+	//é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡è¨­å®š
 	UINT stride = sizeof(VERTEX_3D);
 	UINT offset = 0;
 	Renderer::GetDeviceContext()->IASetVertexBuffers(0, 1, &m_VertexBuffer, &stride, &offset);

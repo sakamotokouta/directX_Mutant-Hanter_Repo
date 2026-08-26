@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #pragma once
 
 #include "gameObject.h"
@@ -6,33 +6,33 @@
 class WeaponDataBase : public GameObject
 {
 protected:
-	//ˆÊ’u
+	//ä½ç½®
 	D3DXVECTOR3 m_Pos{};
-	// ƒTƒCƒY
+	// ã‚µã‚¤ã‚º
 	D3DXVECTOR3 m_Scale{};
-	//ƒgƒŒƒCƒ‹‚ÌˆÊ’u
+	//ãƒˆãƒ¬ã‚¤ãƒ«ã®ä½ç½®
 	D3DXVECTOR3 m_TrailPos{};
-	// Šp“x
+	// è§’åº¦
 	D3DXVECTOR3 m_Rot{};
-	//ƒ‚ƒfƒ‹
+	//ãƒ¢ãƒ‡ãƒ«
 	const char* m_ModelName{};
-	//UŒ‚—Í
+	//æ”»æ’ƒåŠ›
 	float m_Attack{};
-	//Ø‚ê–¡
+	//åˆ‡ã‚Œå‘³
 	float m_Sharpness{};
-	//Ø‚ê–¡‚Ì‰æ‘œ
+	//åˆ‡ã‚Œå‘³ã®ç”»åƒ
 	const char* m_SharpnessTextuer{};
-	//’l’i
+	//å€¤æ®µ
 	int m_Price{};
 
 public:
 
-	//Œ•‚ğ‚µ‚Ü‚Á‚Ä‚¢‚é‚Æ‚«‚ÌˆÊ’uAƒTƒCƒYAŠp“x
+	//å‰£ã‚’ã—ã¾ã£ã¦ã„ã‚‹ã¨ãã®ä½ç½®ã€ã‚µã‚¤ã‚ºã€è§’åº¦
 	virtual D3DXVECTOR3 GetWeaponMountPosition(void) = 0;
 	virtual D3DXVECTOR3 GetWeaponMountScale(void) = 0;
 	virtual D3DXVECTOR3 GetWeaponMountRotation(void) = 0;
 
-	//Œ•‚ğ\‚¦‚Ä‚¢‚é‚Æ‚«‚ÌˆÊ’uAƒTƒCƒYAŠp“x
+	//å‰£ã‚’æ§‹ãˆã¦ã„ã‚‹ã¨ãã®ä½ç½®ã€ã‚µã‚¤ã‚ºã€è§’åº¦
 	virtual D3DXVECTOR3 GetWeaponSetUpPosition(void) = 0;
 	virtual D3DXVECTOR3 GetWeaponSetUpScale(void) = 0;
 	virtual D3DXVECTOR3 GetWeaponSetUpRotation(void) = 0;
@@ -43,7 +43,7 @@ public:
 	virtual const char* GetWeaponSharpnessTextuer(void) = 0;
 	virtual int GetWeaponPrice(void) = 0;
 
-	//ƒgƒŒƒCƒ‹‚ÌˆÊ’u‚Ìæ“¾
+	//ãƒˆãƒ¬ã‚¤ãƒ«ã®ä½ç½®ã®å–å¾—
 	virtual D3DXVECTOR3 GetTrailPositon(void) = 0;
 
 

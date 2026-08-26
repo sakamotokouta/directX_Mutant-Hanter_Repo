@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "loadingLogo.h"
 #include "sprite.h"
@@ -12,7 +12,7 @@ void LoadingLogo::Init()
 
 	Renderer::CreatePixelShader(&m_PixelShader, "shader\\unlitTexturePS.cso");
 
-	//ƒQ[ƒ€‚Å‚Ìƒ[ƒh‰æ–Ê
+	//ã‚²ãƒ¼ãƒ ã§ã®ãƒ­ãƒ¼ãƒ‰ç”»é¢
 	m_OperationInfo = new Sprit2D;
 	m_OperationInfo->Init("asset/texture/sousainfo.png");
 	AddComponet<Sprite>()->Init(0.0f, 0.0f, 100, 100, "asset/texture/loading.png");
@@ -54,17 +54,17 @@ void LoadingLogo::Draw()
 	m_OperationInfo->Draw(m_OperationInfoPos, m_OperationInfoScale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
 
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	Renderer::SetWorldViewProjection2D();
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX world, scale, rot, trans, offset;
 	D3DXMatrixTranslation(&offset, -50.0f, -50.0f, 0.0f);
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
@@ -74,6 +74,6 @@ void LoadingLogo::Draw()
 	Renderer::SetWorldMatrix(&world);
 
 
-	// ‰¼‘zŠÖ”‚È‚Ì‚Å‹­§“I‚ÉŒÄ‚Ño‚·(Šî’êƒNƒ‰ƒX‚Ìƒƒ]ƒbƒgŒÄ‚Ño‚µ)
+	// ä»®æƒ³é–¢æ•°ãªã®ã§å¼·åˆ¶çš„ã«å‘¼ã³å‡ºã™(åŸºåº•ã‚¯ãƒ©ã‚¹ã®ãƒ¡ã‚¾ãƒƒãƒˆå‘¼ã³å‡ºã—)
 	GameObject::Draw();
 }

@@ -1,10 +1,10 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "manager.h"
 #include <thread>
 #include "input.h"
 
 const char* CLASS_NAME = "AppClass";
-const char* WINDOW_NAME = "DX11ƒQ[ƒ€";
+const char* WINDOW_NAME = "DX11ã‚²ãƒ¼ãƒ ";
 POINT LastCursolPos;
 POINT CursolPos;
 bool g_Porz{};
@@ -129,14 +129,14 @@ int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 }
 
 
-//ImGUI‚ÌƒEƒBƒ“ƒhƒEˆ—‚ğƒvƒƒV[ƒWƒƒ‚É’Ç‰Á
+//ImGUIã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å‡¦ç†ã‚’ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã«è¿½åŠ 
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 
-	//ImGUI‚ÌƒEƒBƒ“ƒhƒEˆ—‚ğƒvƒƒV[ƒWƒƒ‚É’Ç‰Á
+	//ImGUIã®ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦å‡¦ç†ã‚’ãƒ—ãƒ­ã‚·ãƒ¼ã‚¸ãƒ£ã«è¿½åŠ 
 	if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
 		return true;
 

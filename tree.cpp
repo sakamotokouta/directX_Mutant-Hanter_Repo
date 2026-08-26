@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "manager.h"
 #include "scene.h"
@@ -36,13 +36,13 @@ void Tree::Load()
 	vertex[3].TexCoord = D3DXVECTOR2(1.0f, 1.0f);
 
 
-	// ’¸“_ƒoƒbƒtƒ@¶¬
+	// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ç”Ÿæˆ
 	D3D11_BUFFER_DESC bd;
 	ZeroMemory(&bd, sizeof(bd));
-	bd.Usage = D3D11_USAGE_DYNAMIC;   // •ÏX
+	bd.Usage = D3D11_USAGE_DYNAMIC;   // å¤‰æ›´
 	bd.ByteWidth = sizeof(VERTEX_3D) * 4;
 	bd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
-	bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;   // •ÏX
+	bd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;   // å¤‰æ›´
 
 	D3D11_SUBRESOURCE_DATA sd;
 	ZeroMemory(&sd, sizeof(sd));
@@ -50,7 +50,7 @@ void Tree::Load()
 
 	Renderer::GetDevice()->CreateBuffer(&bd, &sd, &m_VertexBuffer);
 
-	// ƒeƒNƒXƒ`ƒƒ“Ç‚Ýž‚Ý
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£èª­ã¿è¾¼ã¿
 	D3DX11CreateShaderResourceViewFromFile(Renderer::GetDevice(), "asset/texture/tree.png",
 		NULL, NULL, &m_Texture, NULL);
 	assert(m_Texture);
@@ -91,11 +91,11 @@ void Tree::Update()
 
 void Tree::Draw()
 {
-	// ƒeƒNƒXƒ`ƒƒÀ•WŽZo
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£åº§æ¨™ç®—å‡º
 	float x = m_Count % 4 * (1.0f / 4);
 	float y = m_Count / 4 * (1.0f / 4);
 
-	// ’¸“_ƒf[ƒ^‘‚«Š·‚¦
+	// é ‚ç‚¹ãƒ‡ãƒ¼ã‚¿æ›¸ãæ›ãˆ
 	D3D11_MAPPED_SUBRESOURCE msr;
 	Renderer::GetDeviceContext()->Map(m_VertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &msr);
 
@@ -126,26 +126,26 @@ void Tree::Draw()
 
 
 
-	// “ü—ÍƒŒƒCƒAƒEƒgÝ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[Ý’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// ƒJƒƒ‰‚Ìƒrƒ…[ƒ}ƒgƒŠƒNƒXŽæ“¾
+	// ã‚«ãƒ¡ãƒ©ã®ãƒ“ãƒ¥ãƒ¼ãƒžãƒˆãƒªã‚¯ã‚¹å–å¾—
 	Scene* scene = Manager::GetScene();
 	Camera* camera = scene->GetGameObject<Camera>();
 	D3DXMATRIX view = camera->GetViewMatrix();
 
-	// ƒrƒ…[‚Ì‹ts—ñ
+	// ãƒ“ãƒ¥ãƒ¼ã®é€†è¡Œåˆ—
 	D3DXMATRIX invView;
-	D3DXMatrixInverse(&invView, NULL, &view);   // ‹ts—ñ
+	D3DXMatrixInverse(&invView, NULL, &view);   // é€†è¡Œåˆ—
 	invView._41 = 0.0f;
 	invView._42 = 0.0f;
 	invView._43 = 0.0f;
 
-	// ƒ}ƒgƒŠƒNƒXÝ’è
+	// ãƒžãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXMATRIX world, scale, rot, trans;
 	D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 	D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y, m_Rotation.x, m_Rotation.z);
@@ -153,25 +153,25 @@ void Tree::Draw()
 	world = scale * invView * trans;
 	Renderer::SetWorldMatrix(&world);
 
-	// ’¸“_ƒoƒbƒtƒ@Ý’è
+	// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡è¨­å®š
 	UINT stride = sizeof(VERTEX_3D);
 	UINT offset = 0;
 	Renderer::GetDeviceContext()->IASetVertexBuffers(0, 1, &m_VertexBuffer, &stride, &offset);
 
-	// ƒ}ƒeƒŠƒAƒ‹Ý’è
+	// ãƒžãƒ†ãƒªã‚¢ãƒ«è¨­å®š
 	MATERIAL material;
 	ZeroMemory(&material, sizeof(material));
 	material.Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
 	material.TextureEnable = true;
 	Renderer::SetMaterial(material);
 
-	// ƒeƒNƒXƒ`ƒƒÝ’è
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£è¨­å®š
 	Renderer::GetDeviceContext()->PSSetShaderResources(0, 1, &m_Texture);
 
-	// ƒvƒŠƒ~ƒeƒBƒuƒgƒ|ƒƒWÝ’è
+	// ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ãƒˆãƒãƒ­ã‚¸è¨­å®š
 	Renderer::GetDeviceContext()->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 
-	// ƒ|ƒŠƒSƒ“•`‰æ
+	// ãƒãƒªã‚´ãƒ³æç”»
 	Renderer::GetDeviceContext()->Draw(4, 0);
 
 	GameObject::Draw();

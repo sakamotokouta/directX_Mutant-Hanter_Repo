@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #pragma once
 #pragma once
 
@@ -18,11 +18,11 @@ protected:
 
 public:
 
-	//•Ší‚Ìî•ñ‚Ì“Ç‚İ‚İ
+	//æ­¦å™¨ã®æƒ…å ±ã®èª­ã¿è¾¼ã¿
 	static void DataLoad(void);
 
 
-	//•Šíî•ñ‚ÌŒÄ‚Ño‚µ
+	//æ­¦å™¨æƒ…å ±ã®å‘¼ã³å‡ºã—
 	static ItemDataBase* GetItemDataBase(void) { return *m_ItemData; }
 	static ItemDataBase* GetItemBaseIndex(int i) { return m_ItemData[i]; }
 	static void SetItemBaseIndex(int i) { m_ItemData[i]; }

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "gameObject.h"
 #include <list>
@@ -8,7 +8,7 @@
 class Scene
 {
 protected:
-	// STL‚ÌƒŠƒXƒg\‘¢
+	// STLã®ãƒªã‚¹ãƒˆæ§‹é€ 
 	std::list<GameObject*> m_GameObject[3];
 
 public:
@@ -23,7 +23,7 @@ public:
 				delete gameObject;
 			}
 
-			// ƒŠƒXƒg\‘¢‚Ìíœ
+			// ãƒªã‚¹ãƒˆæ§‹é€ ã®å‰Šé™¤
 			m_GameObject[i].clear();
 		}
 	}
@@ -31,13 +31,13 @@ public:
 	virtual void Update()
 	{
 		for (int i = 0; i < 3; i++) {
-			// ”ÍˆÍforƒ‹[ƒv
+			// ç¯„å›²forãƒ«ãƒ¼ãƒ—
 			for (GameObject* gameObject : m_GameObject[i])
 			{
 				gameObject->Update();
 			}
 
-			// ƒ‰ƒ€ƒ_®
+			// ãƒ©ãƒ ãƒ€å¼
 			m_GameObject[i].remove_if([](GameObject* object)
 				{
 					return object->Destroy();
@@ -69,8 +69,8 @@ public:
 		}
 	}
 
-	// ƒŠƒXƒg\‘¢‚Ö’Ç‰Á
-	// ƒeƒ“ƒvƒŒ[ƒgŠÖ”
+	// ãƒªã‚¹ãƒˆæ§‹é€ ã¸è¿½åŠ 
+	// ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆé–¢æ•°
 	template <typename T>
 	T* AddGameObject(int Layer)
 	{
@@ -87,7 +87,7 @@ public:
 		for (int i = 0; i < 3; i++) {
 			for (GameObject* object : m_GameObject[i])
 			{
-				// Œ^‚ğ’²‚×‚é(RTTI “®“IŒ^î•ñ)
+				// å‹ã‚’èª¿ã¹ã‚‹(RTTI å‹•çš„å‹æƒ…å ±)
 				if (typeid(*object) == typeid(T))
 				{
 					return (T*)object;
@@ -100,13 +100,13 @@ public:
 	template <typename T>
 	std::vector<T*> GetGameObjects()
 	{
-		// STL‚Ì”z—ñ
+		// STLã®é…åˆ—
 		std::vector<T*> objects;
 
 		for (int i = 0; i < 3; i++) {
 			for (GameObject* object : m_GameObject[i])
 			{
-				// Œ^‚ğ’²‚×‚é(RTTI “®“IŒ^î•ñ)
+				// å‹ã‚’èª¿ã¹ã‚‹(RTTI å‹•çš„å‹æƒ…å ±)
 				if (typeid(*object) == typeid(T))
 				{
 					objects.push_back((T*)object);

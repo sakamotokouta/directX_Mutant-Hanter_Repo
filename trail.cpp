@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "manager.h"
 #include "trail.h"
@@ -13,18 +13,18 @@ void Trail::Init()
 	Scene* scene = Manager::GetScene();
 	//SwordTopVertex* toppostion = scene->GetGameObject<SwordTopVertex>();
 	//Sword* bottomposition = scene->GetGameObject<Sword>();
-	// ’¸“_ƒoƒbƒtƒ@¶¬
+	// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ç”Ÿæˆ
 	{
 		for (int i = 0; i < VERTEX_NUMBER / 2; i++)
 		{
 
 			m_Vertex[i * 2].Position = D3DXVECTOR3((i - 10) * 1.0f, 2.0f, 0);
-			m_Vertex[i * 2].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);//–@üƒxƒNƒgƒ‹
+			m_Vertex[i * 2].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);//æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«
 			m_Vertex[i * 2].Diffuse = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 1.0f);
 			m_Vertex[i * 2].TexCoord = D3DXVECTOR2(i * 1.0f, 0.0f);
 
 			m_Vertex[i * 2 + 1].Position = D3DXVECTOR3((i - 10) * 1.0f, 2.0f, 5.0f);
-			m_Vertex[i * 2 + 1].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);//–@üƒxƒNƒgƒ‹
+			m_Vertex[i * 2 + 1].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);//æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«
 			m_Vertex[i * 2 + 1].Diffuse = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 1.0f);
 			m_Vertex[i * 2 + 1].TexCoord = D3DXVECTOR2(i * 1.0f, 1.0f);
 
@@ -45,7 +45,7 @@ void Trail::Init()
 	}
 
 
-	// ƒeƒNƒXƒ`ƒƒ“Ç‚İ‚İ
+	// ãƒ†ã‚¯ã‚¹ãƒãƒ£èª­ã¿è¾¼ã¿
 	D3DX11CreateShaderResourceViewFromFile(Renderer::GetDevice(),
 		"asset/texture/defolttrail.png",
 		NULL,
@@ -108,12 +108,12 @@ void Trail::Draw()
 		m_TopVertexArrayCopy = m_TopVertexArray;
 		m_BottomVertexArrayCopy = m_BottomVertexArray;
 
-		//// ’¸“_ƒf[ƒ^‘‚«Š·‚¦// ‚±‚±‚Éƒƒ“ƒo•Ï”‚Å•Û‘¶‚µ‚½’¸“_ƒf[ƒ^‚ğ•Ï‚¦‚é
+		//// é ‚ç‚¹ãƒ‡ãƒ¼ã‚¿æ›¸ãæ›ãˆ// ã“ã“ã«ãƒ¡ãƒ³ãƒå¤‰æ•°ã§ä¿å­˜ã—ãŸé ‚ç‚¹ãƒ‡ãƒ¼ã‚¿ã‚’å¤‰ãˆã‚‹
 		D3D11_MAPPED_SUBRESOURCE msr;
 		Renderer::GetDeviceContext()->Map(m_VertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &msr);
 		VERTEX_3D* vertex = (VERTEX_3D*)msr.pData;
 
-		////ƒLƒ…[
+		////ã‚­ãƒ¥ãƒ¼
 		for (int i = 0; i < VERTEX_NUMBER / 2; i++)
 		{
 			if (!m_TopVertexArrayCopy.empty())
@@ -121,7 +121,7 @@ void Trail::Draw()
 				vertex[i * 2].Position = m_TopVertexArrayCopy.front();
 				vertex[i * 2].TexCoord = D3DXVECTOR2(i * 1.0f, 0.0f);
 				vertex[i * 2].Diffuse = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 1.0f);
-				vertex[i * 2].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);//–@üƒxƒNƒgƒ‹
+				vertex[i * 2].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);//æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«
 				m_TopVertexArrayCopy.pop();
 			}
 
@@ -130,7 +130,7 @@ void Trail::Draw()
 				vertex[i * 2 + 1].Position = m_BottomVertexArrayCopy.front();
 				vertex[i * 2 + 1].TexCoord = D3DXVECTOR2(i * 1.0f, 1.0f);
 				vertex[i * 2 + 1].Diffuse = D3DXVECTOR4(1.0f, 1.0f, 1.0f, 1.0f);
-				vertex[i * 2 + 1].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);//–@üƒxƒNƒgƒ‹
+				vertex[i * 2 + 1].Normal = D3DXVECTOR3(0.0f, 1.0f, 0.0f);//æ³•ç·šãƒ™ã‚¯ãƒˆãƒ«
 				m_BottomVertexArrayCopy.pop();
 			}
 
@@ -141,17 +141,17 @@ void Trail::Draw()
 
 
 
-		// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+		// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 		Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-		// ƒVƒF[ƒ_İ’è
+		// ã‚·ã‚§ãƒ¼ãƒ€è¨­å®š
 		Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 		Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
 
 
 
-		// ƒ}ƒgƒŠƒNƒXİ’è
+		// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 		D3DXMATRIX world, scale, rot, trans;
 		D3DXMatrixScaling(&scale, m_Scale.x, m_Scale.y, m_Scale.z);
 		D3DXMatrixRotationYawPitchRoll(&rot, m_Rotation.y, m_Rotation.x, m_Rotation.z);
@@ -161,14 +161,14 @@ void Trail::Draw()
 
 
 
-		// ’¸“_ƒoƒbƒtƒ@İ’è
+		// é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡è¨­å®š
 		UINT stride = sizeof(VERTEX_3D);
 		UINT offset = 0;
 		Renderer::GetDeviceContext()->IASetVertexBuffers(0, 1, &m_VertexBuffer, &stride, &offset);
 
 
 
-		// ƒ}ƒeƒŠƒAƒ‹İ’è
+		// ãƒãƒ†ãƒªã‚¢ãƒ«è¨­å®š
 		MATERIAL material;
 		ZeroMemory(&material, sizeof(material));
 		//material.Diffuse = D3DXCOLOR(1.0f, 0.0f, 0.0f, 1.0f);
@@ -176,16 +176,16 @@ void Trail::Draw()
 		material.TextureEnable = true;
 		Renderer::SetMaterial(material);
 
-		// ƒeƒNƒXƒ`ƒƒİ’è
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£è¨­å®š
 		Renderer::GetDeviceContext()->PSSetShaderResources(0, 1, &m_Texture);
 
 
-		// ƒvƒŠƒ~ƒeƒBƒuƒgƒ|ƒƒWİ’è
+		// ãƒ—ãƒªãƒŸãƒ†ã‚£ãƒ–ãƒˆãƒãƒ­ã‚¸è¨­å®š
 		Renderer::GetDeviceContext()->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);
 
 
 		Renderer::SetATCEnable(true);
-		// ƒ|ƒŠƒSƒ“•`‰æ
+		// ãƒãƒªã‚´ãƒ³æç”»
 		//if (m_TrailEnable)
 		//{
 

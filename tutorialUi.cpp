@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "sprit2D.h"
 #include "manager.h"
@@ -61,41 +61,41 @@ void TutorialUi::Update()
 void TutorialUi::Draw()
 {
 
-	//‹“_‘€ì
+	//è¦–ç‚¹æ“ä½œ
 	if(m_MoveViewFlg)
 		m_MoveView->Draw(m_Positon, m_Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
-	//ˆÚ“®
+	//ç§»å‹•
 	if (Input::GetKeyTrigger(VK_RETURN) && m_MoveViewFlg)
 	{
 		m_MoveFlg = true;
 		m_MoveViewFlg = false;
 	}
-	//‰ñ”ğ
+	//å›é¿
 	else if (Input::GetKeyTrigger(VK_RETURN) && m_MoveFlg)
 	{
 		m_AvoidanceFlg = true;
 		m_MoveFlg = false;
 	}
-	//UŒ‚
+	//æ”»æ’ƒ
 	else if (Input::GetKeyTrigger(VK_RETURN) && m_AvoidanceFlg)
 	{
 		m_AttackFlg = true;
 		m_AvoidanceFlg = false;
 	}
-	//“ÁêUŒ‚
+	//ç‰¹æ®Šæ”»æ’ƒ
 	else if (Input::GetKeyTrigger(VK_RETURN) && m_AttackFlg)
 	{
 		m_SpecialAttackFlg = true;
 		m_AttackFlg = false;
 	}
-	//“G
+	//æ•µ
 	else if (Input::GetKeyTrigger(VK_RETURN) && m_SpecialAttackFlg)
 	{
 		m_EnemyFlg = true;
 		m_SpecialAttackFlg = false;
 	}
-	//ÅŒã
+	//æœ€å¾Œ
 	else if (Input::GetKeyTrigger(VK_RETURN) && m_EnemyFlg)
 	{
 		m_EnemyFlg = false;

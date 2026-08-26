@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "scene.h"
 
 class Village : public Scene
@@ -15,7 +15,7 @@ private:
 	static bool m_QuestFlg1;
 	static bool m_TutorialFlg;
 
-	//‘ºƒV[ƒ“‚Ì‚ÉƒIƒ“‚É‚·‚éƒtƒ‰ƒO
+	//æ‘ã‚·ãƒ¼ãƒ³ã®æ™‚ã«ã‚ªãƒ³ã«ã™ã‚‹ãƒ•ãƒ©ã‚°
 	static bool m_VillageFlg;
 
 public:

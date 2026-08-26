@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "drawModel.h"
 #include "specialAttack02.h"
@@ -51,10 +51,10 @@ void SpecialAttack02::Update()
 	Enemy* enemy = m_Scene->GetGameObject<Enemy>();
 
 
-	////pos‚Ì•ÏŠ·
-	//m_CollitionPos.x = m_CollitionMatrix._41; // s—ñ‚Ì‰E‰º‚Ì—v‘f‚ªX²•ûŒü‚ÌˆÚ“®¬•ª
-	//m_CollitionPos.y = m_CollitionMatrix._42; // s—ñ‚Ì‰E‰º‚Ì—v‘f‚ªY²•ûŒü‚ÌˆÚ“®¬•ª
-	//m_CollitionPos.z = m_CollitionMatrix._43; // s—ñ‚Ì‰E‰º‚Ì—v‘f‚ªZ²•ûŒü‚ÌˆÚ“®¬•ª
+	////posã®å¤‰æ›
+	//m_CollitionPos.x = m_CollitionMatrix._41; // è¡Œåˆ—ã®å³ä¸‹ã®è¦ç´ ãŒXè»¸æ–¹å‘ã®ç§»å‹•æˆåˆ†
+	//m_CollitionPos.y = m_CollitionMatrix._42; // è¡Œåˆ—ã®å³ä¸‹ã®è¦ç´ ãŒYè»¸æ–¹å‘ã®ç§»å‹•æˆåˆ†
+	//m_CollitionPos.z = m_CollitionMatrix._43; // è¡Œåˆ—ã®å³ä¸‹ã®è¦ç´ ãŒZè»¸æ–¹å‘ã®ç§»å‹•æˆåˆ†
 
 	if (enemy != NULL)
 	{
@@ -73,7 +73,7 @@ void SpecialAttack02::Update()
 			m_EnemyDamege = false;
 		}
 
-		////“G‚Æ‚Ì“–‚½‚è”»’è
+		////æ•µã¨ã®å½“ãŸã‚Šåˆ¤å®š
 		//D3DXVECTOR3 position = enemy->GetPosition();
 		//D3DXVECTOR3 scale1 = enemy->GetScale() * 388;
 
@@ -105,10 +105,10 @@ void SpecialAttack02::Draw()
 {
 	Player* player = m_Scene->GetGameObject<Player>();
 
-	// “ü—ÍƒŒƒCƒAƒEƒgİ’è
+	// å…¥åŠ›ãƒ¬ã‚¤ã‚¢ã‚¦ãƒˆè¨­å®š
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// ƒVƒF[ƒ_[İ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®š
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
@@ -120,7 +120,7 @@ void SpecialAttack02::Draw()
 
 	m_CollitionMatrix = scale * rot * trans * player->GetMatrix();
 
-	// ƒ}ƒgƒŠƒNƒXİ’è
+	// ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	Renderer::SetWorldMatrix(&m_CollitionMatrix);
 
 	//collision

@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "gameObject.h"
 
@@ -21,7 +21,7 @@ public:
 	void Update();
 	void Draw();
 
-	// ‘O•ûŒüƒxƒNƒgƒ‹æ“¾
+	// å‰æ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«å–å¾—
 	D3DXVECTOR3 GetForward()
 	{
 		D3DXMATRIX rot;
@@ -36,7 +36,7 @@ public:
 		return forward;
 	}
 
-	// ‰¡•ûŒüƒxƒNƒgƒ‹æ“¾
+	// æ¨ªæ–¹å‘ãƒ™ã‚¯ãƒˆãƒ«å–å¾—
 	D3DXVECTOR3 GetRight()
 	{
 		D3DXMATRIX rot;

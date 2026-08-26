@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "manager.h"
 #include "renderer.h"
 #include "game.h"
@@ -63,7 +63,7 @@ void Game::Unload()
 void Game::Init()
 {
 
-	//ƒQ[ƒ€ƒV[ƒ“‚Ì‚ÉƒIƒ“‚É‚·‚éƒtƒ‰ƒO
+	//ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã®æ™‚ã«ã‚ªãƒ³ã«ã™ã‚‹ãƒ•ãƒ©ã‚°
 	m_GameFlg = true;
 
 	// camera
@@ -89,19 +89,19 @@ void Game::Init()
 	Enemy* enemy = AddGameObject<Enemy>(1);
 	enemy->SetPosition(D3DXVECTOR3(5.0f, 0.0f, 3.0f));
 	
-	//ƒŒƒxƒ‹1
+	//ãƒ¬ãƒ™ãƒ«1
 	if (QuestDeskUi::GetLevel01RespwanFlg())
 	{
 		Enemy::SetEnmeyHp(30.0f);
 		enemy->SetEnemyModel(0);
 	}
-	//ƒŒƒxƒ‹2
+	//ãƒ¬ãƒ™ãƒ«2
 	if (QuestDeskUi::GetLevel02RespwanFlg())
 	{
 		Enemy::SetEnmeyHp(60.0f);
 		enemy->SetEnemyModel(1);
 	}
-	//ƒŒƒxƒ‹3
+	//ãƒ¬ãƒ™ãƒ«3
 	if (QuestDeskUi::GetLevel03RespwanFlg())
 	{
 		Enemy::SetEnmeyHp(70.0f);
@@ -123,9 +123,9 @@ void Game::Init()
 
 	Ui01* ui = AddGameObject<Ui01>(2);
 
-	//BGMÄ¶
+	//BGMå†ç”Ÿ
 	m_BGM = AddGameObject<GameObject>(0)->AddComponet<Audio>();
-	m_BGM->Load("asset\\audio\\í“¬Œn04.wav");
+	m_BGM->Load("asset\\audio\\æˆ¦é—˜ç³»04.wav");
 	m_BGM->Play(true);
 	m_BGM->Volume(0.05f);
 
@@ -147,7 +147,7 @@ void Game::Update()
 void Game::Draw()
 {
 	
-	//ƒ‰ƒCƒgƒJƒƒ‰\‘¢‘Ì‚Ì‰Šú‰»
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©æ§‹é€ ä½“ã®åˆæœŸåŒ–
 	LIGHT light;
 	light.Enable = true;
 	light.Direction = D3DXVECTOR4(1.0f, -1.0f, 1.0f, 0.0f);
@@ -156,31 +156,31 @@ void Game::Draw()
 	light.Diffuse = D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f);
 
 
-	//ƒ‰ƒCƒgƒJƒƒ‰‚Ìƒrƒ…[s—ñ‚ğì¬
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®ãƒ“ãƒ¥ãƒ¼è¡Œåˆ—ã‚’ä½œæˆ
 	D3DXVECTOR3 lightPos = D3DXVECTOR3(-50.0f, 20.0f, -50.0f);
 	D3DXVECTOR3 lightTarget = D3DXVECTOR3(0.0f, 0.0f, 0.0f);
 	D3DXVECTOR3 lightUp = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 	D3DXMatrixLookAtLH(&light.ViewMatrix, &lightPos, &lightTarget, &lightUp);
-	//ƒ‰ƒCƒgƒJƒƒ‰‚ÌƒvƒƒWƒFƒNƒVƒ‡ƒ“s—ñ‚ğì¬
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³è¡Œåˆ—ã‚’ä½œæˆ
 	D3DXMatrixPerspectiveFovLH(&light.ProjectionMatrix, 1.0f,
 		(float)1.0f, 10.0f, 300.0f);
 
 
 	Renderer::SetLight(light);
 
-	//** 1ƒpƒX–Ú ƒVƒƒƒhƒEƒoƒbƒtƒ@‚Ìì¬ **//
+	//** 1ãƒ‘ã‚¹ç›® ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ•ã‚¡ã®ä½œæˆ **//
 	Renderer::BeginDepth();
 
 	Renderer::SetDepthViewport();
 
-	//ƒ‰ƒCƒgƒJƒƒ‰‚Ìs—ñ‚ğƒZƒbƒg
+	//ãƒ©ã‚¤ãƒˆã‚«ãƒ¡ãƒ©ã®è¡Œåˆ—ã‚’ã‚»ãƒƒãƒˆ
 	Renderer::SetViewMatrix(&light.ViewMatrix);
 	Renderer::SetProjectionMatrix(&light.ProjectionMatrix);
 
-	//‰e‚ğ—‚Æ‚µ‚½‚¢ƒIƒuƒWƒFƒNƒg‚Ì•`‰æ
+	//å½±ã‚’è½ã¨ã—ãŸã„ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æç”»
 	ShadowDraw();
 
-	//** 2ƒpƒX–Ú ’Êí‚Ìì¬ **//
+	//** 2ãƒ‘ã‚¹ç›® é€šå¸¸ã®ä½œæˆ **//
 	Renderer::Begin();
 
 	Renderer::SetDefaultViewport();

@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "sprite.h"
 #include "villageUi.h"
@@ -34,19 +34,19 @@ void VillageUi::Init()
 	Scene* scene = Manager::GetScene();
 
 
-	//ƒAƒCƒeƒ€ƒf[ƒ^‚Ì“Ç‚Ýž‚Ý
+	//ã‚¢ã‚¤ãƒ†ãƒ ãƒ‡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿
 	ItemDataLoad::DataLoad();
 
 
-	//•Ší‚Ìƒf[ƒ^“Ç‚Ýž‚Ý
+	//æ­¦å™¨ã®ãƒ‡ãƒ¼ã‚¿èª­ã¿è¾¼ã¿
 	WeaponDataLoad::DataLoad();
 
 	m_Fade = scene->AddGameObject<Fade>(2);
 
-	//‚¨‹à‚Ì‰Šú‰»
+	//ãŠé‡‘ã®åˆæœŸåŒ–
 	Money::Init();
 
-	//Sprit2D‚Ì‰Šú‰»
+	//Sprit2Dã®åˆæœŸåŒ–
 	m_Pointer = new Sprit2D;
 	m_EnerOrRetern = new Sprit2D;
 	m_LastSelect = new Sprit2D;
@@ -92,75 +92,75 @@ void VillageUi::Init()
 	m_TutorialInfo->Init("asset/texture/tutorial.png");
 
 
-	//ƒNƒGƒXƒgo”­‘O‚Ì‰æ–Ê
+	//ã‚¯ã‚¨ã‚¹ãƒˆå‡ºç™ºå‰ã®ç”»é¢
 	m_QuestGateLastInfoPos = D3DXVECTOR3(177.0f, 61.0f, 0.0f);
 	m_QuestGateLastInfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//‘º‚ÌÐ‰î‰æ–Ê01
+	//æ‘ã®ç´¹ä»‹ç”»é¢01
 	m_VillageInfoSelect01Pos = D3DXVECTOR3(215.0f, 39.0f, 0.0f);
 	m_VillageInfoSelect01Scale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//‘º‚ÌÐ‰î‰æ–Ê02
+	//æ‘ã®ç´¹ä»‹ç”»é¢02
 	m_VillageInfoSelect02Pos = D3DXVECTOR3(215.0f, 255.0f, 0.0f);
 	m_VillageInfoSelect02Scale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//•Ší‰®‚ÌÐ‰î•¶
+	//æ­¦å™¨å±‹ã®ç´¹ä»‹æ–‡
 	m_WeaponStoreInfoPos = D3DXVECTOR3(215.0f, 255.0f, 0.0f);
 	m_WeaponStoreInfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//ŽG‰Ý‰®‚ÌÐ‰î•¶
+	//é›‘è²¨å±‹ã®ç´¹ä»‹æ–‡
 	m_GeneralStoreInfoPos = D3DXVECTOR3(215.0f, 255.0f, 0.0f);
 	m_GeneralStoreInfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//Žó•tì‚ÌÐ‰î•¶
+	//å—ä»˜å¬¢ã®ç´¹ä»‹æ–‡
 	m_QuestBoardInfoPos = D3DXVECTOR3(215.0f, 255.0f, 0.0f);
 	m_QuestBoardInfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//ƒNƒGƒXƒgo”­–å‚ÌÐ‰î•¶
+	//ã‚¯ã‚¨ã‚¹ãƒˆå‡ºç™ºé–€ã®ç´¹ä»‹æ–‡
 	m_QuestGateInfoPos = D3DXVECTOR3(215.0f, 255.0f, 0.0f);
 	m_QuestGateInfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//‹³Š¯‚ÌÐ‰î•¶
+	//æ•™å®˜ã®ç´¹ä»‹æ–‡
 	m_TutorialInfoPos = D3DXVECTOR3(215.0f, 255.0f, 0.0f);
 	m_TutorialInfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
 
-	//ƒ`ƒ…[ƒgƒŠƒAƒ‹‚ÌÅŒã‚Ì•¶
+	//ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã®æœ€å¾Œã®æ–‡
 	m_InfoFinishPos = D3DXVECTOR3(215.0f, 255.0f, 0.0f);
 	m_InfoFinishScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//ƒ^ƒCƒgƒ‹‚É–ß‚é‚Æ‚«‚Ì•¶
+	//ã‚¿ã‚¤ãƒˆãƒ«ã«æˆ»ã‚‹ã¨ãã®æ–‡
 	m_TitleLastInfoPos = D3DXVECTOR3(199.0f, 49.0f, 0.0f);
 	m_TitleLastInfoScale = D3DXVECTOR3(900.0f, 500.0f, 0.0f);
 
-	//‰ñ•œ–ò‚Ì”‚ðŠm”F‚·‚é‚½‚ß‚Ì‰ñ•œ–ò‚Ì‰æ‘œ
+	//å›žå¾©è–¬ã®æ•°ã‚’ç¢ºèªã™ã‚‹ãŸã‚ã®å›žå¾©è–¬ã®ç”»åƒ
 	m_ItemPicPos = D3DXVECTOR3(144.0f, 514.0f, 0.0f);
 	m_ItemPicScale = D3DXVECTOR3(200.0f, 100.0f, 0.0f);
 
-	//Žc‹à‚ÌŠm”F
+	//æ®‹é‡‘ã®ç¢ºèª
 	m_ConfirmationMoneyPos = D3DXVECTOR3(774.0f, 239.0f, 0.0f);
 	m_ConfirmationMoneyScale = D3DXVECTOR3(30.0f, 30.0f, 0.0f);
 
-	//ƒAƒCƒeƒ€‚Ì”‚ÌŠm”F
+	//ã‚¢ã‚¤ãƒ†ãƒ ã®æ•°ã®ç¢ºèª
 	m_ItemNumPos = D3DXVECTOR3(770.0f, 304.0f, 0.0f);
 	m_ItemNumScale = D3DXVECTOR3(30.0f, 30.0f, 0.0f);
 
-	//ƒNƒGƒXƒgs‚­Û‚ÌÅŒã‚Ì–îˆó
-	m_QuestLastPointPos = D3DXVECTOR3(487.0f, 242.0f, 0.0f);	//íŽžo‚µ‚Ä‚¨‚­Šm”F‰æ–Ê‚ðŠJ‚­‚½‚ß‚ÌŽwŽ¦
+	//ã‚¯ã‚¨ã‚¹ãƒˆè¡Œãéš›ã®æœ€å¾Œã®çŸ¢å°
+	m_QuestLastPointPos = D3DXVECTOR3(487.0f, 242.0f, 0.0f);	//å¸¸æ™‚å‡ºã—ã¦ãŠãç¢ºèªç”»é¢ã‚’é–‹ããŸã‚ã®æŒ‡ç¤º
 	m_QuestLastPointScale = D3DXVECTOR3(280.0f, 200.0f, 0.0f);
 
-	//Šm”F‚ÌŽž‚Ì‰æ‘œ
+	//ç¢ºèªã®æ™‚ã®ç”»åƒ
 	m_ChackPicPos = D3DXVECTOR3(270.0f, 68.0f, 0.0f);
 	m_ChackPicScale = D3DXVECTOR3(775.0f, 420.0f, 0.0f);
 
 	m_ChackRavelPos = D3DXVECTOR3(-16.0f,528.0f, 0.0f);
 	m_ChackRavelScale = D3DXVECTOR3(280.0f, 200.0f, 0.0f);
 
-	//Šm”F‚ª‰æ–Ê‚ðŠJ‚¢‚½‚Æ‚«‚Éo‚é–ß‚é‚½‚ß‚ÌŽwŽ¦
+	//ç¢ºèªãŒç”»é¢ã‚’é–‹ã„ãŸã¨ãã«å‡ºã‚‹æˆ»ã‚‹ãŸã‚ã®æŒ‡ç¤º
 	m_ReturnRavelPos = D3DXVECTOR3(-60.0f, 499.0f, 0.0f);
 	m_ReturnRavelScale = D3DXVECTOR3(280.0f, 200.0f, 0.0f);
 
-	//”’l‚Ì•`‰æ‚Ì‰Šú‰»
+	//æ•°å€¤ã®æç”»ã®åˆæœŸåŒ–
 	m_ConfirmationScore->Init();
 	m_MoeneyNum->Init();
 	m_ItemNum->Init();
@@ -170,20 +170,20 @@ void VillageUi::Init()
 
 	//AudioLoad
 	m_SelectSE = AddComponet<Audio>();
-	m_SelectSE->Load("asset\\audio\\‘I‘ð‰¹.wav");
+	m_SelectSE->Load("asset\\audio\\é¸æŠžéŸ³.wav");
 	m_SelectSE->Volume(0.4f);
 
 	m_EnterSE = AddComponet<Audio>();
-	m_EnterSE->Load("asset\\audio\\Œˆ’è‰¹.wav");
+	m_EnterSE->Load("asset\\audio\\æ±ºå®šéŸ³.wav");
 	m_EnterSE->Volume(0.4f);
 
-	//’b–èê‚ÌUiƒNƒ‰ƒX‚Ì‰Šú‰»
+	//é›å†¶å ´ã®Uiã‚¯ãƒ©ã‚¹ã®åˆæœŸåŒ–
 	WeaponStoreUi* weaponui = scene->AddGameObject<WeaponStoreUi>(2);
 
-	//ŽG‰Ý‰®‚ÌUiƒNƒ‰ƒX‚Ì‰Šú‰»
+	//é›‘è²¨å±‹ã®Uiã‚¯ãƒ©ã‚¹ã®åˆæœŸåŒ–
 	GeneralStoreUi* generalui = scene->AddGameObject<GeneralStoreUi>(2);
 
-	//ƒNƒGƒXƒgŽó•t‚ÌUiƒNƒ‰ƒX‚Ì‰Šú‰»
+	//ã‚¯ã‚¨ã‚¹ãƒˆå—ä»˜ã®Uiã‚¯ãƒ©ã‚¹ã®åˆæœŸåŒ–
 	QuestDeskUi* questdeskui = scene->AddGameObject<QuestDeskUi>(2);
 
 	GameObject::Init();
@@ -223,7 +223,7 @@ void VillageUi::Update()
 	Weapon* vweapon = scene->GetGameObject<Weapon>();
 
 
-	//íŽž‰ñ•œ–ò‚ª‰½ŒÂ‚ ‚é‚Ì‚©‚ð•\Ž¦‚·‚éUI
+	//å¸¸æ™‚å›žå¾©è–¬ãŒä½•å€‹ã‚ã‚‹ã®ã‹ã‚’è¡¨ç¤ºã™ã‚‹UI
 	if (Input::GetKeyPress('T'))
 		m_ConfirmationFlg = true;
 	else if (Input::GetKeyPress('R') && m_ConfirmationFlg)
@@ -231,13 +231,13 @@ void VillageUi::Update()
 
 
 
-	//ÅŒã‚Ì–å‚Ìˆ—
+	//æœ€å¾Œã®é–€ã®å‡¦ç†
 	if (QuestDeskUi::GetLevel01RespwanFlg() || QuestDeskUi::GetLevel02RespwanFlg() || QuestDeskUi::GetLevel03RespwanFlg())
 	{
 		m_QuestGate = true;
 	}
 
-	//ÅŒã‚Ì–å‚É‹ß‚Ã‚¢‚½‚çƒNƒGƒXƒg‚És‚­‚©‚Ç‚¤‚©‚ð•·‚­ˆ—
+	//æœ€å¾Œã®é–€ã«è¿‘ã¥ã„ãŸã‚‰ã‚¯ã‚¨ã‚¹ãƒˆã«è¡Œãã‹ã©ã†ã‹ã‚’èžãå‡¦ç†
 	if (player->GetPosition().z <= 26.399f && player->GetPosition().z >= 24.681 && player->GetPosition().x >= 3.0f && m_QuestGate)
 	{
 
@@ -250,7 +250,7 @@ void VillageUi::Update()
 	if (m_QuestGateLastFlg)
 	{
 		
-		//‘I‘ð‚·‚é‚Æ‚«‚Ì‚â‚¶‚é‚µ
+		//é¸æŠžã™ã‚‹ã¨ãã®ã‚„ã˜ã‚‹ã—
 		if (Input::GetKeyTrigger(VK_DOWN))
 		{
 			m_QuestLastPointPos.y += 53.0f;
@@ -270,7 +270,7 @@ void VillageUi::Update()
 			m_SelectSE->Play();
 		}
 
-		//‚Í‚¢‚Æ‚¢‚¢‚¦‚Ìˆ—
+		//ã¯ã„ã¨ã„ã„ãˆã®å‡¦ç†
 		if (m_QuestLastPointPos.y >= 291.0f && Input::GetKeyTrigger('F'))
 			m_QuestGateLastFlg = false;
 		else if (m_QuestLastPointPos.y <= 242.0f && Input::GetKeyTrigger('F'))
@@ -279,7 +279,7 @@ void VillageUi::Update()
 		}
 	}
 
-	//ƒ[ƒh‰æ–Ê‚É‘JˆÚ‚·‚éˆ—
+	//ãƒ­ãƒ¼ãƒ‰ç”»é¢ã«é·ç§»ã™ã‚‹å‡¦ç†
 	if (m_Fade->GetFadeFinish() && m_QuestGate)
 	{
 		Manager::SetScene<Loading>();
@@ -289,7 +289,7 @@ void VillageUi::Update()
 	}
 
 	
-	//‘º‚Ìƒ`ƒ…[ƒgƒŠƒAƒ‹
+	//æ‘ã®ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«
 	if (vplayer->GetVillageInfoFlg())
 	{
 		if (Input::GetKeyTrigger('E'))
@@ -342,7 +342,7 @@ void VillageUi::Update()
 	}
 	else if (Input::GetKeyTrigger('F') && m_TitleLastInfoFlg && m_LastSelectPointerPos.y == 160.0f)
 	{
-		//ƒ^ƒCƒgƒ‹‚É–ß‚éˆ—
+		//ã‚¿ã‚¤ãƒˆãƒ«ã«æˆ»ã‚‹å‡¦ç†
 		m_Fade->FadeOut();
 		m_EnterSE->Play();
 	}
@@ -425,11 +425,11 @@ void VillageUi::Update()
 		Village::SetVillageFlg(false);
 	}
 
-	//ƒAƒCƒeƒ€ƒf[ƒ^[‚ðƒf[ƒ^[ƒx[ƒX‚Ö•Û‘¶‚·‚é
+	//ã‚¢ã‚¤ãƒ†ãƒ ãƒ‡ãƒ¼ã‚¿ãƒ¼ã‚’ãƒ‡ãƒ¼ã‚¿ãƒ¼ãƒ™ãƒ¼ã‚¹ã¸ä¿å­˜ã™ã‚‹
 	ItemDataLoad::SetKeepItemBase(0, ItemDataLoad::GetItemBaseIndex(0));
 	ItemDataLoad::SetDataKeepFlg(true);
 
-	//‚¨‹à‚ð•Û‘¶
+	//ãŠé‡‘ã‚’ä¿å­˜
 	Money::SetKeepMoney(Money::GetMoney(), true);
 
 	GameObject::Update();
@@ -445,15 +445,15 @@ void VillageUi::Draw()
 
 	if (m_ConfirmationFlg)
 	{
-		//Šm”F‰æ–Ê
+		//ç¢ºèªç”»é¢
 		m_ChackPic->Draw(m_ChackPicPos, m_ChackPicScale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 
-		//‰ñ•œ–ò‚Ì”
+		//å›žå¾©è–¬ã®æ•°
 		m_ConfirmationScore->Draw();
 		m_ConfirmationScore->SetCount(ItemDataLoad::GetItemBaseIndex(0)->GetItemCount());
 		m_ConfirmationScore->SetPosAndScale(m_ItemNumPos.x, m_ItemNumPos.y, m_ItemNumScale.x, m_ItemNumScale.y);
 
-		//Žc‹à
+		//æ®‹é‡‘
 		m_MoeneyNum->Draw();
 		m_MoeneyNum->SetCount(Money::GetMoney());
 		m_MoeneyNum->SetPosAndScale(m_ConfirmationMoneyPos.x, m_ConfirmationMoneyPos.y, m_ConfirmationMoneyScale.x, m_ConfirmationMoneyScale.y);
@@ -468,7 +468,7 @@ void VillageUi::Draw()
 	}
 
 
-	//ƒNƒGƒXƒgƒQ[ƒg‚ÌUI
+	//ã‚¯ã‚¨ã‚¹ãƒˆã‚²ãƒ¼ãƒˆã®UI
 	if (m_QuestGateLastFlg)
 	{
 		m_QuestGateLastInfo->Draw(m_QuestGateLastInfoPos, m_QuestGateLastInfoScale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 0.8f);
@@ -477,7 +477,7 @@ void VillageUi::Draw()
 	}
 
 
-	//ƒ`ƒ…[ƒgƒŠƒAƒ‹‚ÌUI•`‰æ
+	//ãƒãƒ¥ãƒ¼ãƒˆãƒªã‚¢ãƒ«ã®UIæç”»
 	if (m_InfoFirstSelectFlg)
 	{
 		m_VillageInfoSelect01->Draw(m_VillageInfoSelect01Pos, m_VillageInfoSelect01Scale, D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);

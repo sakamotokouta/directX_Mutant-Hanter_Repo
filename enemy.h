@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include "gameObject.h"
 #include <string>
@@ -48,7 +48,7 @@ private:
 
 	float m_BlendRate{};
 	float m_Time{};
-	float m_ViewDistance = 5.0f; // ‹–ì‹——£
+	float m_ViewDistance = 5.0f; // è¦–é‡è·é›¢
 	float m_EnemyDistance = 10.0f;
 	static float m_EnemyHp;
 	float m_Threshold{};

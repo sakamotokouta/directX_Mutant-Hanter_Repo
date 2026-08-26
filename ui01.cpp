@@ -1,4 +1,4 @@
-#include "main.h"
+ï»¿#include "main.h"
 #include "renderer.h"
 #include "ui01.h"
 #include "sprit2D.h"
@@ -36,10 +36,10 @@ void Ui01::Init()
 	m_Sprit18 = new Sprit2D;
 	m_Sprit19 = new Sprit2D;
 
-	//ƒAƒCƒeƒ€ƒf[ƒ^[‚Ì“Ç‚Ýž‚Ý
+	//ã‚¢ã‚¤ãƒ†ãƒ ãƒ‡ãƒ¼ã‚¿ãƒ¼ã®èª­ã¿è¾¼ã¿
 	ItemDataLoad::DataLoad();
 
-	//•Šíƒf[ƒ^‚Ì“Ç‚Ýž‚Ý
+	//æ­¦å™¨ãƒ‡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿
 	WeaponDataLoad::DataLoad();
 
 
@@ -170,7 +170,7 @@ void Ui01::Uninit()
 
 void Ui01::Update()
 {
-	//Žž‚Ì•bj
+	//æ™‚åˆ»ã®ç§’é‡
 	m_Rot4.x += 0.0001f;
 	
 	if (m_Scale18.x >= 160.0f)
@@ -214,7 +214,7 @@ void Ui01::Draw()
 
 	}
 
-	//ƒNƒGƒXƒg¬Œ÷Žž
+	//ã‚¯ã‚¨ã‚¹ãƒˆæˆåŠŸæ™‚
 	if (m_ClearFlg && Village::GetTutorialFlg() == false)
 	{
 		m_ClearCo++;
@@ -223,7 +223,7 @@ void Ui01::Draw()
 			m_Sprit15->Draw(D3DXVECTOR3(0.0f, 0.0f, 0.0f), D3DXVECTOR3(SCREEN_WIDTH, SCREEN_HEIGHT, 0.0f), D3DXVECTOR3(0.0f, 0.0f, 0.0f), 1.0f);
 	}
 
-	//ƒNƒGƒXƒgŽ¸”sŽž
+	//ã‚¯ã‚¨ã‚¹ãƒˆå¤±æ•—æ™‚
 	if (player->GetPlayerEndFlg())
 	{
 		m_ClearCo++;

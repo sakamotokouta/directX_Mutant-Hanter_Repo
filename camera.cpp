@@ -1,4 +1,4 @@
-#include"main.h"
+ï»¿#include"main.h"
 #include"manager.h"
 #include"renderer.h"
 #include"camera.h"
@@ -47,7 +47,7 @@ void Camera::Update()
 
 
 
-	////////ƒQ[ƒ€ƒV[ƒ“‚Å‚ÌƒJƒƒ‰ˆ—//////////////
+	////////ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ã§ã®ã‚«ãƒ¡ãƒ©å‡¦ç†//////////////
 	if (enemy != NULL && enemy->GetEnemyState() == ENEMY_STATE_DIE)
 	{
 		m_Target = enemy->GetPosition();
@@ -71,7 +71,7 @@ void Camera::Update()
 
 	}
 
-	/////////‘ºƒV[ƒ“‚Å‚ÌƒJƒƒ‰ˆ—//////////////////
+	/////////æ‘ã‚·ãƒ¼ãƒ³ã§ã®ã‚«ãƒ¡ãƒ©å‡¦ç†//////////////////
 	if (Village::GetVillageFlg())
 	{
 		if (vui->GetWeaponSotreInfoFlg())
@@ -117,19 +117,19 @@ void Camera::Update()
 
 void Camera::Draw()
 {
-	//ƒrƒ…[ƒ}ƒgƒŠƒNƒXİ’è
+	//ãƒ“ãƒ¥ãƒ¼ãƒãƒˆãƒªã‚¯ã‚¹è¨­å®š
 	D3DXVECTOR3 up = D3DXVECTOR3(0.0f, 1.0f, 0.0f);
 
 	D3DXVECTOR3 position = m_Position + D3DXVECTOR3(m_ShakeOffset, m_ShakeOffset, 0.0f);
 	D3DXVECTOR3 target = m_Target + D3DXVECTOR3(m_ShakeOffset, m_ShakeOffset, 0.0f);
 
 	D3DXMatrixLookAtLH(&m_ViewMatrix, &position, &target, &up);
-	//m_target ’‹“_
+	//m_target æ³¨è¦–ç‚¹
 
 	Renderer::SetViewMatrix(&m_ViewMatrix);
 
-	//ƒvƒƒWƒFƒNƒVƒ‡ƒ“ƒ}ƒgƒŠƒbƒNƒXİ’è
-	D3DXMatrixPerspectiveFovLH(&m_ProjectionMatrix, 1.0f/*‹–ì*/, (float)SCREEN_WIDTH / SCREEN_HEIGHT, 1.0f, 1000.0f);
+	//ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ã‚·ãƒ§ãƒ³ãƒãƒˆãƒªãƒƒã‚¯ã‚¹è¨­å®š
+	D3DXMatrixPerspectiveFovLH(&m_ProjectionMatrix, 1.0f/*è¦–é‡*/, (float)SCREEN_WIDTH / SCREEN_HEIGHT, 1.0f, 1000.0f);
 
 	Renderer::SetProjectionMatrix(&m_ProjectionMatrix);
 
@@ -160,7 +160,7 @@ bool Camera::CheckView(D3DXVECTOR3 Position)
 
 	v = Position - m_Position;
 
-	//¶–Ê”»’è
+	//å·¦é¢åˆ¤å®š
 	{
 		v1 = wpos[0] - m_Position;
 		v2 = wpos[2] - m_Position;
@@ -170,7 +170,7 @@ bool Camera::CheckView(D3DXVECTOR3 Position)
 			return false;
 	}
 
-	//‰E–Ê”»’è
+	//å³é¢åˆ¤å®š
 	{
 		v1 = wpos[3] - m_Position;
 		v2 = wpos[1] - m_Position;

@@ -1,4 +1,4 @@
-#include "main.h"
+﻿#include "main.h"
 #include "renderer.h"
 #include "titleLogo.h"
 #include "sprite.h"
@@ -48,14 +48,14 @@ void TitleLogo::Update()
 
 void TitleLogo::Draw()
 {
-	// ���̓��C�A�E�g�ݒ�
+	// 入力レイアウト設定
 	Renderer::GetDeviceContext()->IASetInputLayout(m_VertexLayout);
 
-	// �V�F�[�_�[�ݒ�
+	// シェーダー設定
 	Renderer::GetDeviceContext()->VSSetShader(m_VertexShader, NULL, 0);
 	Renderer::GetDeviceContext()->PSSetShader(m_PixelShader, NULL, 0);
 
-	// �}�g���N�X�ݒ�
+	// マトリクス設定
 	Renderer::SetWorldViewProjection2D();
 
 
@@ -81,6 +81,6 @@ void TitleLogo::Draw()
 	if (m_Minus)
 		m_clear -= 0.01f;
 
-	// ���z�֐��Ȃ̂ŋ����I�ɌĂяo��(���N���X�̃��]�b�g�Ăяo��)
+	// 仮想関数なので強制的に呼び出す(基底クラスのメゾット呼び出し)
 	GameObject::Draw();
 }
