@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="hlsl">
+      <UniqueIdentifier>{48a15213-fc33-4fdf-8037-e09d2077729c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{997a7057-5f1a-4438-a5a8-2b9b6a1f5442}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\TitleScene">
+      <UniqueIdentifier>{b1d804eb-3256-419f-8989-56918a06e05f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameScene">
+      <UniqueIdentifier>{fbdd0087-e61f-46c0-a991-ddc58566fe67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\VillageScene">
+      <UniqueIdentifier>{672a66e8-2579-4755-99ce-fa924587ddda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\GameScene">
+      <UniqueIdentifier>{bcb84512-a93b-4114-bc04-1cb588f0396e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\TitleScene">
+      <UniqueIdentifier>{13f01abb-7dc7-49a4-afa6-e788baba90f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\ResultScene">
+      <UniqueIdentifier>{8e66f7ec-5234-4f20-83f8-0c0173fd4157}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\ResultScene">
+      <UniqueIdentifier>{dc031d40-da13-4120-9b5b-29de1bcd9a45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\VillageScene">
+      <UniqueIdentifier>{d5484189-5b17-45df-bac3-5848eab37e0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\TutorialScene">
+      <UniqueIdentifier>{9fd78254-02a5-4db7-a335-6798d0eea632}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\TutorialScene">
+      <UniqueIdentifier>{20eb00a6-be4c-4536-88c7-a46f224dfbe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Item">
+      <UniqueIdentifier>{0864b671-4c1d-4101-9fc7-e5d01bef3b77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Weapon">
+      <UniqueIdentifier>{a4e053a8-5bec-45ea-8e4c-b1df97716c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\LodingScene">
+      <UniqueIdentifier>{71326601-6c96-4ca1-8a4b-71feb092ff78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\LodingScene">
+      <UniqueIdentifier>{8959787d-5d39-43fd-87c7-3138c41ab831}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\VillageScene\VillageUi">
+      <UniqueIdentifier>{3fdeb0eb-0cc7-441d-9667-9c857481a0a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\VillageScene\VIllageUi">
+      <UniqueIdentifier>{db53a19c-d1b5-4fbf-8593-fdc488529b48}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="manager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="renderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="sprite.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="spritefield.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="audio.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="fade.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="animationModel.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="sprit2D.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="weaponDataLoad.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="itemDataLoad.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="drawModel.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="village.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="villageInfoDesk.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="villageUi.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="bentiObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="generalStoreBoardObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="generalStoreDesk.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="generalStoreObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="houseObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="idoObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="questBordObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="questGateObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="recepitionPointer.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="receptionDesk.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="title.cpp">
+      <Filter>ソース ファイル\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="titleCamera.cpp">
+      <Filter>ソース ファイル\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="titleDome.cpp">
+      <Filter>ソース ファイル\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="titleLogo.cpp">
+      <Filter>ソース ファイル\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="titlePlayer.cpp">
+      <Filter>ソース ファイル\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="titleWeapon.cpp">
+      <Filter>ソース ファイル\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="windmillObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="weaponStoreDesk.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="weaponStoreObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="weaponBoardObj.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="enemy.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyJumpAttack.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyRemoteAttack.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="enemyWeapon.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="bullet.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="game.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="specialAttack03.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="dome.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="attackPrediction.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="explosion.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="otomo.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="specialAttack01.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="specialAttack02.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="sky.cpp">
+      <Filter>ソース ファイル\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="score.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="score2.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="score3.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="ui01.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="tree.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="treeObj.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="weapon.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="field.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="result.cpp">
+      <Filter>ソース ファイル\ResultScene</Filter>
+    </ClCompile>
+    <ClCompile Include="resultLogo.cpp">
+      <Filter>ソース ファイル\ResultScene</Filter>
+    </ClCompile>
+    <ClCompile Include="instructor.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorial.cpp">
+      <Filter>ソース ファイル\TutorialScene</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorialUi.cpp">
+      <Filter>ソース ファイル\TutorialScene</Filter>
+    </ClCompile>
+    <ClCompile Include="loading.cpp">
+      <Filter>ソース ファイル\LodingScene</Filter>
+    </ClCompile>
+    <ClCompile Include="loadingLogo.cpp">
+      <Filter>ソース ファイル\LodingScene</Filter>
+    </ClCompile>
+    <ClCompile Include="collitionBox.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="villageObjCollition.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="villagePlayerAction.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="healEffect.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="money.cpp">
+      <Filter>ソース ファイル\VillageScene</Filter>
+    </ClCompile>
+    <ClCompile Include="trail.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="meshField.cpp">
+      <Filter>ソース ファイル\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="villageUiManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="weaponStoreUi.cpp">
+      <Filter>ソース ファイル\VillageScene\VillageUi</Filter>
+    </ClCompile>
+    <ClCompile Include="generalStoreUi.cpp">
+      <Filter>ソース ファイル\VillageScene\VillageUi</Filter>
+    </ClCompile>
+    <ClCompile Include="questDeskUi.cpp">
+      <Filter>ソース ファイル\VillageScene\VillageUi</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="manager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="renderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="gameObject.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="sprite.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="audio.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="fade.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="animationModel.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_dx11.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="sprit2D.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="drawModel.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="attackPrediction.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="bentiObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="bullet.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="dome.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="enemy.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyJumpAttack.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyRemoteAttack.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="enemyWeapon.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="explosion.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="field.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="game.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="generalStoreBoardObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="generalStoreDesk.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="generalStoreObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="houseObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="idoObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="otomo.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="score.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="score2.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="score3.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="village.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="villageInfoDesk.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="villageUi.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponBoardObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponStoreDesk.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponStoreObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="windmillObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="specialAttack01.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="specialAttack02.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="specialAttack03.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="questBordObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="questGateObj.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="recepitionPointer.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="receptionDesk.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="title.h">
+      <Filter>ヘッダー ファイル\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="titleCamera.h">
+      <Filter>ヘッダー ファイル\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="titleDome.h">
+      <Filter>ヘッダー ファイル\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="titleLogo.h">
+      <Filter>ヘッダー ファイル\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="titlePlayer.h">
+      <Filter>ヘッダー ファイル\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="titleWeapon.h">
+      <Filter>ヘッダー ファイル\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="treeObj.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="ui01.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="result.h">
+      <Filter>ヘッダー ファイル\ResultScene</Filter>
+    </ClInclude>
+    <ClInclude Include="resultLogo.h">
+      <Filter>ヘッダー ファイル\ResultScene</Filter>
+    </ClInclude>
+    <ClInclude Include="sky.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="instructor.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorial.h">
+      <Filter>ヘッダー ファイル\TutorialScene</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorialUi.h">
+      <Filter>ヘッダー ファイル\TutorialScene</Filter>
+    </ClInclude>
+    <ClInclude Include="weapon03.h">
+      <Filter>ヘッダー ファイル\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="weapon02.h">
+      <Filter>ヘッダー ファイル\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="weapon01.h">
+      <Filter>ヘッダー ファイル\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="weapon00.h">
+      <Filter>ヘッダー ファイル\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="weapon.h">
+      <Filter>ヘッダー ファイル\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponDataBase.h">
+      <Filter>ヘッダー ファイル\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponDataLoad.h">
+      <Filter>ヘッダー ファイル\Weapon</Filter>
+    </ClInclude>
+    <ClInclude Include="itemDataBase.h">
+      <Filter>ヘッダー ファイル\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="itemDataLoad.h">
+      <Filter>ヘッダー ファイル\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="medicalItem.h">
+      <Filter>ヘッダー ファイル\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="loadingLogo.h">
+      <Filter>ヘッダー ファイル\LodingScene</Filter>
+    </ClInclude>
+    <ClInclude Include="loading.h">
+      <Filter>ヘッダー ファイル\LodingScene</Filter>
+    </ClInclude>
+    <ClInclude Include="collitionBox.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="trail.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="money.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="villagePlayerAction.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="villageObjCollition.h">
+      <Filter>ヘッダー ファイル\VillageScene</Filter>
+    </ClInclude>
+    <ClInclude Include="spritefield.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="healEffect.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="meshField.h">
+      <Filter>ヘッダー ファイル\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="villageUiManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="generalStoreUi.h">
+      <Filter>ヘッダー ファイル\VillageScene\VIllageUi</Filter>
+    </ClInclude>
+    <ClInclude Include="questDeskUi.h">
+      <Filter>ヘッダー ファイル\VillageScene\VIllageUi</Filter>
+    </ClInclude>
+    <ClInclude Include="weaponStoreUi.h">
+      <Filter>ヘッダー ファイル\VillageScene\VIllageUi</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="shader\common.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\unlitTexturePS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\unlitTextureVS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\vertexLightingPS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\vertexLightingVS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\DepthShadowMappingPS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\DepthShadowMappingVS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\pixelLightingRimPS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\pixelLightingRimVS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\dissolvePS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+    <FxCompile Include="shader\pixelLightingVS.hlsl">
+      <Filter>hlsl</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
