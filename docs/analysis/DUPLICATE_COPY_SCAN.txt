@@ -1,0 +1,11 @@
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\DepthShadowMappingPS-DESKTOP-2FSCGV3.cso
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\DepthShadowMappingVS-DESKTOP-2FSCGV3.cso
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\pixelLightingRimPS-DESKTOP-2FSCGV3.cso
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\pixelLightingRimVS-DESKTOP-2FSCGV3.cso
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\questDeskUi-DESKTOP-2FSCGV3.cpp
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\questDeskUi-DESKTOP-2FSCGV3.h
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\villageUi-DESKTOP-2FSCGV3.cpp
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\shader\unlitTexturePS-DESKTOP-2FSCGV3.cso
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\shader\unlitTextureVS-DESKTOP-2FSCGV3.cso
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\shader\vertexLightingPS-DESKTOP-2FSCGV3.cso
+C:\Users\kota2\AppData\Local\Temp\claude\repo_snapshot_check\shader\vertexLightingVS-DESKTOP-2FSCGV3.cso

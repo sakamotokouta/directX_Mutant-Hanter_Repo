@@ -1,0 +1,52 @@
+{
+  "total_files": 622,
+  "source_files": 178,
+  "source_loc": 20350,
+  "source_encodings": {
+    "cp932": 102,
+    "utf-8-sig": 76
+  },
+  "raw_new": 222,
+  "delete": 38,
+  "categories": {
+    "compiled-shader-copy": 12,
+    "visual-studio-project": 3,
+    "project-source": 178,
+    "dependency-binary-copy": 2,
+    "configuration": 1,
+    "runtime-binary": 12,
+    "build-artifact-debug": 10,
+    "asset-audio": 25,
+    "asset-model": 157,
+    "asset-texture": 93,
+    "third-party-assimp": 92,
+    "third-party-imgui": 16,
+    "runtime-other": 1,
+    "shader-binary": 8,
+    "shader-source": 11,
+    "solution": 1
+  },
+  "duplicate_pairs": [
+    {
+      "conflict": "villageUi-DESKTOP-2FSCGV3.cpp",
+      "base": "villageUi.cpp",
+      "similarity": 0.5886442641946698,
+      "conflict_lines": 1206,
+      "base_lines": 520
+    },
+    {
+      "conflict": "questDeskUi-DESKTOP-2FSCGV3.h",
+      "base": "questDeskUi.h",
+      "similarity": 0.9132947976878613,
+      "conflict_lines": 83,
+      "base_lines": 90
+    },
+    {
+      "conflict": "questDeskUi-DESKTOP-2FSCGV3.cpp",
+      "base": "questDeskUi.cpp",
+      "similarity": 0.8738621586475943,
+      "conflict_lines": 357,
+      "base_lines": 412
+    }
+  ]
+}
