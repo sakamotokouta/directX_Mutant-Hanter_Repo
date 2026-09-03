@@ -1,4 +1,4 @@
-﻿
+
 #include "main.h"
 #include "renderer.h"
 #include <io.h>
@@ -482,13 +482,30 @@ void Renderer::SetEnemy(ENEMYPARAM Enemy)
 void Renderer::CreateVertexShader( ID3D11VertexShader** VertexShader, ID3D11InputLayout** VertexLayout, const char* FileName )
 {
 
-	FILE* file;
-	long int fsize;
+	FILE* file = fopen(FileName, "rb");
 
-	file = fopen(FileName, "rb");
+	if (file == nullptr)
+	{
+		char message[512];
+
+		sprintf_s(
+			message,
+			sizeof(message),
+			"Vertex Shader not found: %s\n",
+			FileName
+		);
+
+		OutputDebugStringA(message);
+
+		assert(false);
+
+		return;
+	}
+
+
+	long int fsize =_filelength(_fileno(file));
+
 	//assert(file);
-
-	fsize = _filelength(_fileno(file));
 	unsigned char* buffer = new unsigned char[fsize];
 	fread(buffer, fsize, 1, file);
 	fclose(file);
@@ -523,13 +540,31 @@ void Renderer::CreateVertexShader( ID3D11VertexShader** VertexShader, ID3D11Inpu
 
 void Renderer::CreatePixelShader( ID3D11PixelShader** PixelShader, const char* FileName )
 {
-	FILE* file;
-	long int fsize;
+	FILE* file = fopen(FileName, "rb");
 
-	file = fopen(FileName, "rb");
+	if (file == nullptr)
+	{
+		char message[512];
+
+		sprintf_s(
+			message,
+			sizeof(message),
+			"Pixel Shader not found: %s\n",
+			FileName
+		);
+
+		OutputDebugStringA(message);
+
+		assert(false);
+
+		return;
+	}
+
+	long int fsize = _filelength(_fileno(file));
+
+	file ;
 	assert(file);
 
-	fsize = _filelength(_fileno(file));
 	unsigned char* buffer = new unsigned char[fsize];
 	fread(buffer, fsize, 1, file);
 	fclose(file);

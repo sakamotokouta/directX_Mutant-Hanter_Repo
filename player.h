@@ -140,6 +140,7 @@ private:
 	bool m_AttackCoFlg02{};
 	bool m_AttackCoFlg03{};
 	bool m_VillageStopFlg{};
+	bool m_IsRunBgmPlaying{};
 
 public:
 	void Init();

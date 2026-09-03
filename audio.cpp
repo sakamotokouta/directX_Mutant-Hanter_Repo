@@ -1,4 +1,4 @@
-﻿
+
 #include "main.h"
 #include "audio.h"
 
@@ -68,6 +68,22 @@ void Audio::Load(const char *FileName)
 
 
 		hmmio = mmioOpen((LPSTR)FileName, &mmioinfo, MMIO_READ);
+		if (hmmio == NULL)
+		{
+			char message[1024];
+
+			sprintf_s(
+				message,
+				sizeof(message),
+				"Audio file open failed: %s\n",
+				FileName
+			);
+
+			OutputDebugStringA(message);
+
+			assert(false);
+			return;
+		}
 		assert(hmmio);
 
 		riffchunkinfo.fccType = mmioFOURCC('W', 'A', 'V', 'E');

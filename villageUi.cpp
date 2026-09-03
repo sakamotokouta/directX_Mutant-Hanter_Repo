@@ -1,4 +1,4 @@
-﻿#include "main.h"
+#include "main.h"
 #include "renderer.h"
 #include "sprite.h"
 #include "villageUi.h"
@@ -170,11 +170,11 @@ void VillageUi::Init()
 
 	//AudioLoad
 	m_SelectSE = AddComponet<Audio>();
-	m_SelectSE->Load("asset\\audio\\選択音.wav");
+	m_SelectSE->Load("asset\\audio\\chice.wav");
 	m_SelectSE->Volume(0.4f);
 
 	m_EnterSE = AddComponet<Audio>();
-	m_EnterSE->Load("asset\\audio\\決定音.wav");
+	m_EnterSE->Load("asset\\audio\\direction.wav");
 	m_EnterSE->Volume(0.4f);
 
 	//鍛冶場のUiクラスの初期化

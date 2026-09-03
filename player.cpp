@@ -1,4 +1,4 @@
-﻿#include "main.h"
+#include "main.h"
 #include "manager.h"
 #include "renderer.h"
 #include "drawModel.h"
@@ -76,57 +76,57 @@ void Player::Init()
 	//SELoad
 	{
 		m_DamageSE_1 = AddComponet<Audio>();
-		m_DamageSE_1->Load("asset\\audio\\プレイヤーダメージ1.wav");
+		m_DamageSE_1->Load("asset\\audio\\PlayerDamage1.wav");
 		m_DamageSE_1->Volume(0.4f);
 		m_DamageSE_2 = AddComponet<Audio>();
-		m_DamageSE_2->Load("asset\\audio\\プレイヤーダメージ2.wav");
+		m_DamageSE_2->Load("asset\\audio\\PlayerDamage2.wav");
 		m_DamageSE_2->Volume(0.4f);
 
 		m_HealSE = AddComponet<Audio>();
-		m_HealSE->Load("asset\\audio\\体力回復.wav");
+		m_HealSE->Load("asset\\audio\\StaminaRecovery.wav");
 		m_HealSE->Volume(0.4f);
 
 		m_AVoiceSE_1 = AddComponet<Audio>();
-		m_AVoiceSE_1->Load("asset\\audio\\プレイヤー攻撃掛け声1.wav");
+		m_AVoiceSE_1->Load("asset\\audio\\PlayerAttackShouts1.wav");
 		m_AVoiceSE_1->Volume(0.4f);
 		m_AVoiceSE_2 = AddComponet<Audio>();
-		m_AVoiceSE_2->Load("asset\\audio\\プレイヤー攻撃掛け声2.wav");
+		m_AVoiceSE_2->Load("asset\\audio\\PlayerAttackShouts2.wav");
 		m_AVoiceSE_2->Volume(0.4f);
 		m_AVoiceSE_3 = AddComponet<Audio>();
-		m_AVoiceSE_3->Load("asset\\audio\\プレイヤー攻撃掛け声3.wav");
+		m_AVoiceSE_3->Load("asset\\audio\\PlayerAttackShouts3.wav");
 		m_AVoiceSE_3->Volume(0.4f);
 
 		m_AttackSE_1 = AddComponet<Audio>();
-		m_AttackSE_1->Load("asset\\audio\\剣で斬る.wav");
+		m_AttackSE_1->Load("asset\\audio\\Toslashwithasword.wav");
 		m_AttackSE_1->Volume(0.4f);
 		m_AttackSE_2 = AddComponet<Audio>();
-		m_AttackSE_2->Load("asset\\audio\\剣で斬る.wav");
+		m_AttackSE_2->Load("asset\\audio\\Toslashwithasword.wav");
 		m_AttackSE_2->Volume(0.4f);
 		m_AttackSE_3 = AddComponet<Audio>();
-		m_AttackSE_3->Load("asset\\audio\\剣で斬る.wav");
+		m_AttackSE_3->Load("asset\\audio\\Toslashwithasword.wav");
 		m_AttackSE_3->Volume(0.4f);
 
 		m_SAVoiceSE = AddComponet<Audio>();
-		m_SAVoiceSE->Load("asset\\audio\\プレイヤー重攻撃掛け声.wav");
+		m_SAVoiceSE->Load("asset\\audio\\PlayerHeavyAttackShout.wav");
 		m_SAVoiceSE->Volume(0.4f);
 
 		m_SALandingSE = AddComponet<Audio>();
-		m_SALandingSE->Load("asset\\audio\\プレイヤー重攻撃前.wav");
+		m_SALandingSE->Load("asset\\audio\\BeforethePlayersHeavyAttack.wav");
 		m_SALandingSE->Volume(1.0f);
 
 		m_SAttackSE_1 = AddComponet<Audio>();
-		m_SAttackSE_1->Load("asset\\audio\\プレイヤー重攻撃1.wav");
+		m_SAttackSE_1->Load("asset\\audio\\PlayerHeavyAttack1.wav");
 		m_SAttackSE_1->Volume(0.6f);
 		m_SAttackSE_2 = AddComponet<Audio>();
-		m_SAttackSE_2->Load("asset\\audio\\プレイヤー重攻撃2.wav");
+		m_SAttackSE_2->Load("asset\\audio\\PlayerHeavyAttack2.wav");
 		m_SAttackSE_2->Volume(0.6f);
 
 		m_BGM2 = AddComponet<Audio>();
-		m_BGM2->Load("asset\\audio\\土の上を走る.wav");
+		m_BGM2->Load("asset\\audio\\Runningontheground.wav");
 		m_BGM3 = AddComponet<Audio>();
-		m_BGM3->Load("asset\\audio\\剣を抜く.wav");
+		m_BGM3->Load("asset\\audio\\Drawthesword.wav");
 		m_BGM4 = AddComponet<Audio>();
-		m_BGM4->Load("asset\\audio\\剣を鞘にしまう.wav");
+		m_BGM4->Load("asset\\audio\\Shesheathedhersword.wav");
 	}
 
 
@@ -443,6 +443,7 @@ void Player::UpdateGround()
 {
 
 	m_OldPosition = m_Position;
+	m_MoveFlg = false;
 
 	Camera* camera = m_Scene->GetGameObject<Camera>();
 	Enemy* enemy = m_Scene->GetGameObject<Enemy>();
@@ -453,13 +454,13 @@ void Player::UpdateGround()
 	Ui01* hpgreen = m_Scene->GetGameObject<Ui01>();
 	VillagePlayerAction* vplayer = m_Scene->GetGameObject<VillagePlayerAction>();
 	
-	m_MoveFlg = false;
+	
 
 	//同時に押したときでも速度が変わらないようにする処理
-	if (Input::GetKeyPress('W') || Input::GetKeyPress('D') &&
-		Input::GetKeyPress('S') || Input::GetKeyPress('D') &&
-		Input::GetKeyPress('W') || Input::GetKeyPress('A') &&
-		Input::GetKeyPress('S') || Input::GetKeyPress('A'))
+	if (Input::GetKeyPress('W') && Input::GetKeyPress('D') ||
+		Input::GetKeyPress('S') && Input::GetKeyPress('D') ||
+		Input::GetKeyPress('W') && Input::GetKeyPress('A') ||
+		Input::GetKeyPress('S') && Input::GetKeyPress('A'))
 	{
 		m_Forward = 0.071f;
 	}
@@ -506,7 +507,7 @@ void Player::UpdateGround()
 			if (Input::GetKeyPress(VK_SHIFT) && (Game::GetGameFlg() || Tutorial::GetTutorialFlg()))
 			{
 
-				ui->SetSutaminahiku(2.0f);
+				ui->SetSutaminahiku(1.0f);
 				if (ui->GetSutaminaScale() <= 0)
 					ui->SetSutamina(0.0f);
 				else
@@ -533,25 +534,6 @@ void Player::UpdateGround()
 			m_MoveFlg = true;
 
 		}
-		else
-		{
-			if (!m_RunBgm1)
-			{
-				m_BGM2->Stop();
-				m_RunBgm1 = true;
-
-			}
-
-		}
-
-		if (Input::GetKeyTrigger('A'))
-		{
-			m_RunBgm1 = false;
-			m_BGM2->Play(true);
-			m_BGM2->Volume(0.1f);
-
-		}
-
 
 
 
@@ -583,7 +565,7 @@ void Player::UpdateGround()
 			if (Input::GetKeyPress(VK_SHIFT) && (Game::GetGameFlg() || Tutorial::GetTutorialFlg()))
 			{
 
-				ui->SetSutaminahiku(2.0f);
+				ui->SetSutaminahiku(1.0f);
 				if (ui->GetSutaminaScale() <= 0)
 					ui->SetSutamina(0.0f);
 				else
@@ -609,24 +591,25 @@ void Player::UpdateGround()
 
 			m_MoveFlg = true;
 		}
-		else
-		{
-			if (!m_RunBgm2)
-			{
-				m_BGM2->Stop();
-				m_RunBgm2 = true;
+		//else
+		//{
 
-			}
+		//	if (!m_RunBgm2)
+		//	{
+		//		m_BGM2->Stop();
+		//		m_RunBgm2 = true;
 
-		}
+		//	}
 
-		if (Input::GetKeyTrigger('D'))
-		{
-			m_RunBgm2 = false;
-			m_BGM2->Play(true);
-			m_BGM2->Volume(0.1f);
+		//}
 
-		}
+		//if (Input::GetKeyTrigger('D'))
+		//{
+		//	m_RunBgm2 = false;
+		//	m_BGM2->Play(true);
+		//	m_BGM2->Volume(0.1f);
+
+		//}
 
 
 		if (Input::GetKeyPress('W'))
@@ -688,25 +671,25 @@ void Player::UpdateGround()
 
 			m_MoveFlg = true;
 		}
-		else
-		{
-			if (!m_RunBgm3)
-			{
-				m_BGM2->Stop();
-				m_RunBgm3 = true;
+		//else
+		//{
+		//	if (!m_RunBgm3)
+		//	{
+		//		m_BGM2->Stop();
+		//		m_RunBgm3 = true;
 
-			}
-			m_SutaminaFlg = false;
+		//	}
+		//	m_SutaminaFlg = false;
 
-		}
+		//}
 
-		if (Input::GetKeyTrigger('W'))
-		{
-			m_RunBgm3 = false;
-			m_BGM2->Play(true);
-			m_BGM2->Volume(0.1f);
+		//if (Input::GetKeyTrigger('W'))
+		//{
+		//	m_RunBgm3 = false;
+		//	m_BGM2->Play(true);
+		//	m_BGM2->Volume(0.1f);
 
-		}
+		//}
 
 		if (Input::GetKeyPress('S'))
 		{
@@ -758,23 +741,19 @@ void Player::UpdateGround()
 
 			m_MoveFlg = true;
 		}
-		else
+
+		
+
+		if (m_MoveFlg && !m_IsRunBgmPlaying)
 		{
-			if (!m_RunBgm4)
-			{
-				m_BGM2->Stop();
-				m_RunBgm4 = true;
-
-			}
-
-		}
-
-		if (Input::GetKeyTrigger('S'))
-		{
-			m_RunBgm4 = false;
 			m_BGM2->Play(true);
 			m_BGM2->Volume(0.1f);
-
+			m_IsRunBgmPlaying = true;
+		}
+		else if (!m_MoveFlg && m_IsRunBgmPlaying)
+		{
+			m_BGM2->Stop();
+			m_IsRunBgmPlaying = false;
 		}
 
 	}

@@ -1,4 +1,4 @@
-﻿#include "main.h"
+#include "main.h"
 #include "renderer.h"
 #include "enemy.h"
 #include "animationModel.h"
@@ -102,18 +102,18 @@ void Enemy::Init()
 
 
 	m_JABarkSE = AddComponet<Audio>();
-	m_JABarkSE->Load("asset\\audio\\敵重攻撃前.wav");
+	m_JABarkSE->Load("asset\\audio\\BeforetheEnemysHeavyAttack.wav");
 	m_JALandingSE = AddComponet<Audio>();
-	m_JALandingSE->Load("asset\\audio\\敵重攻撃.wav");
+	m_JALandingSE->Load("asset\\audio\\EnemyHeavyAttack.wav");
 	m_RAttackSE = AddComponet<Audio>();
-	m_RAttackSE->Load("asset\\audio\\敵遠距離攻撃.wav");
+	m_RAttackSE->Load("asset\\audio\\EnemyRangedAttacks.wav");
 
 	m_DamageBarkSE = AddComponet<Audio>();
-	m_DamageBarkSE->Load("asset\\audio\\ゴブリンの鳴き声2.wav");
+	m_DamageBarkSE->Load("asset\\audio\\CryofGoblin2.wav");
 	m_DamageBarkSE->Volume(0.2f);
 
 	m_BarkSE = AddComponet<Audio>();
-	m_BarkSE->Load("asset\\audio\\ゴブリンの鳴き声2.wav");
+	m_BarkSE->Load("asset\\audio\\CryofGoblin2.wav");
 	m_BarkSE->Volume(0.3f);
 
 	if (Village::GetTutorialFlg())
