@@ -1,4 +1,4 @@
-﻿#include "main.h"
+#include "main.h"
 #include "weaponStoreUi.h"
 #include "scene.h"
 #include "manager.h"
@@ -77,11 +77,11 @@ void WeaponStoreUi::Init()
 
 	//AudioLoad
 	m_SelectSE = AddComponet<Audio>();
-	m_SelectSE->Load("asset\\audio\\選択音.wav");
+	m_SelectSE->Load("asset\\audio\\chice.wav");
 	m_SelectSE->Volume(0.4f);
 
 	m_EnterSE = AddComponet<Audio>();
-	m_EnterSE->Load("asset\\audio\\決定音.wav");
+	m_EnterSE->Load("asset\\audio\\direction.wav");
 	m_EnterSE->Volume(0.4f);
 
 	//やじるし
@@ -184,23 +184,77 @@ void WeaponStoreUi::Init()
 void WeaponStoreUi::Uninit()
 {
 	m_Pointer->Uninit();
+	delete m_Pointer;
+	m_Pointer = nullptr;
+
 	m_LastSelectPointer->Uninit();
+	delete m_LastSelectPointer;
+	m_LastSelectPointer = nullptr;
+
 	m_BlacksmithFirstSelect->Uninit();
+	delete m_BlacksmithFirstSelect;
+	m_BlacksmithFirstSelect = nullptr;
+
 	m_BlacksmithSecondSelect01->Uninit();
+	delete m_BlacksmithSecondSelect01;
+	m_BlacksmithSecondSelect01 = nullptr;
+
 	m_BlacksmithSecondSelect02->Uninit();
+	delete m_BlacksmithSecondSelect02;
+	m_BlacksmithSecondSelect02 = nullptr;
+
 	m_BlacksmithSecondSelect03->Uninit();
+	delete m_BlacksmithSecondSelect03;
+	m_BlacksmithSecondSelect03 = nullptr;
+
 	m_BlacksmithSelectPointer->Uninit();
+	delete m_BlacksmithSelectPointer;
+	m_BlacksmithSelectPointer = nullptr;
+
 	m_WeaponMaterial1->Uninit();
+	delete m_WeaponMaterial1;
+	m_WeaponMaterial1 = nullptr;
+
 	m_WeaponMaterial2->Uninit();
+	delete m_WeaponMaterial2;
+	m_WeaponMaterial2 = nullptr;
+
 	m_WeaponMaterial3->Uninit();
+	delete m_WeaponMaterial3;
+	m_WeaponMaterial3 = nullptr;
+
 	m_BlacksmithPointer->Uninit();
+	delete m_BlacksmithPointer;
+	m_BlacksmithPointer = nullptr;
+
 	m_BlacksmithLastInfo->Uninit();
+	delete m_BlacksmithLastInfo;
+	m_BlacksmithLastInfo = nullptr;
+
 	m_Weapon00Info->Uninit();
+	delete m_Weapon00Info;
+	m_Weapon00Info = nullptr;
+
 	m_Weapon00SharpnessTextuer->Uninit();
+	delete m_Weapon00SharpnessTextuer;
+	m_Weapon00SharpnessTextuer = nullptr;
+
 	m_Weapon01Info->Uninit();
+	delete m_Weapon01Info;
+	m_Weapon01Info = nullptr;
+
 	m_Weapon01SharpnessTextuer->Uninit();
+	delete m_Weapon01SharpnessTextuer;
+	m_Weapon01SharpnessTextuer = nullptr;
+
 	m_Weapon02Info->Uninit();
+	delete m_Weapon02Info;
+	m_Weapon02Info = nullptr;
+
 	m_Weapon03Info->Uninit();
+	delete m_Weapon03Info;
+	m_Weapon03Info = nullptr;
+
 
 }
 

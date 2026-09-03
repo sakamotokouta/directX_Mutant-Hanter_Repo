@@ -1,4 +1,4 @@
-﻿#include "main.h"
+#include "main.h"
 #include "renderer.h"
 #include "drawModel.h"
 #include "player.h"
@@ -27,7 +27,7 @@ void EnemyWeapon::Init()
 	m_Model->Load("asset\\model\\box.obj");
 
 	m_AttackSE = AddComponet<Audio>();
-	m_AttackSE->Load("asset\\audio\\敵近距離攻撃.wav");
+	m_AttackSE->Load("asset\\audio\\EnemyCloseRangeAttack.wav");
 	m_AttackSE->Volume(0.6f);
 
 
